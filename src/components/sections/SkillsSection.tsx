@@ -1,5 +1,7 @@
 "use client";
-import { useState } from "react";
+import { SlidingControls } from "@/components/ui/SlidingControls";
+import { SlidingPanel } from "@/components/ui/SlidingPanel";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import {
   ArrowUpRight,
@@ -19,8 +21,19 @@ const icons = [Code2, Monitor, Server, Database, Brain, Wrench, Cloud, Cpu];
 export function SkillsSection() {
   const [groupIndex, setGroupIndex] = useState(0);
   const [selected, setSelected] = useState("Python");
+  const [direction, setDirection] = useState(1);
+  const [skillAxis, setSkillAxis] = useState<"x" | "fade">("x");
+  const [vertical, setVertical] = useState(true);
+  useEffect(() => {
+    const query = window.matchMedia("(min-width: 769px)");
+    const update = () => setVertical(query.matches);
+    update();
+    query.addEventListener("change", update);
+    return () => query.removeEventListener("change", update);
+  }, []);
   const group = skillGroups[groupIndex];
   const chooseGroup = (index: number) => {
+    setDirection(index > groupIndex ? 1 : -1);
     setGroupIndex(index);
     setSelected(skillGroups[index].skills[0]);
   };
@@ -39,38 +52,11 @@ export function SkillsSection() {
           Explore my stack — and the projects where it comes to life.
         </p>
         <div className="toolkit-layout">
-          <div
+          <SlidingControls
             className="toolkit-categories"
-            role="group"
-            aria-label="Technology disciplines"
-            onKeyDown={(event) => {
-              const directions: Record<string, number> = {
-                ArrowDown: 1,
-                ArrowRight: 1,
-                ArrowUp: -1,
-                ArrowLeft: -1,
-              };
-              if (
-                !(event.key in directions) &&
-                event.key !== "Home" &&
-                event.key !== "End"
-              )
-                return;
-              event.preventDefault();
-              const next =
-                event.key === "Home"
-                  ? 0
-                  : event.key === "End"
-                    ? skillGroups.length - 1
-                    : (groupIndex +
-                        directions[event.key] +
-                        skillGroups.length) %
-                      skillGroups.length;
-              chooseGroup(next);
-              event.currentTarget
-                .querySelectorAll<HTMLButtonElement>("button")
-                [next]?.focus();
-            }}
+            label="Technology disciplines"
+            panelId="skills-discipline-panel"
+            orientation="responsive"
           >
             {skillGroups.map((g, i) => {
               const Icon = icons[i];
@@ -87,54 +73,97 @@ export function SkillsSection() {
                 </button>
               );
             })}
-          </div>
-          <div className="toolkit-panel">
-            <span className="toolkit-count">
-              {String(groupIndex + 1).padStart(2, "0")} /{" "}
-              {String(skillGroups.length).padStart(2, "0")}
-            </span>
-            <h3>{group.category}</h3>
-            <p className="toolkit-instruction">
-              Select a technology to explore related projects.
-            </p>
-            <div
-              className="toolkit-technologies"
-              role="group"
-              aria-label={`${group.category} technologies`}
+          </SlidingControls>
+          <div
+            className="toolkit-panel"
+            id="skills-discipline-panel"
+            role="tabpanel"
+            aria-label={group.category}
+          >
+            <SlidingPanel
+              panelKey={group.category}
+              direction={direction}
+              axis={vertical ? "y" : "x"}
             >
-              {group.skills.map((skill) => (
-                <button
-                  type="button"
-                  key={skill}
-                  onClick={() => setSelected(skill)}
-                  aria-pressed={selected === skill}
+              <span className="toolkit-count">
+                {String(groupIndex + 1).padStart(2, "0")} /{" "}
+                {String(skillGroups.length).padStart(2, "0")}
+              </span>
+              <h3>{group.category}</h3>
+              <p className="toolkit-instruction">
+                Select a technology to explore related projects.
+              </p>
+              <SlidingControls
+                className="toolkit-technologies"
+                label={`${group.category} technologies`}
+                panelId="skills-evidence-panel"
+              >
+                {group.skills.map((skill) => (
+                  <button
+                    type="button"
+                    key={skill}
+                    onClick={(event) => {
+                      const controls = event.currentTarget.parentElement;
+                      const previous =
+                        controls?.querySelector<HTMLButtonElement>(
+                          'button:is([aria-pressed="true"],[aria-selected="true"])',
+                        );
+                      setSkillAxis(
+                        previous &&
+                          previous.offsetTop !== event.currentTarget.offsetTop
+                          ? "fade"
+                          : "x",
+                      );
+                      setDirection(
+                        group.skills.indexOf(skill) >
+                          group.skills.indexOf(selected)
+                          ? 1
+                          : -1,
+                      );
+                      setSelected(skill);
+                    }}
+                    aria-pressed={selected === skill}
+                  >
+                    {skill}
+                  </button>
+                ))}
+              </SlidingControls>
+              <div
+                className="toolkit-projects"
+                id="skills-evidence-panel"
+                role="tabpanel"
+                aria-label={`${selected} in practice`}
+                aria-live="polite"
+              >
+                <SlidingPanel
+                  panelKey={selected}
+                  direction={direction}
+                  axis={skillAxis}
                 >
-                  {skill}
-                </button>
-              ))}
-            </div>
-            <div className="toolkit-projects" aria-live="polite">
-              <span className="section-label">{selected} in practice</span>
-              {related.length ? (
-                <ul>
-                  {related.map((p) => (
-                    <li key={p.slug}>
-                      <Link href={`/projects/${p.slug}`}>
-                        {p.title}
-                        <ArrowUpRight size={15} />
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              ) : (
-                <p>
-                  Part of my technical toolkit. Explore my broader work below.
-                </p>
-              )}
-              <a href="#projects" className="toolkit-all">
-                Explore all projects <ArrowUpRight size={16} />
-              </a>
-            </div>
+                  <span className="section-label">{selected} in practice</span>
+                  {related.length ? (
+                    <ul>
+                      {related.map((p) => (
+                        <li key={p.slug}>
+                          <Link href={`/projects/${p.slug}`}>
+                            {p.title}
+                            <ArrowUpRight size={15} />
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  ) : (
+                    <p>
+                      Part of my technical toolkit. Explore my broader work
+                      below.
+                    </p>
+                  )}
+                  <a href="#projects" className="toolkit-all">
+                    Explore all projects <ArrowUpRight size={16} />
+                  </a>
+                </SlidingPanel>
+              </div>
+            </SlidingPanel>
           </div>
         </div>
       </div>

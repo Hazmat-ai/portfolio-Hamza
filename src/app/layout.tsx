@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import "./refinements.css";
+import { ProjectTransitions } from "@/components/animations/ProjectTransitions";
 import { Navigation } from "@/components/layout/Navigation";
 import { Footer } from "@/components/layout/Footer";
 import { SmoothScrollProvider } from "@/components/animations/SmoothScrollProvider";
@@ -140,11 +141,13 @@ export default function RootLayout({
           Skip to content
         </a>
         <SmoothScrollProvider>
-          <Navigation />
-          <main id="main-content" tabIndex={-1}>
-            {children}
-          </main>
-          <Footer />
+          <ProjectTransitions>
+            <Navigation />
+            <main id="main-content" tabIndex={-1}>
+              {children}
+            </main>
+            <Footer />
+          </ProjectTransitions>
         </SmoothScrollProvider>
       </body>
     </html>

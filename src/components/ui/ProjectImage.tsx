@@ -1,6 +1,9 @@
 "use client";
 import Image from "next/image";
 import { projectVisual, type ProjectVisual } from "@/data/projectVisuals";
+import { ViewTransition } from "react";
+import { useIsPresent } from "motion/react";
+import { useProjectNavigation } from "@/components/animations/ProjectTransitions";
 import { projects } from "@/data/projects";
 import { useEffect, useRef, useState, type CSSProperties } from "react";
 export function ProjectImage({
@@ -8,16 +11,29 @@ export function ProjectImage({
   title,
   featured = false,
   visual,
+  transitionId,
+  destination = false,
 }: {
   slug: string;
   title: string;
   featured?: boolean;
   visual?: ProjectVisual;
+  transitionId?: string;
+  destination?: boolean;
 }) {
+  // AnimatePresence retains the outgoing image; only the current image may
+  // own the shared route-transition name.
+  const isPresent = useIsPresent();
+  const { origin } = useProjectNavigation();
+  const name = destination
+    ? origin?.slug === slug
+      ? origin.name
+      : `project-${slug}-collection`
+    : transitionId;
   const asset = visual ?? projectVisual(slug, title);
   const frame = useRef<HTMLDivElement>(null);
   useEffect(() => {
-    if (asset.kind !== "photograph") return;
+    if (asset.kind !== "photograph" || destination) return;
     let disposed = false;
     let cleanup: (() => void) | undefined;
     void Promise.all([import("gsap"), import("gsap/ScrollTrigger")]).then(
@@ -71,7 +87,7 @@ export function ProjectImage({
       disposed = true;
       cleanup?.();
     };
-  }, [asset.kind, asset.src]);
+  }, [asset.kind, asset.src, destination]);
   const [failed, setFailed] = useState(false);
   const [loaded, setLoaded] = useState(false);
   if (!asset.src) {
@@ -86,9 +102,12 @@ export function ProjectImage({
       </div>
     );
   }
-  return (
+  const preview = (
     <div
       ref={frame}
+      data-project-visual={slug}
+      data-transition-id={transitionId}
+      data-project-src={asset.src}
       style={
         {
           "--photo-position": asset.position,
@@ -135,5 +154,12 @@ export function ProjectImage({
       )}
       <span className="preview-label">{asset.label}</span>
     </div>
+  );
+  return name && isPresent ? (
+    <ViewTransition name={name} share="project-morph" default="none">
+      {preview}
+    </ViewTransition>
+  ) : (
+    preview
   );
 }

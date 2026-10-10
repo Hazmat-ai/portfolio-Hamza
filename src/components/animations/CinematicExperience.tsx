@@ -235,9 +235,12 @@ export function CinematicExperience({
         void document.fonts.ready.then(() => {
           refresh();
           requestAnimationFrame(() => {
+            if (!disposed)
+              window.dispatchEvent(new Event("portfolio:layout-ready"));
             if (
               disposed ||
               userScrolled ||
+              document.documentElement.dataset.projectReturn ||
               !initialHash ||
               window.location.hash !== initialHash
             )

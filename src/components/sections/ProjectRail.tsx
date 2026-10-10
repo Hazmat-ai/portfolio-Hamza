@@ -79,12 +79,17 @@ export function ProjectRail() {
         {["studymind", "campaign-os", "asl-recognition"].map((slug) => {
           const p = projects.find((p) => p.slug === slug)!;
           return (
-            <article className="rail-card" key={slug}>
+            <article className="rail-card" key={slug} data-project={slug}>
               <Link
                 href={`/projects/${slug}`}
                 aria-label={`Explore ${p.title}`}
               >
-                <ProjectImage slug={slug} title={p.title} featured />
+                <ProjectImage
+                  slug={slug}
+                  title={p.title}
+                  featured
+                  transitionId={`project-${slug}-rail`}
+                />
                 <div className="rail-caption">
                   <h4>{p.title}</h4>
                   <ArrowUpRight size={24} />

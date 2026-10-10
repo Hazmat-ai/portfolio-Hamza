@@ -1,4 +1,7 @@
 "use client";
+import { SlidingControls } from "@/components/ui/SlidingControls";
+import { SlidingPanel } from "@/components/ui/SlidingPanel";
+import { useProjectNavigation } from "@/components/animations/ProjectTransitions";
 import { useState } from "react";
 import { ProjectImage } from "@/components/ui/ProjectImage";
 import { campaignVisuals, studyVisuals } from "@/data/projectVisuals";
@@ -9,27 +12,42 @@ export function ProjectGallery({
   slug: string;
   title: string;
 }) {
-  const [index, setIndex] = useState(0);
+  const { origin } = useProjectNavigation();
   const visuals =
     slug === "campaign-os"
       ? campaignVisuals
       : slug === "studymind"
         ? studyVisuals
         : null;
+  const [index, setIndex] = useState(() =>
+    origin?.slug === slug
+      ? Math.max(0, visuals?.findIndex((v) => v.src === origin.src) ?? 0)
+      : 0,
+  );
+  const [direction, setDirection] = useState(1);
   return (
     <>
-      <ProjectImage
-        key={`${slug}-${index}`}
-        slug={slug}
-        title={title}
-        featured
-        visual={visuals?.[index]}
-      />
+      <div
+        id="project-gallery-panel"
+        role="tabpanel"
+        aria-label={`${title} selected capture`}
+      >
+        <SlidingPanel panelKey={String(index)} axis="x" direction={direction}>
+          <ProjectImage
+            key={`${slug}-${index}`}
+            slug={slug}
+            title={title}
+            featured
+            destination
+            visual={visuals?.[index]}
+          />
+        </SlidingPanel>
+      </div>
       {visuals && (
-        <div
+        <SlidingControls
           className="capture-controls"
-          role="group"
-          aria-label="campaignOS frontend gallery"
+          label={`${title} frontend gallery`}
+          panelId="project-gallery-panel"
         >
           {(slug === "studymind"
             ? ["Workspace", "Sign in"]
@@ -39,12 +57,15 @@ export function ProjectGallery({
               type="button"
               key={label}
               aria-pressed={index === i}
-              onClick={() => setIndex(i)}
+              onClick={() => {
+                setDirection(i > index ? 1 : -1);
+                setIndex(i);
+              }}
             >
               {label}
             </button>
           ))}
-        </div>
+        </SlidingControls>
       )}
     </>
   );

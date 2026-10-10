@@ -1,4 +1,6 @@
 "use client";
+import { SlidingControls } from "@/components/ui/SlidingControls";
+import { SlidingPanel } from "@/components/ui/SlidingPanel";
 
 import { useState } from "react";
 import Link from "next/link";
@@ -16,7 +18,10 @@ export function ResumeSkills() {
       <p className="resume-skills-hint">
         Select a technology to see it in my work.
       </p>
-      <div className="resume-skills-grid">
+      <SlidingControls
+        className="resume-skills-grid"
+        label="Resume technologies"
+      >
         {skillGroups.map((group) => (
           <div className="resume-skill-group" key={group.category}>
             <h3>{group.category}</h3>
@@ -39,34 +44,36 @@ export function ResumeSkills() {
             </div>
           </div>
         ))}
-      </div>
+      </SlidingControls>
       <div
         className="resume-skill-evidence"
         aria-live="polite"
         aria-atomic="true"
       >
-        {selected && (
-          <>
-            <h3>{selected} in practice</h3>
-            {related.length ? (
-              <ul>
-                {related.map((project) => (
-                  <li key={project.slug}>
-                    <Link href={`/projects/${project.slug}`}>
-                      {project.title}
-                      <ArrowUpRight size={16} aria-hidden="true" />
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            ) : (
-              <p>
-                Part of my technical toolkit. Browse the projects below to
-                explore my work.
-              </p>
-            )}
-          </>
-        )}
+        <SlidingPanel panelKey={selected ?? "empty"} axis="fade">
+          {selected && (
+            <>
+              <h3>{selected} in practice</h3>
+              {related.length ? (
+                <ul>
+                  {related.map((project) => (
+                    <li key={project.slug}>
+                      <Link href={`/projects/${project.slug}`}>
+                        {project.title}
+                        <ArrowUpRight size={16} aria-hidden="true" />
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              ) : (
+                <p>
+                  Part of my technical toolkit. Browse the projects below to
+                  explore my work.
+                </p>
+              )}
+            </>
+          )}
+        </SlidingPanel>
       </div>
     </div>
   );

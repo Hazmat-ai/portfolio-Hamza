@@ -1,5 +1,12 @@
 "use client";
-import { useEffect, useRef, useState } from "react";
+import { SlidingControls } from "@/components/ui/SlidingControls";
+import {
+  useEffect,
+  useRef,
+  useState,
+  ViewTransition,
+  type CSSProperties,
+} from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
@@ -145,32 +152,47 @@ export function FeaturedStory({
         [i]?.scrollIntoView({ behavior: "smooth", block: "center" });
   };
   return (
-    <div className="featured-story" ref={root}>
+    <div className="featured-story" ref={root} data-project={project}>
       <div className="story-visual-column">
         <div className="story-visual" ref={visual}>
-          <div className="story-gallery" aria-label={`${title} visual gallery`}>
-            {chapters.map((chapter, i) => (
-              <div
-                className={`story-frame ${i === active ? "active-frame" : ""}`}
-                key={chapter.label}
-              >
-                <Image
-                  src={chapter.image}
-                  alt={chapter.alt}
-                  width={1000}
-                  height={650}
-                  sizes="(max-width: 1023px) 100vw, 60vw"
-                />
-              </div>
-            ))}
-            <span className="preview-label">
-              Original frontend · local captures
-            </span>
-          </div>
-          <div
+          <ViewTransition
+            name={`project-${project}-story`}
+            share="project-morph"
+            default="none"
+          >
+            <div
+              className="story-gallery"
+              data-transition-id={`project-${project}-story`}
+              data-project-src={chapters[active].image}
+              aria-label={`${title} visual gallery`}
+            >
+              {chapters.map((chapter, i) => (
+                <div
+                  className={`story-frame ${i === active ? "active-frame" : ""}`}
+                  key={chapter.label}
+                  style={
+                    {
+                      "--chapter-offset": `${i < active ? -20 : 20}px`,
+                    } as CSSProperties
+                  }
+                >
+                  <Image
+                    src={chapter.image}
+                    alt={chapter.alt}
+                    width={1000}
+                    height={650}
+                    sizes="(max-width: 1023px) 100vw, 60vw"
+                  />
+                </div>
+              ))}
+              <span className="preview-label">
+                Original frontend · local captures
+              </span>
+            </div>
+          </ViewTransition>
+          <SlidingControls
             className="story-gallery-controls"
-            role="group"
-            aria-label={`Explore ${title} chapters`}
+            label={`Explore ${title} chapters`}
           >
             {chapters.map((chapter, i) => (
               <button
@@ -183,7 +205,7 @@ export function FeaturedStory({
                 {chapter.label}
               </button>
             ))}
-          </div>
+          </SlidingControls>
         </div>
       </div>
       <div className="story-chapters">
