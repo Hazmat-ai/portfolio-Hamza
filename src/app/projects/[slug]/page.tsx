@@ -1,0 +1,212 @@
+import { notFound } from 'next/navigation';
+import type { Metadata } from 'next';
+import Link from 'next/link';
+import { projects } from '@/data/projects';
+import { ExternalLink, ArrowLeft, Calendar } from 'lucide-react';
+import { Github } from '@/components/ui/Icons';
+
+interface Props {
+  params: Promise<{ slug: string }>;
+}
+
+export async function generateStaticParams() {
+  return projects.map((p) => ({ slug: p.slug }));
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { slug } = await params;
+  const project = projects.find((p) => p.slug === slug);
+  if (!project) return {};
+  return {
+    title: project.title,
+    description: project.shortDescription,
+    openGraph: {
+      title: `${project.title} | Hamza Rizvi`,
+      description: project.shortDescription,
+    },
+  };
+}
+
+export default async function ProjectDetailPage({ params }: Props) {
+  const { slug } = await params;
+  const project = projects.find((p) => p.slug === slug);
+  if (!project) notFound();
+
+  return (
+    <div className="min-h-screen pt-24 pb-20">
+      {/* Ambient background */}
+      <div
+        className="fixed top-0 right-0 w-[500px] h-[500px] opacity-[0.06] pointer-events-none"
+        style={{
+          background: 'radial-gradient(circle, #8b5cf6 0%, transparent 70%)',
+          filter: 'blur(80px)',
+        }}
+        aria-hidden="true"
+      />
+
+      <div className="container max-w-4xl">
+        {/* Back button */}
+        <Link
+          href="/#projects"
+          className="inline-flex items-center gap-2 text-sm text-[var(--text-secondary)] hover:text-white transition-colors mb-10 group"
+          aria-label="Back to projects"
+        >
+          <ArrowLeft
+            size={16}
+            className="group-hover:-translate-x-1 transition-transform"
+          />
+          Back to Projects
+        </Link>
+
+        {/* Header */}
+        <header className="mb-10">
+          <div className="flex items-center gap-3 mb-4">
+            <span className="text-xs font-semibold px-2.5 py-1 rounded-md badge">
+              {project.category}
+            </span>
+            {project.featured && (
+              <span className="text-xs font-medium text-[var(--accent-bright)] bg-[var(--accent-dim)] px-2.5 py-1 rounded-full border border-[var(--accent)]/20">
+                Featured
+              </span>
+            )}
+          </div>
+          <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-white mb-4">
+            {project.title}
+          </h1>
+          <p className="text-xl text-[var(--text-secondary)] leading-relaxed">
+            {project.shortDescription}
+          </p>
+
+          {/* Action buttons */}
+          <div className="flex flex-wrap gap-3 mt-6">
+            {project.githubUrl && (
+              <a
+                href={project.githubUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-secondary"
+                aria-label={`GitHub repository for ${project.title}`}
+              >
+                <Github size={16} />
+                View on GitHub
+              </a>
+            )}
+            {project.liveUrl && (
+              <a
+                href={project.liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary"
+                aria-label={`Live demo for ${project.title}`}
+              >
+                <ExternalLink size={16} />
+                Live Demo
+              </a>
+            )}
+          </div>
+        </header>
+
+        {/* Content */}
+        <div className="grid md:grid-cols-3 gap-8">
+          {/* Main content */}
+          <div className="md:col-span-2 space-y-8">
+            <Section title="Overview">
+              <p className="text-[var(--text-secondary)] leading-relaxed">{project.description}</p>
+            </Section>
+
+            <Section title="Problem / Challenge">
+              <p className="text-[var(--text-secondary)] leading-relaxed">{project.problem}</p>
+            </Section>
+
+            <Section title="Technical Approach">
+              <p className="text-[var(--text-secondary)] leading-relaxed">{project.approach}</p>
+            </Section>
+
+            <Section title="Key Features">
+              <ul className="space-y-2.5">
+                {project.keyFeatures.map((feature, i) => (
+                  <li key={i} className="flex items-start gap-3 text-[var(--text-secondary)]">
+                    <span
+                      className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 text-xs font-bold"
+                      style={{ background: 'var(--accent-dim)', color: 'var(--accent-bright)' }}
+                      aria-hidden="true"
+                    >
+                      {i + 1}
+                    </span>
+                    <span>{feature}</span>
+                  </li>
+                ))}
+              </ul>
+            </Section>
+          </div>
+
+          {/* Sidebar */}
+          <aside className="space-y-6">
+            <div className="card p-5 sticky top-24">
+              <h3 className="text-sm font-semibold text-white mb-4">Tech Stack</h3>
+              <div className="flex flex-wrap gap-2">
+                {project.techStack.map((tech) => (
+                  <span key={tech} className="badge">
+                    {tech}
+                  </span>
+                ))}
+              </div>
+
+              <div className="mt-6 pt-5 border-t border-white/5 space-y-3">
+                {project.githubUrl && (
+                  <a
+                    href={project.githubUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 text-sm text-[var(--text-secondary)] hover:text-white transition-colors"
+                    aria-label="Open GitHub repository"
+                  >
+                    <Github size={15} />
+                    GitHub Repository
+                  </a>
+                )}
+                {project.liveUrl && (
+                  <a
+                    href={project.liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 text-sm text-[var(--text-secondary)] hover:text-white transition-colors"
+                    aria-label="Open live demo"
+                  >
+                    <ExternalLink size={15} />
+                    Live Demo
+                  </a>
+                )}
+              </div>
+            </div>
+          </aside>
+        </div>
+
+        {/* Back to all projects */}
+        <div className="mt-16 pt-8 border-t border-white/5 text-center">
+          <Link href="/#projects" className="btn-secondary">
+            <ArrowLeft size={16} />
+            All Projects
+          </Link>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function Section({
+  title,
+  children,
+}: {
+  title: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <section>
+      <h2 className="text-xl font-bold text-white mb-3 pb-2 border-b border-white/5">
+        {title}
+      </h2>
+      {children}
+    </section>
+  );
+}
