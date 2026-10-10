@@ -1,181 +1,118 @@
-'use client';
-
-import { motion } from 'motion/react';
-import { Mail, ArrowDown, Download, ExternalLink } from 'lucide-react';
-import { Github, Linkedin } from '@/components/ui/Icons';
+import Image from "next/image";
+import { ArrowDown, ArrowUpRight } from "lucide-react";
+import { Github, Linkedin } from "@/components/ui/Icons";
 
 export function HeroSection() {
   return (
-    <section
-      id="hero"
-      className="relative min-h-screen flex flex-col justify-center overflow-hidden"
-      aria-label="Introduction"
-    >
-      {/* Ambient background orbs */}
-      <div
-        className="ambient-orb w-[600px] h-[600px] opacity-10"
-        style={{
-          background: 'radial-gradient(circle, #8b5cf6 0%, transparent 70%)',
-          top: '-150px',
-          right: '-100px',
-        }}
-        aria-hidden="true"
-      />
-      <div
-        className="ambient-orb w-[400px] h-[400px] opacity-8"
-        style={{
-          background: 'radial-gradient(circle, #6366f1 0%, transparent 70%)',
-          bottom: '0',
-          left: '-80px',
-        }}
-        aria-hidden="true"
-      />
-
-      {/* Grid lines overlay */}
-      <div
-        className="absolute inset-0 opacity-[0.03]"
-        style={{
-          backgroundImage:
-            'linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px)',
-          backgroundSize: '60px 60px',
-        }}
-        aria-hidden="true"
-      />
-
-      <div className="container relative z-10 pt-24">
-        <div className="max-w-4xl">
-          {/* Location badge */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="flex items-center gap-2 mb-6"
-          >
-            <span className="section-label">Mississauga, Ontario · Available for Co-op</span>
-          </motion.div>
-
-          {/* Name */}
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.2, ease: [0.21, 0.47, 0.32, 0.98] }}
-            className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-none mb-6"
-          >
-            <span className="gradient-text">Hamza</span>
-            <br />
-            <span className="text-white">Rizvi</span>
-          </motion.h1>
-
-          {/* Headline */}
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.35 }}
-            className="text-xl md:text-2xl font-medium text-[var(--text-secondary)] mb-4 tracking-tight"
-          >
-            Software Developer &middot; Computer Science &amp; UX Design
-          </motion.p>
-
-          {/* Description */}
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.45 }}
-            className="text-base md:text-lg text-[var(--text-muted)] max-w-2xl leading-relaxed mb-10"
-          >
-            I build full-stack applications, AI-powered tools, and robotics systems at Wilfrid Laurier University.
-            Currently a Software Development Intern at the Ontario Government, with hands-on experience spanning
-            computer vision, embedded systems, and user-focused engineering.
-          </motion.p>
-
-          {/* CTA buttons */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.55 }}
-            className="flex flex-wrap gap-3 mb-12"
-          >
-            <a href="#projects" className="btn-primary">
-              View Projects
-              <ExternalLink size={15} />
-            </a>
-            <a
-              href="/resume.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-secondary"
-            >
-              <Download size={15} />
-              Resume
-            </a>
-            <a
-              href="https://github.com/Hazmat-ai"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-secondary"
-              aria-label="GitHub profile"
-            >
-              <Github size={15} />
-              GitHub
-            </a>
-            <a
-              href="https://www.linkedin.com/in/hamzarizvi-cs"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-secondary"
-              aria-label="LinkedIn profile"
-            >
-              <Linkedin size={15} />
-              LinkedIn
-            </a>
-            <a
-              href="mailto:hamzarizvi006@gmail.com"
-              className="btn-secondary"
-              aria-label="Send email"
-            >
-              <Mail size={15} />
-              Contact
-            </a>
-          </motion.div>
-
-          {/* Stats row */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.65 }}
-            className="flex flex-wrap gap-8 pt-8 border-t border-white/5"
-          >
-            {[
-              { value: '12+', label: 'Projects Built' },
-              { value: '11', label: 'Certifications' },
-              { value: 'BSc CS', label: 'Wilfrid Laurier' },
-              { value: 'Aug 2028', label: 'Graduation' },
-            ].map((stat) => (
-              <div key={stat.label}>
-                <div className="text-2xl font-bold gradient-text">{stat.value}</div>
-                <div className="text-xs text-[var(--text-muted)] mt-0.5">{stat.label}</div>
-              </div>
-            ))}
-          </motion.div>
+    <section id="hero" className="launch-hero" aria-labelledby="hero-heading">
+      <div className="container launch-hero-intro">
+        <div className="launch-status">
+          <span className="status">
+            <span />
+            Available for co-op opportunities
+          </span>
+          <span className="mono">Mississauga, Ontario</span>
+        </div>
+        <p className="launch-kicker">
+          Software Developer · Computer Science + UX Design
+        </p>
+        <h1 className="launch-hero-title" id="hero-heading">
+          <span className="title-mask">
+            <span className="title-line">Hamza Rizvi.</span>
+          </span>
+          <span className="title-mask">
+            <span className="title-line hero-title-sub">
+              Built on curiosity.
+            </span>
+          </span>
+        </h1>
+        <p className="launch-description">
+          Full-stack applications. Intelligent tools. Embedded systems. <br />
+          Thoughtful engineering, from the interface to the infrastructure.
+        </p>
+        <div className="launch-actions">
+          <a href="#projects" className="btn-primary">
+            Explore my work <ArrowDown size={16} />
+          </a>
+          <a href="#contact" className="btn-secondary">
+            Let’s connect <ArrowUpRight size={16} />
+          </a>
         </div>
       </div>
-
-      {/* Scroll indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.2 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
-        aria-hidden="true"
-      >
-        <span className="text-xs text-[var(--text-muted)] tracking-widest uppercase">Scroll</span>
-        <motion.div
-          animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
-        >
-          <ArrowDown size={16} className="text-[var(--text-muted)]" />
-        </motion.div>
-      </motion.div>
+      <div className="hero-device-stage">
+        <div className="hero-device-scene">
+          <div className="hero-monitor">
+            <div className="monitor-bar">
+              <span className="window-controls">
+                <i />
+                <i />
+                <i />
+              </span>
+              <span>StudyMind / Original frontend</span>
+              <span className="monitor-bar-end">⌘</span>
+            </div>
+            <Image
+              src="/assets/projects/studymind/home.webp"
+              alt="Actual StudyMind frontend captured locally"
+              width={1000}
+              height={650}
+              preload
+              sizes="(max-width: 767px) 92vw, 70vw"
+            />
+            <div className="monitor-base" />
+          </div>
+          <div className="hero-code-panel" aria-hidden="true">
+            <span className="code-panel-label">BEHIND THE INTERFACE</span>
+            <code>
+              <span>INPUT</span> → document
+              <br />
+              <br />
+              document → extract
+              <br />
+              prompt → generate
+              <br />
+              response → validate
+              <br />
+              <span>OUTPUT</span> → study materials
+            </code>
+            <span className="code-panel-footer">
+              Python / FastAPI / Claude API
+            </span>
+          </div>
+        </div>
+      </div>
+      <div className="container launch-hero-bottom">
+        <p>
+          Currently building at <strong>Ontario Government</strong>
+          <br />
+          Studying at Wilfrid Laurier University
+        </p>
+        <div className="launch-socials">
+          <a
+            href="https://github.com/Hazmat-ai"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub profile"
+          >
+            <Github size={17} />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/hamzarizvi-cs"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn profile"
+          >
+            <Linkedin size={17} />
+          </a>
+          <a href="/resume">
+            Resume <ArrowUpRight size={13} />
+          </a>
+        </div>
+        <a href="#projects" className="launch-scroll">
+          <span>Scroll to discover</span>
+          <ArrowDown size={16} />
+        </a>
+      </div>
     </section>
   );
 }

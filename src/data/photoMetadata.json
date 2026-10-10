@@ -1,0 +1,65 @@
+{
+  "fitforge": {
+    "width": 1800,
+    "height": 1200,
+    "blurDataURL": "data:image/webp;base64,UklGRjYAAABXRUJQVlA4ICoAAAAwAQCdASoQAAsAA4BaJaQAA3AA/vUvJH2Nha6gIr/cZy+w+bMbXUUAAAA=",
+    "source": "https://unsplash.com/photos/9dzWZQWZMdE",
+    "photographer": "Anastase Maragos on Unsplash"
+  },
+  "smart-write": {
+    "width": 1800,
+    "height": 1352,
+    "blurDataURL": "data:image/webp;base64,UklGRlwAAABXRUJQVlA4IFAAAACwAQCdASoQAAwAA4BaJZQAAfg/mVAAAPZG5nMo8kOuwGUTwaj1lxdd72NKBUBCqi609MsIk8HH4Ps3On7fqdPWY8ZQQs4s/VMs/f/cLKAAAA==",
+    "source": "https://unsplash.com/photos/y02jEX_B0O0",
+    "photographer": "Aaron Burden on Unsplash"
+  },
+  "arns-travel-system": {
+    "width": 1800,
+    "height": 2700,
+    "blurDataURL": "data:image/webp;base64,UklGRqoAAABXRUJQVlA4IJ4AAADwBACdASoQABgAPu1iqU2ppaOiMAgBMB2JbACdMoR2foKH/AUkIcLfds+1QjIMXgAA/pbMeOms1XAyDIMAEAZkaXluhTNkxpbuV8QYuDQ085MYuKaPF+Y/FfvaoZ6oaBS2PZj0+eGrm5qTkf7iyIPd+4NUToTakvc50n93IJPwgggMHQG+2ft0qafGvrj+6NwJgWsOZtWloJsfyYAAAA==",
+    "source": "https://unsplash.com/photos/wNNdhPycLkU",
+    "photographer": "Fujiphilm on Unsplash"
+  },
+  "jetson-nano-robot": {
+    "width": 1800,
+    "height": 1352,
+    "blurDataURL": "data:image/webp;base64,UklGRmYAAABXRUJQVlA4IFoAAABQAgCdASoQAAwAA4BaJbACdAYtfWWIfY3WDgAA/tyERZsV47Qi4NEAR9cab9FVcyVQuM0CFo4tEvU6F8ng0XRn4ovEcomcr4dz/rnRQ60qzEJ9HkLenJCAAAA=",
+    "source": "https://unsplash.com/photos/uXFKr39XNBM",
+    "photographer": "Vishnu Mohanan on Unsplash"
+  },
+  "tcp-converter": {
+    "width": 1800,
+    "height": 1010,
+    "blurDataURL": "data:image/webp;base64,UklGRjgAAABXRUJQVlA4ICwAAACQAQCdASoQAAkAA4BaJZwAApLtNgAA/un21MWmSo+cXoxcoAbFHlfFAAAAAA==",
+    "source": "https://unsplash.com/photos/M5tzZtFCOfs",
+    "photographer": "Taylor Vick on Unsplash"
+  },
+  "arm-cortex-simulator": {
+    "width": 1800,
+    "height": 1200,
+    "blurDataURL": "data:image/webp;base64,UklGRm4AAABXRUJQVlA4IGIAAADwAQCdASoQAAsAA4BaJbACdAENPPRbeAAA/sbvNDWPNkVtcFHEumFppvhEgG0u5MkJyjXsB82VlluP4YCLGrC/3UvL7qzrovwQ3ZQxP3ZKwceOt7XhD6768Bwa/BkfAMAAAA==",
+    "source": "https://unsplash.com/photos/owjrvbyXYyc",
+    "photographer": "Sahand Babali on Unsplash"
+  },
+  "hubspot-integration": {
+    "width": 1800,
+    "height": 1200,
+    "blurDataURL": "data:image/webp;base64,UklGRnoAAABXRUJQVlA4IG4AAABQAgCdASoQAAsAA4BaJQBOgMVG7WpDyOK/wgAA/k0+JovtZZ/iyK+U3/ktohdXPza/XySjxiIssYg5e4Rp/s9iFfLxVOxA8q+dncnovJqIRrSRr6indhhtSVYhdQEaQMdUtdg9J23R5Jt9n8AAAA==",
+    "source": "https://unsplash.com/photos/gMsnXqILjp4",
+    "photographer": "Campaign Creators on Unsplash"
+  },
+  "vex-robotics": {
+    "width": 1800,
+    "height": 1200,
+    "blurDataURL": "data:image/webp;base64,UklGRlAAAABXRUJQVlA4IEQAAADwAQCdASoQAAsAA4BaJZwAAudIWGIJngAA/viTFpCmr9JqCJEXMBr5A46Z2U3TDRERpNTPwvHnun+Bb3eK7bSGND4AAA==",
+    "source": "https://unsplash.com/photos/hsPFuudRg5I",
+    "photographer": "Isis França on Unsplash"
+  },
+  "fpv-racing-sim": {
+    "width": 1800,
+    "height": 1200,
+    "blurDataURL": "data:image/webp;base64,UklGRlAAAABXRUJQVlA4IEQAAACwAQCdASoQAAsAA4BaJZwAAuQA/64AAP7qV1UQCpmT1OHtuSzbTTjY4I6/KXUlDHwgvwbNu9ozzumPOGUz0mSP3FBAAA==",
+    "source": "https://unsplash.com/photos/7jabkilL0qI",
+    "photographer": "Kool C on Unsplash"
+  }
+}

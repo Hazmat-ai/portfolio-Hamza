@@ -1,68 +1,41 @@
-import Link from 'next/link';
-import { Mail, ArrowUpRight } from 'lucide-react';
-import { Github, Linkedin } from '@/components/ui/Icons';
-
+import Link from "next/link";
+import { ArrowUp, ArrowUpRight } from "lucide-react";
 export function Footer() {
-  const currentYear = new Date().getFullYear();
   return (
-    <footer className="border-t border-white/5 bg-[#0a0a0f]">
-      <div className="container py-12">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-          {/* Branding */}
-          <div>
-            <Link
-              href="/"
-              className="text-white font-bold text-lg tracking-tight"
-              aria-label="Hamza Rizvi — home"
-            >
-              <span className="gradient-text">Hamza Rizvi</span>
-            </Link>
-            <p className="text-sm text-[var(--text-muted)] mt-1">
-              Software Developer · Computer Science & UX Design
-            </p>
-          </div>
-
-          {/* Social links */}
-          <div className="flex items-center gap-4">
-            <a
-              href="https://github.com/Hazmat-ai"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-2 rounded-lg text-[var(--text-secondary)] hover:text-white hover:bg-white/5 transition-colors"
-              aria-label="GitHub profile"
-            >
-              <Github size={18} />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/hamzarizvi-cs"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-2 rounded-lg text-[var(--text-secondary)] hover:text-white hover:bg-white/5 transition-colors"
-              aria-label="LinkedIn profile"
-            >
-              <Linkedin size={18} />
-            </a>
-            <a
-              href="mailto:hamzarizvi006@gmail.com"
-              className="p-2 rounded-lg text-[var(--text-secondary)] hover:text-white hover:bg-white/5 transition-colors"
-              aria-label="Send email"
-            >
-              <Mail size={18} />
-            </a>
-          </div>
-        </div>
-
-        <div className="mt-8 pt-6 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p className="text-xs text-[var(--text-muted)]">
-            &copy; {currentYear} Hamza Rizvi. All rights reserved.
+    <footer className="border-t border-white/10">
+      <div className="container">
+        <div className="footer-main">
+          <Link href="/" className="brand">
+            <span className="brand-mark">hr.</span>
+            <span>Hamza Rizvi</span>
+          </Link>
+          <p>
+            Engineering with intention.
+            <br />
+            <span>Computer Science &amp; UX Design</span>
           </p>
+          <Link href="/#hero" className="back-top">
+            Back to top <ArrowUp size={14} />
+          </Link>
+        </div>
+        <nav className="footer-links" aria-label="Footer navigation">
+          <Link href="/#projects">Selected work</Link>
+          <Link href="/resume">Web resume</Link>
+          <a href="mailto:hamzarizvi006@gmail.com">
+            Get in touch
+            <ArrowUpRight size={14} />
+          </a>
+        </nav>
+        <div className="footer-editorial">
+          <span>© {new Date().getFullYear()} Hamza Rizvi</span>
+          <span>Mississauga, Ontario · Canada</span>
           <a
             href="https://github.com/Hazmat-ai"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-xs text-[var(--text-muted)] hover:text-[var(--accent-bright)] transition-colors flex items-center gap-1"
+            className="inline-flex items-center gap-2 hover:text-white"
           >
-            View source on GitHub <ArrowUpRight size={12} />
+            Find me on GitHub <ArrowUpRight size={12} />
           </a>
         </div>
       </div>

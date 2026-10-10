@@ -1,9 +1,10 @@
-import { notFound } from 'next/navigation';
-import type { Metadata } from 'next';
-import Link from 'next/link';
-import { projects } from '@/data/projects';
-import { ExternalLink, ArrowLeft, Calendar } from 'lucide-react';
-import { Github } from '@/components/ui/Icons';
+import { notFound } from "next/navigation";
+import type { Metadata } from "next";
+import Link from "next/link";
+import { projects } from "@/data/projects";
+import { ExternalLink, ArrowLeft, ArrowUpRight } from "lucide-react";
+import { ProjectGallery } from "@/components/ui/ProjectGallery";
+import { Github } from "@/components/ui/Icons";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -19,8 +20,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!project) return {};
   return {
     title: project.title,
+    alternates: { canonical: `/projects/${slug}` },
     description: project.shortDescription,
     openGraph: {
+      url: `/projects/${slug}`,
       title: `${project.title} | Hamza Rizvi`,
       description: project.shortDescription,
     },
@@ -31,20 +34,12 @@ export default async function ProjectDetailPage({ params }: Props) {
   const { slug } = await params;
   const project = projects.find((p) => p.slug === slug);
   if (!project) notFound();
+  const nextProject =
+    projects[(projects.indexOf(project) + 1) % projects.length];
 
   return (
-    <div className="min-h-screen pt-24 pb-20">
-      {/* Ambient background */}
-      <div
-        className="fixed top-0 right-0 w-[500px] h-[500px] opacity-[0.06] pointer-events-none"
-        style={{
-          background: 'radial-gradient(circle, #8b5cf6 0%, transparent 70%)',
-          filter: 'blur(80px)',
-        }}
-        aria-hidden="true"
-      />
-
-      <div className="container max-w-4xl">
+    <div className="project-detail min-h-screen pt-24 pb-20">
+      <div className="container detail-container">
         {/* Back button */}
         <Link
           href="/#projects"
@@ -59,7 +54,7 @@ export default async function ProjectDetailPage({ params }: Props) {
         </Link>
 
         {/* Header */}
-        <header className="mb-10">
+        <header className="case-heading">
           <div className="flex items-center gap-3 mb-4">
             <span className="text-xs font-semibold px-2.5 py-1 rounded-md badge">
               {project.category}
@@ -106,29 +101,45 @@ export default async function ProjectDetailPage({ params }: Props) {
           </div>
         </header>
 
+        <div className="detail-visual">
+          <ProjectGallery slug={project.slug} title={project.title} />
+        </div>
+
         {/* Content */}
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="case-body grid md:grid-cols-3 gap-8">
           {/* Main content */}
           <div className="md:col-span-2 space-y-8">
             <Section title="Overview">
-              <p className="text-[var(--text-secondary)] leading-relaxed">{project.description}</p>
+              <p className="text-[var(--text-secondary)] leading-relaxed">
+                {project.description}
+              </p>
             </Section>
 
             <Section title="Problem / Challenge">
-              <p className="text-[var(--text-secondary)] leading-relaxed">{project.problem}</p>
+              <p className="text-[var(--text-secondary)] leading-relaxed">
+                {project.problem}
+              </p>
             </Section>
 
             <Section title="Technical Approach">
-              <p className="text-[var(--text-secondary)] leading-relaxed">{project.approach}</p>
+              <p className="text-[var(--text-secondary)] leading-relaxed">
+                {project.approach}
+              </p>
             </Section>
 
             <Section title="Key Features">
               <ul className="space-y-2.5">
                 {project.keyFeatures.map((feature, i) => (
-                  <li key={i} className="flex items-start gap-3 text-[var(--text-secondary)]">
+                  <li
+                    key={i}
+                    className="flex items-start gap-3 text-[var(--text-secondary)]"
+                  >
                     <span
                       className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 text-xs font-bold"
-                      style={{ background: 'var(--accent-dim)', color: 'var(--accent-bright)' }}
+                      style={{
+                        background: "var(--accent-dim)",
+                        color: "var(--accent-bright)",
+                      }}
                       aria-hidden="true"
                     >
                       {i + 1}
@@ -143,7 +154,9 @@ export default async function ProjectDetailPage({ params }: Props) {
           {/* Sidebar */}
           <aside className="space-y-6">
             <div className="card p-5 sticky top-24">
-              <h3 className="text-sm font-semibold text-white mb-4">Tech Stack</h3>
+              <h3 className="text-sm font-semibold text-white mb-4">
+                Tech Stack
+              </h3>
               <div className="flex flex-wrap gap-2">
                 {project.techStack.map((tech) => (
                   <span key={tech} className="badge">
@@ -182,13 +195,24 @@ export default async function ProjectDetailPage({ params }: Props) {
           </aside>
         </div>
 
-        {/* Back to all projects */}
-        <div className="mt-16 pt-8 border-t border-white/5 text-center">
-          <Link href="/#projects" className="btn-secondary">
+        <nav className="case-next" aria-label="Continue exploring projects">
+          <Link href="/#projects" className="case-all">
             <ArrowLeft size={16} />
-            All Projects
+            All projects
           </Link>
-        </div>
+          <Link
+            href={`/projects/${nextProject.slug}`}
+            className="case-next-link"
+          >
+            <span className="section-label">
+              Next project / {nextProject.category}
+            </span>
+            <span>
+              {nextProject.title}
+              <ArrowUpRight size={30} />
+            </span>
+          </Link>
+        </nav>
       </div>
     </div>
   );

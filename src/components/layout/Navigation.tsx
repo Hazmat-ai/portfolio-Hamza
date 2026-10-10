@@ -1,168 +1,140 @@
-'use client';
-
-import { useEffect, useState } from 'react';
-import Link from 'next/link';
-import { motion, AnimatePresence } from 'motion/react';
-import { Menu, X } from 'lucide-react';
-
-const navLinks = [
-  { label: 'About', href: '#about' },
-  { label: 'Projects', href: '#projects' },
-  { label: 'Experience', href: '#experience' },
-  { label: 'Skills', href: '#skills' },
-  { label: 'Contact', href: '#contact' },
+"use client";
+import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { Menu, X, ArrowUpRight } from "lucide-react";
+import { ThemeToggle } from "@/components/ui/ThemeToggle";
+const links = [
+  "Projects",
+  "About",
+  "Experience",
+  "Skills",
+  "Education",
+  "Contact",
 ];
-
 export function Navigation() {
-  const [scrolled, setScrolled] = useState(false);
-  const [activeSection, setActiveSection] = useState('');
-  const [mobileOpen, setMobileOpen] = useState(false);
-
+  const pathname = usePathname();
+  const [active, setActive] = useState("");
+  const [open, setOpen] = useState(false);
+  const progress = useRef<HTMLDivElement>(null);
+  const toggle = useRef<HTMLButtonElement>(null);
+  const menu = useRef<HTMLDivElement>(null);
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
-
-      // Active section tracking
-      const sections = navLinks.map((l) => l.href.replace('#', ''));
-      for (const id of sections.reverse()) {
-        const el = document.getElementById(id);
-        if (el && window.scrollY >= el.offsetTop - 120) {
-          setActiveSection(id);
-          break;
+    const track = () => {
+      let current = "";
+      for (const label of links) {
+        const element = document.getElementById(label.toLowerCase());
+        if (element && element.getBoundingClientRect().top <= 160)
+          current = label;
+      }
+      setActive(current);
+      const distance =
+        document.documentElement.scrollHeight - window.innerHeight;
+      if (progress.current)
+        progress.current.style.transform = `scaleX(${distance > 0 ? Math.min(1, window.scrollY / distance) : 0})`;
+    };
+    track();
+    window.addEventListener("scroll", track, { passive: true });
+    return () => window.removeEventListener("scroll", track);
+  }, [pathname]);
+  useEffect(() => {
+    if (!open) return;
+    const first = menu.current?.querySelector<HTMLAnchorElement>("a");
+    first?.focus();
+    const key = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setOpen(false);
+        toggle.current?.focus();
+      }
+      if (e.key === "Tab") {
+        const nodes = [
+          toggle.current,
+          ...Array.from(
+            menu.current?.querySelectorAll<HTMLAnchorElement>("a") ?? [],
+          ),
+        ].filter(Boolean) as HTMLElement[];
+        const i = nodes.indexOf(document.activeElement as HTMLElement);
+        if (e.shiftKey && i <= 0) {
+          e.preventDefault();
+          nodes.at(-1)?.focus();
+        } else if (!e.shiftKey && i === nodes.length - 1) {
+          e.preventDefault();
+          nodes[0]?.focus();
         }
       }
     };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  // Close mobile nav on resize to desktop
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth >= 768) setMobileOpen(false);
+    const resize = () => {
+      if (window.innerWidth >= 768) setOpen(false);
     };
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
-
-  // Lock body scroll when mobile nav is open
-  useEffect(() => {
-    document.body.style.overflow = mobileOpen ? 'hidden' : '';
-    return () => { document.body.style.overflow = ''; };
-  }, [mobileOpen]);
-
+    document.addEventListener("keydown", key);
+    window.addEventListener("resize", resize);
+    return () => {
+      document.removeEventListener("keydown", key);
+      window.removeEventListener("resize", resize);
+    };
+  }, [open]);
+  const href = (label: string) =>
+    `${pathname === "/" ? "" : "/"}#${label.toLowerCase()}`;
   return (
-    <>
-      <motion.header
-        initial={{ y: -80, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.6, ease: [0.21, 0.47, 0.32, 0.98] }}
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          scrolled
-            ? 'bg-[rgba(10,10,15,0.85)] backdrop-blur-xl border-b border-white/5'
-            : 'bg-transparent'
-        }`}
-      >
-        <div className="container">
-          <nav
-            className="flex items-center justify-between h-16"
-            aria-label="Primary navigation"
-          >
-            {/* Logo */}
-            <Link
-              href="/"
-              className="text-white font-bold text-lg tracking-tight hover:opacity-80 transition-opacity"
-              aria-label="Hamza Rizvi — home"
-            >
-              <span className="gradient-text">HR</span>
-            </Link>
-
-            {/* Desktop links */}
-            <ul className="hidden md:flex items-center gap-8" role="list">
-              {navLinks.map((link) => (
-                <li key={link.href}>
-                  <a
-                    href={link.href}
-                    className={`nav-link ${activeSection === link.href.replace('#', '') ? 'active' : ''}`}
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-
-            {/* Desktop CTA */}
-            <a
-              href="/resume.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hidden md:inline-flex btn-secondary text-sm py-2 px-4"
-              aria-label="Download resume PDF"
-            >
-              Resume
-            </a>
-
-            {/* Mobile hamburger */}
-            <button
-              onClick={() => setMobileOpen((v) => !v)}
-              className="md:hidden p-2 rounded-lg text-white/70 hover:text-white hover:bg-white/5 transition-colors"
-              aria-label={mobileOpen ? 'Close navigation' : 'Open navigation'}
-              aria-expanded={mobileOpen}
-              aria-controls="mobile-nav"
-            >
-              {mobileOpen ? <X size={20} /> : <Menu size={20} />}
-            </button>
-          </nav>
-        </div>
-      </motion.header>
-
-      {/* Mobile nav overlay */}
-      <AnimatePresence>
-        {mobileOpen && (
-          <motion.div
-            id="mobile-nav"
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            transition={{ duration: 0.25 }}
-            className="fixed inset-0 z-40 mobile-nav-overlay bg-[rgba(10,10,15,0.97)] flex flex-col pt-20 px-6"
-            role="dialog"
-            aria-modal="true"
-            aria-label="Mobile navigation"
-          >
-            <ul className="flex flex-col gap-2" role="list">
-              {navLinks.map((link, i) => (
-                <motion.li
-                  key={link.href}
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: i * 0.06 }}
+    <header className="nav-shell">
+      <div className="nav-scroll-progress" aria-hidden="true">
+        <div ref={progress} />
+      </div>
+      <div className="container">
+        <nav className="nav-inner" aria-label="Primary navigation">
+          <Link href="/" className="brand" aria-label="Hamza Rizvi home">
+            <span className="brand-mark">
+              hr<span className="brand-dot">.</span>
+            </span>
+            <span className="brand-name">Hamza Rizvi</span>
+          </Link>
+          <ul className="nav-desktop">
+            {links.map((label) => (
+              <li key={label}>
+                <a
+                  href={href(label)}
+                  aria-current={active === label ? "location" : undefined}
+                  className={`nav-link ${active === label ? "active" : ""}`}
                 >
-                  <a
-                    href={link.href}
-                    onClick={() => setMobileOpen(false)}
-                    className="block py-4 text-2xl font-semibold text-white/80 hover:text-white border-b border-white/5 transition-colors"
-                  >
-                    {link.label}
-                  </a>
-                </motion.li>
-              ))}
-            </ul>
-            <div className="mt-8">
-              <a
-                href="/resume.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => setMobileOpen(false)}
-                className="btn-primary w-full justify-center"
-              >
-                Download Resume
-              </a>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </>
+                  {label}
+                </a>
+              </li>
+            ))}
+          </ul>
+          <Link
+            className="nav-resume"
+            href="/resume"
+            aria-current={pathname === "/resume" ? "page" : undefined}
+          >
+            Resume <ArrowUpRight size={14} />
+          </Link>
+          <ThemeToggle />
+          <button
+            ref={toggle}
+            className="mobile-toggle"
+            aria-expanded={open}
+            aria-controls="mobile-nav"
+            aria-label={open ? "Close navigation" : "Open navigation"}
+            onClick={() => setOpen(!open)}
+          >
+            {open ? <X size={20} /> : <Menu size={20} />}
+          </button>
+        </nav>
+      </div>
+      {open && (
+        <div ref={menu} id="mobile-nav" className="mobile-menu">
+          {links.map((label) => (
+            <a key={label} href={href(label)} onClick={() => setOpen(false)}>
+              {label}
+              <ArrowUpRight size={18} />
+            </a>
+          ))}
+          <Link href="/resume" onClick={() => setOpen(false)}>
+            Resume
+            <ArrowUpRight size={18} />
+          </Link>
+        </div>
+      )}
+    </header>
   );
 }

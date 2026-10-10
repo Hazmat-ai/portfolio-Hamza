@@ -1,13 +1,18 @@
-'use client';
+"use client";
 
-import { motion, useInView, type Variants } from 'motion/react';
-import { useRef } from 'react';
+import {
+  motion,
+  useInView,
+  useReducedMotion,
+  type Variants,
+} from "motion/react";
+import { useRef } from "react";
 
 interface FadeInProps {
   children: React.ReactNode;
   delay?: number;
   duration?: number;
-  direction?: 'up' | 'down' | 'left' | 'right' | 'none';
+  direction?: "up" | "down" | "left" | "right" | "none";
   className?: string;
   once?: boolean;
 }
@@ -24,20 +29,29 @@ export function FadeIn({
   children,
   delay = 0,
   duration = 0.6,
-  direction = 'up',
+  direction = "up",
   className,
   once = true,
 }: FadeInProps) {
   const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { once, margin: '-80px' });
-  const offset = directionOffset[direction];
+  const isInView = useInView(ref, { once, margin: "-80px" });
+  const reduced = useReducedMotion();
+  const offset = reduced ? { x: 0, y: 0 } : directionOffset[direction];
 
   return (
     <motion.div
       ref={ref}
-      initial={{ opacity: 0, ...offset }}
-      animate={isInView ? { opacity: 1, x: 0, y: 0 } : { opacity: 0, ...offset }}
-      transition={{ duration, delay, ease: [0.21, 0.47, 0.32, 0.98] }}
+      initial={false}
+      animate={
+        isInView || reduced
+          ? { opacity: 1, x: 0, y: 0 }
+          : { opacity: 1, ...offset }
+      }
+      transition={{
+        duration: reduced ? 0 : duration,
+        delay: reduced ? 0 : delay,
+        ease: [0.21, 0.47, 0.32, 0.98],
+      }}
       className={className}
     >
       {children}
@@ -59,7 +73,9 @@ export function StaggerContainer({
   once = true,
 }: StaggerContainerProps) {
   const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { once, margin: '-60px' });
+  const isInView = useInView(ref, { once, margin: "-60px" });
+
+  const reduced = useReducedMotion();
 
   const containerVariants: Variants = {
     hidden: {},
@@ -75,8 +91,8 @@ export function StaggerContainer({
     <motion.div
       ref={ref}
       variants={containerVariants}
-      initial="hidden"
-      animate={isInView ? 'visible' : 'hidden'}
+      initial={false}
+      animate={isInView || reduced ? "visible" : "hidden"}
       className={className}
     >
       {children}
@@ -85,7 +101,7 @@ export function StaggerContainer({
 }
 
 export const staggerItem: Variants = {
-  hidden: { opacity: 0, y: 24 },
+  hidden: { opacity: 1, y: 24 },
   visible: {
     opacity: 1,
     y: 0,
