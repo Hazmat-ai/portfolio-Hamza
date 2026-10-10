@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X, ArrowUpRight } from "lucide-react";
+import { BrandLogo } from "@/components/ui/BrandLogo";
 import { ThemeToggle } from "@/components/ui/ThemeToggle";
 const links = [
   "Projects",
@@ -14,6 +15,7 @@ const links = [
 ];
 export function Navigation() {
   const pathname = usePathname();
+  const [condensed, setCondensed] = useState(false);
   const [active, setActive] = useState("");
   const [open, setOpen] = useState(false);
   const progress = useRef<HTMLDivElement>(null);
@@ -21,6 +23,7 @@ export function Navigation() {
   const menu = useRef<HTMLDivElement>(null);
   useEffect(() => {
     const track = () => {
+      setCondensed(window.scrollY > 96);
       let current = "";
       for (const label of links) {
         const element = document.getElementById(label.toLowerCase());
@@ -83,10 +86,7 @@ export function Navigation() {
       <div className="container">
         <nav className="nav-inner" aria-label="Primary navigation">
           <Link href="/" className="brand" aria-label="Hamza Rizvi home">
-            <span className="brand-mark">
-              hr<span className="brand-dot">.</span>
-            </span>
-            <span className="brand-name">Hamza Rizvi</span>
+            <BrandLogo compact={condensed} />
           </Link>
           <ul className="nav-desktop">
             {links.map((label) => (

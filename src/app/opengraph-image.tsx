@@ -1,3 +1,4 @@
+import { HR_PATHS } from "@/data/brand";
 import { ImageResponse } from "next/og";
 export const alt = "Hamza Rizvi — Built on curiosity.";
 export const size = { width: 1200, height: 630 };
@@ -24,7 +25,13 @@ export default function Image() {
           fontSize: 22,
         }}
       >
-        <span>HAMZA RIZVI</span>
+        <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
+          <svg width="60" height="48" viewBox="0 0 60 48" fill="#f4f5f7">
+            <path d={HR_PATHS.h} />
+            <path d={HR_PATHS.r} fillRule="evenodd" />
+          </svg>
+          <span>Hamza Rizvi</span>
+        </div>
         <span style={{ color: "#a5c6ff" }}>SOFTWARE DEVELOPER</span>
       </div>
       <div

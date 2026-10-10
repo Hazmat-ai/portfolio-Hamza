@@ -1,3 +1,4 @@
+import { BrandLogo } from "@/components/ui/BrandLogo";
 import Link from "next/link";
 import { ArrowUp, ArrowUpRight } from "lucide-react";
 export function Footer() {
@@ -5,9 +6,8 @@ export function Footer() {
     <footer className="border-t border-white/10">
       <div className="container">
         <div className="footer-main">
-          <Link href="/" className="brand">
-            <span className="brand-mark">hr.</span>
-            <span>Hamza Rizvi</span>
+          <Link href="/" className="brand" aria-label="Hamza Rizvi home">
+            <BrandLogo />
           </Link>
           <p>
             Engineering with intention.

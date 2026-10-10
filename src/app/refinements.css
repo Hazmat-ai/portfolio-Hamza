@@ -896,3 +896,116 @@
     opacity: 1;
   }
 }
+
+/* HR identity: a shared stem, a quiet wordmark, and a stable navigation slot. */
+.brand-signature {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--text-primary);
+}
+.hr-monogram {
+  display: block;
+  width: 44px;
+  height: 36px;
+  flex: none;
+  overflow: visible;
+}
+.brand-wordmark {
+  display: grid;
+  grid-template-columns: 1fr;
+  opacity: 1;
+  transition:
+    grid-template-columns 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 0.25s;
+}
+.brand-wordmark > span {
+  min-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: -0.025em;
+}
+.brand-signature[data-compact="true"] .brand-wordmark {
+  grid-template-columns: 0fr;
+  opacity: 0;
+}
+.hr-initial {
+  transform-origin: center;
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.brand:hover .hr-h {
+  transform: translateX(-0.7px);
+}
+.brand:hover .hr-r {
+  transform: translateX(0.7px);
+}
+.brand:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 6px;
+  border-radius: 6px;
+}
+.nav-inner > .brand {
+  width: 174px;
+  flex: none;
+  min-height: 44px;
+}
+.nav-shell .hr-h {
+  animation: hr-reveal 0.65s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+.nav-shell .hr-r {
+  animation: hr-reveal 0.65s 0.1s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+.nav-shell .brand-wordmark > span {
+  animation: hr-wordmark 0.5s 0.2s ease-out both;
+}
+.footer-main .hr-monogram {
+  width: 54px;
+  height: 44px;
+}
+.footer-main .brand-signature {
+  gap: 16px;
+}
+@keyframes hr-reveal {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+@keyframes hr-wordmark {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@media (max-width: 1023px) {
+  .nav-inner > .brand {
+    width: 44px;
+  }
+  .nav-shell .brand-wordmark {
+    display: none;
+  }
+  .nav-shell .brand-signature {
+    gap: 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .nav-shell .hr-initial,
+  .nav-shell .brand-wordmark > span {
+    animation: none;
+  }
+  .brand-wordmark,
+  .hr-initial {
+    transition: none;
+  }
+  .brand:hover .hr-initial {
+    transform: none;
+  }
+}
