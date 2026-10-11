@@ -6,18 +6,21 @@ import { SkillsSection } from "@/components/sections/SkillsSection";
 import { EducationSection } from "@/components/sections/EducationSection";
 import { ContactSection } from "@/components/sections/ContactSection";
 
-import { CinematicExperience } from "@/components/animations/CinematicExperience";
+import { ProjectRail } from "@/components/sections/ProjectRail";
 
 export default function HomePage() {
   return (
-    <CinematicExperience>
+    <>
       <HeroSection />
-      <ProjectsSection />
-      <AboutSection />
+      <ProjectRail />
       <ExperienceSection />
+      <div className="personal-background">
+        <AboutSection />
+        <EducationSection />
+      </div>
       <SkillsSection />
-      <EducationSection />
+      <ProjectsSection />
       <ContactSection />
-    </CinematicExperience>
+    </>
   );
 }

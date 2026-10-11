@@ -10,12 +10,7 @@ export function ThemeToggle() {
       try {
         saved = localStorage.getItem("portfolio-theme");
       } catch {}
-      const next =
-        saved === "dark" || saved === "light"
-          ? saved
-          : media.matches
-            ? "dark"
-            : "light";
+      const next = saved === "dark" || saved === "light" ? saved : "light";
       document.documentElement.dataset.theme = next;
       setTheme(next);
     };

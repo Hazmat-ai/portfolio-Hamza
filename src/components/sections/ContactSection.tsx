@@ -33,13 +33,7 @@ export function ContactSection() {
         <div className="contact-content contact-layout">
           <div className="contact-intro">
             <FadeIn delay={0.1}>
-              <h2 id="contact-heading">
-                Let’s build
-                <br />
-                something
-                <br />
-                <span className="serif-accent">worth using.</span>
-              </h2>
+              <h2 id="contact-heading">Get in touch.</h2>
             </FadeIn>
             <FadeIn delay={0.2}>
               <span className="status">
@@ -51,10 +45,8 @@ export function ContactSection() {
           <div className="contact-conversation">
             <FadeIn delay={0.2}>
               <p className="contact-description">
-                I&apos;m actively seeking co-op opportunities and always open to
-                discussing interesting projects, collaborations, or full-time
-                roles after graduation. Reach out via email or connect on
-                LinkedIn.
+                I’m looking for a co-op term. If you’re hiring, or want to talk
+                about one of these projects, email me or find me on LinkedIn.
               </p>
             </FadeIn>
             <FadeIn delay={0.3}>
@@ -62,7 +54,6 @@ export function ContactSection() {
                 {copied ? "Email address copied to clipboard" : ""}
               </span>
               <div className="contact-email">
-                <span className="section-label">Start a conversation</span>
                 <a
                   href={`mailto:${EMAIL}`}
                   aria-label={`Send email to ${EMAIL}`}

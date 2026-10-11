@@ -10,9 +10,9 @@ export function Footer() {
             <BrandLogo />
           </Link>
           <p>
-            Engineering with intention.
+            Computer Science at Wilfrid Laurier.
             <br />
-            <span>Computer Science &amp; UX Design</span>
+            <span>Web, machine learning &amp; robotics</span>
           </p>
           <Link href="/#hero" className="back-top">
             Back to top <ArrowUp size={14} />
@@ -36,6 +36,13 @@ export function Footer() {
             className="inline-flex items-center gap-2 hover:text-white"
           >
             Find me on GitHub <ArrowUpRight size={12} />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/hamzarizvi-cs"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            LinkedIn <ArrowUpRight size={12} />
           </a>
         </div>
       </div>

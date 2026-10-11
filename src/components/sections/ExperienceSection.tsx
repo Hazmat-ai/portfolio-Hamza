@@ -12,9 +12,7 @@ export function ExperienceSection() {
         <FadeIn>
           <div className="section-intro">
             <div>
-              <ScrollHeading id="experience-heading">
-                Every role. A new perspective.
-              </ScrollHeading>
+              <ScrollHeading id="experience-heading">Experience</ScrollHeading>
             </div>
             <p>
               Building software, supporting students, and working with teams

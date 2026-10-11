@@ -7,8 +7,8 @@ import { BrandLogo } from "@/components/ui/BrandLogo";
 import { ThemeToggle } from "@/components/ui/ThemeToggle";
 const links = [
   "Projects",
-  "About",
   "Experience",
+  "About",
   "Skills",
   "Education",
   "Contact",

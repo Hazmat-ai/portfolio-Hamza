@@ -45,11 +45,9 @@ export function SkillsSection() {
       aria-labelledby="skills-heading"
     >
       <div className="container">
-        <ScrollHeading id="skills-heading">
-          The right tool. The right reason.
-        </ScrollHeading>
+        <ScrollHeading id="skills-heading">Skills</ScrollHeading>
         <p className="toolkit-intro">
-          Explore my stack — and the projects where it comes to life.
+          Select a technology to see where I’ve used it.
         </p>
         <div className="toolkit-layout">
           <SlidingControls
@@ -158,7 +156,7 @@ export function SkillsSection() {
                       below.
                     </p>
                   )}
-                  <a href="#projects" className="toolkit-all">
+                  <a href="#all-projects" className="toolkit-all">
                     Explore all projects <ArrowUpRight size={16} />
                   </a>
                 </SlidingPanel>

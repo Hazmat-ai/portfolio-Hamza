@@ -35,20 +35,6 @@ These captures depict the portfolio owner's public project frontends. The V4 fro
 
 No original resume PDF was available in the accessible repository or attachments. No PDF has been created, rewritten, or replaced; integration and byte checksum require the original file.
 
-## Cinematic contextual photography
+## Recruiter reading pass
 
-The nine photographs below represent project subject matter, not the actual application, hardware, team, or author. All source pages identify these as free photos under the [Unsplash License](https://unsplash.com/license). These are direct licensed downloads, not Unsplash API integrations. Attribution is appreciated rather than required; photographers are credited here. No image is hotlinked. Each local WebP is at most 1800 pixels wide, with a tiny embedded blur placeholder. Original frontend captures retain priority for StudyMind, campaignOS, and ASL.
-
-| Asset / project | Photographer | Original photo | Context |
-|---|---|---|---|
-| `photography/fitforge.webp` | Anastase Maragos on Unsplash | [View source](https://unsplash.com/photos/9dzWZQWZMdE) | Shirtless man lifting barbell in gym |
-| `photography/smart-write.webp` | Aaron Burden on Unsplash | [View source](https://unsplash.com/photos/y02jEX_B0O0) | Fountain pen on black lined paper |
-| `photography/arns-travel-system.webp` | Fujiphilm on Unsplash | [View source](https://unsplash.com/photos/wNNdhPycLkU) | Airplane engine and wing above clouds at sunset |
-| `photography/jetson-nano-robot.webp` | Vishnu Mohanan on Unsplash | [View source](https://unsplash.com/photos/uXFKr39XNBM) | Green and black circuit board |
-| `photography/tcp-converter.webp` | Taylor Vick on Unsplash | [View source](https://unsplash.com/photos/M5tzZtFCOfs) | Cable network |
-| `photography/arm-cortex-simulator.webp` | Sahand Babali on Unsplash | [View source](https://unsplash.com/photos/owjrvbyXYyc) | Blue and black circuit board |
-| `photography/hubspot-integration.webp` | Campaign Creators on Unsplash | [View source](https://unsplash.com/photos/gMsnXqILjp4) | Man standing in front of people sitting beside table with laptop computers |
-| `photography/vex-robotics.webp` | Isis França on Unsplash | [View source](https://unsplash.com/photos/hsPFuudRg5I) | Close-up photography of black metal gears |
-| `photography/fpv-racing-sim.webp` | Kool C on Unsplash | [View source](https://unsplash.com/photos/7jabkilL0qI) | Black camera lens in close up photography |
-
-Arduino and Raspberry Pi imagery is contextual electronics photography, not a claim that these boards implement the ARM simulator or are the project’s Jetson Nano. Gears represent drivetrain/mechanical work; the camera lens represents imaging/optics rather than a photograph of the FPV installation. No author or subject endorsement is implied.
+Contextual Unsplash photographs and their metadata have been removed. Nine projects without authentic images use code-native technical summaries, not simulated screenshots. The original captures above remain unchanged and are now displayed without decorative browser chrome or cropping. Instrument Serif is self-hosted from Google Fonts with its SIL Open Font License in `fonts/instrument-serif-OFL.txt`.
