@@ -415,26 +415,18 @@ section[id],
   background: transparent;
   color: var(--text);
 }
-.theme-toggle svg {
-  position: absolute;
-  transition:
-    opacity 0.4s,
-    transform 0.4s var(--ease);
+.theme-toggle {
+  font-size: 12px;
+  font-weight: 500;
 }
-.theme-sun {
-  opacity: 0;
-  transform: rotate(-20deg);
+.theme-label-light {
+  display: none;
 }
-.theme-moon {
-  opacity: 1;
+[data-theme="dark"] .theme-label-dark {
+  display: none;
 }
-[data-theme="dark"] .theme-sun {
-  opacity: 1;
-  transform: none;
-}
-[data-theme="dark"] .theme-moon {
-  opacity: 0;
-  transform: rotate(20deg);
+[data-theme="dark"] .theme-label-light {
+  display: inline;
 }
 .mobile-toggle {
   display: none;

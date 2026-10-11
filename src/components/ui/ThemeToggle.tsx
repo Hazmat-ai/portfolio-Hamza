@@ -1,6 +1,5 @@
 "use client";
 import { useEffect, useState } from "react";
-import { Moon, Sun } from "@/components/icons";
 export function ThemeToggle() {
   const [theme, setTheme] = useState<string | null>(null);
   useEffect(() => {
@@ -47,8 +46,12 @@ export function ThemeToggle() {
           : "Switch color theme"
       }
     >
-      <Sun className="theme-sun" size={18} />
-      <Moon className="theme-moon" size={18} />
+      <span className="theme-label-dark" aria-hidden="true">
+        Dark
+      </span>
+      <span className="theme-label-light" aria-hidden="true">
+        Light
+      </span>
     </button>
   );
 }
