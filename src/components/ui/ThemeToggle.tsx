@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-import { Moon, Sun } from "lucide-react";
+import { Moon, Sun } from "@/components/icons";
 export function ThemeToggle() {
   const [theme, setTheme] = useState<string | null>(null);
   useEffect(() => {
@@ -10,7 +10,12 @@ export function ThemeToggle() {
       try {
         saved = localStorage.getItem("portfolio-theme");
       } catch {}
-      const next = saved === "dark" || saved === "light" ? saved : "light";
+      const next =
+        saved === "dark" || saved === "light"
+          ? saved
+          : media.matches
+            ? "dark"
+            : "light";
       document.documentElement.dataset.theme = next;
       setTheme(next);
     };

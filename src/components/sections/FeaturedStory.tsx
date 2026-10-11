@@ -9,7 +9,7 @@ import {
 } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
+import { ChevronRight } from "@/components/icons";
 import { Github } from "@/components/ui/Icons";
 const studyChapters = [
   {
@@ -82,13 +82,13 @@ export function FeaturedStory({
         const mm = gsap.matchMedia();
         const ctx = gsap.context(() => {
           mm.add(
-            "(min-width: 1024px) and (min-height: 650px) and (prefers-reduced-motion: no-preference)",
+            "(min-width: 1024px) and (min-height: 650px) and (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference)",
             () => {
               const frames = gsap.utils.toArray<HTMLElement>(".story-frame");
               const steps = gsap.utils.toArray<HTMLElement>(".story-chapter");
               const pin = ScrollTrigger.create({
                 trigger: root.current,
-                start: "top 112px",
+                start: "top 76px",
                 end: "bottom bottom-=60px",
                 pin: visual.current,
                 pinSpacing: false,
@@ -226,7 +226,7 @@ export function FeaturedStory({
             {i === chapters.length - 1 && (
               <div className="story-links">
                 <Link href={`/projects/${project}`} className="btn-primary">
-                  Explore {title} <ArrowUpRight size={16} />
+                  Explore {title} <ChevronRight size={16} />
                 </Link>
                 <a
                   href={

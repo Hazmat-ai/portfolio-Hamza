@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { ViewTransition, useState } from "react";
+import { ViewTransition, useState, type CSSProperties } from "react";
 import { useIsPresent } from "motion/react";
 import { projectVisual, type ProjectVisual } from "@/data/projectVisuals";
 import { projects } from "@/data/projects";
@@ -37,7 +37,13 @@ export function ProjectImage({
       data-project-visual={slug}
       data-transition-id={transitionId}
       data-project-src={asset.src ?? ""}
-      className={`project-image ${asset.src ? "authentic-preview" : "technical-project"} ${loaded ? "is-loaded" : ""}`}
+      style={
+        {
+          "--photo-position": asset.position,
+          "--photo-mobile-position": asset.mobilePosition ?? asset.position,
+        } as CSSProperties
+      }
+      className={`project-image ${asset.kind === "photograph" ? `photo-frame photo-${slug}` : asset.src ? "authentic-preview" : "technical-project"} ${loaded ? "is-loaded" : ""}`}
     >
       {!asset.src ? (
         <div className="technical-preview">
@@ -57,12 +63,18 @@ export function ProjectImage({
           <p>Project preview unavailable</p>
         </div>
       ) : (
-        <div className="capture-layer">
+        <div
+          className={
+            asset.kind === "photograph" ? "photo-layer" : "capture-layer"
+          }
+        >
           <Image
             src={asset.src}
             alt={asset.alt}
             width={asset.width ?? 1440}
             height={asset.height ?? 1000}
+            placeholder={asset.blurDataURL ? "blur" : "empty"}
+            blurDataURL={asset.blurDataURL}
             sizes={
               featured
                 ? "(max-width: 767px) calc(100vw - 40px), 92vw"
@@ -72,6 +84,9 @@ export function ProjectImage({
             onError={() => setFailed(true)}
           />
         </div>
+      )}
+      {asset.kind === "photograph" && (
+        <span className="preview-label">Contextual photo · Unsplash</span>
       )}
     </div>
   );

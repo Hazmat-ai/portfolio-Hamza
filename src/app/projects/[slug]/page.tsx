@@ -5,7 +5,7 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { projects } from "@/data/projects";
-import { ExternalLink, ArrowLeft, ArrowUpRight } from "lucide-react";
+import { ExternalLink, ArrowLeft, ArrowUpRight } from "@/components/icons";
 import { ProjectGallery } from "@/components/ui/ProjectGallery";
 import { Github } from "@/components/ui/Icons";
 import { socialMetadata } from "@/lib/socialMetadata";
@@ -47,10 +47,7 @@ export default async function ProjectDetailPage({ params }: Props) {
     >
       <div className="container detail-container">
         {/* Back button */}
-        <ProjectBackLink
-          className="inline-flex items-center gap-2 text-sm text-[var(--text-secondary)] hover:text-white transition-colors mb-10 group"
-          label="Back to projects"
-        >
+        <ProjectBackLink className="back-link group" label="Back to projects">
           <ArrowLeft
             size={16}
             className="group-hover:-translate-x-1 transition-transform"

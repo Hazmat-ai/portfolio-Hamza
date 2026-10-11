@@ -3,7 +3,7 @@ import Link from "next/link";
 import { experience } from "@/data/experience";
 import { projects } from "@/data/projects";
 import { certifications } from "@/data/skills";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight } from "@/components/icons";
 import { ResumeNavigation } from "@/components/ui/ResumeNavigation";
 import { ResumeSkills } from "@/components/ui/ResumeSkills";
 import { PrintResume } from "@/components/ui/PrintResume";

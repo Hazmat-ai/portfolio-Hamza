@@ -127,7 +127,10 @@ export function SlidingControls({
           className="sliding-indicator"
           initial={false}
           animate={box}
-          transition={{ duration: reduced ? 0 : 0.45, ease: [0.16, 1, 0.3, 1] }}
+          transition={{
+            duration: reduced ? 0 : 0.45,
+            ease: [0.28, 0.11, 0.32, 1],
+          }}
         />
       )}
       {panelId

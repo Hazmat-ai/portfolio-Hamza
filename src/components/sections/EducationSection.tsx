@@ -7,7 +7,6 @@ import {
 } from "@/components/animations/FadeIn";
 import { certifications } from "@/data/skills";
 import { motion } from "motion/react";
-import { GraduationCap, Award, BookOpen, Calendar } from "lucide-react";
 
 export function EducationSection() {
   return (
@@ -31,23 +30,10 @@ export function EducationSection() {
           <FadeIn delay={0.15}>
             <div>
               <h3 className="text-lg font-semibold text-[var(--text-secondary)] mb-5 flex items-center gap-2">
-                <GraduationCap
-                  size={18}
-                  className="text-[var(--accent-bright)]"
-                />
                 Degree
               </h3>
               <div className="card p-7">
                 <div className="flex items-start gap-4">
-                  <div
-                    className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0"
-                    style={{ background: "var(--accent-dim)" }}
-                  >
-                    <BookOpen
-                      size={22}
-                      className="text-[var(--accent-bright)]"
-                    />
-                  </div>
                   <div>
                     <h4 className="text-xl font-bold text-white">
                       Wilfrid Laurier University
@@ -62,7 +48,6 @@ export function EducationSection() {
                       UX Design Minor · Co-op Program
                     </p>
                     <div className="flex items-center gap-1.5 mt-3 text-xs text-[var(--text-muted)]">
-                      <Calendar size={12} />
                       Expected Graduation: August 2028
                     </div>
                   </div>
@@ -102,7 +87,6 @@ export function EducationSection() {
           <FadeIn delay={0.2}>
             <div>
               <h3 className="text-lg font-semibold text-[var(--text-secondary)] mb-5 flex items-center gap-2">
-                <Award size={18} className="text-[var(--accent-bright)]" />
                 Certifications
               </h3>
               <details className="education-credentials" open>
@@ -119,15 +103,6 @@ export function EducationSection() {
                       variants={staggerItem}
                       className="flex items-start gap-3 p-4 rounded-xl border border-white/5 bg-[var(--bg-card)] hover:border-[var(--border-hover)] hover:bg-[var(--bg-card-hover)] transition-all duration-200"
                     >
-                      <div
-                        className="w-7 h-7 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5"
-                        style={{ background: "var(--accent-dim)" }}
-                      >
-                        <Award
-                          size={13}
-                          className="text-[var(--accent-bright)]"
-                        />
-                      </div>
                       <div className="min-w-0">
                         <p className="text-sm font-medium text-white leading-snug">
                           {cert.title}

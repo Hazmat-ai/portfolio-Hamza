@@ -2,15 +2,15 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, X, ArrowUpRight } from "lucide-react";
+import { Menu, X, ArrowUpRight } from "@/components/icons";
 import { BrandLogo } from "@/components/ui/BrandLogo";
 import { ThemeToggle } from "@/components/ui/ThemeToggle";
 const links = [
   "Projects",
   "Experience",
   "About",
-  "Skills",
   "Education",
+  "Skills",
   "Contact",
 ];
 export function Navigation() {
@@ -25,10 +25,14 @@ export function Navigation() {
     const track = () => {
       setCondensed(window.scrollY > 96);
       let current = "";
+      let nearest = -Infinity;
       for (const label of links) {
         const element = document.getElementById(label.toLowerCase());
-        if (element && element.getBoundingClientRect().top <= 160)
+        const top = element?.getBoundingClientRect().top;
+        if (top !== undefined && top <= 160 && top > nearest) {
           current = label;
+          nearest = top;
+        }
       }
       setActive(current);
       const distance =
@@ -79,7 +83,7 @@ export function Navigation() {
   const href = (label: string) =>
     `${pathname === "/" ? "" : "/"}#${label.toLowerCase()}`;
   return (
-    <header className="nav-shell">
+    <header className="nav-shell" data-condensed={condensed}>
       <div className="nav-scroll-progress" aria-hidden="true">
         <div ref={progress} />
       </div>

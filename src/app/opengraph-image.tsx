@@ -13,8 +13,8 @@ export default function Image() {
         flexDirection: "column",
         justifyContent: "space-between",
         padding: 70,
-        background: "#08090c",
-        color: "#f1f0f3",
+        background: "#000000",
+        color: "#f5f5f7",
         fontFamily: "sans-serif",
       }}
     >
@@ -26,13 +26,13 @@ export default function Image() {
         }}
       >
         <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
-          <svg width="60" height="48" viewBox="0 0 60 48" fill="#f4f5f7">
+          <svg width="60" height="48" viewBox="0 0 60 48" fill="#f5f5f7">
             <path d={HR_PATHS.h} />
             <path d={HR_PATHS.r} fillRule="evenodd" />
           </svg>
           <span>Hamza Rizvi</span>
         </div>
-        <span style={{ color: "#a5c6ff" }}>SOFTWARE DEVELOPER</span>
+        <span style={{ color: "#2997ff" }}>SOFTWARE DEVELOPER</span>
       </div>
       <div
         style={{
@@ -44,15 +44,15 @@ export default function Image() {
         }}
       >
         <span>Hamza Rizvi.</span>
-        <span style={{ color: "#a5c6ff" }}>Built on curiosity.</span>
+        <span style={{ color: "#2997ff" }}>Built on curiosity.</span>
       </div>
       <div
         style={{
           display: "flex",
-          borderTop: "1px solid #39353f",
+          borderTop: "1px solid #424245",
           paddingTop: 25,
           fontSize: 20,
-          color: "#b0afb9",
+          color: "#a1a1a6",
         }}
       >
         Full-stack · AI / ML · Robotics · UX Design

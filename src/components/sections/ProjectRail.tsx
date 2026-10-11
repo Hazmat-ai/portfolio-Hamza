@@ -1,86 +1,105 @@
+"use client";
+import { useEffect, useRef } from "react";
 import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
+import { ChevronRight } from "@/components/icons";
 import { projects } from "@/data/projects";
 import { ProjectImage } from "@/components/ui/ProjectImage";
-
-/** Selected work stays in document flow: no pinning or horizontal scrolling. */
 export function ProjectRail() {
+  const root = useRef<HTMLElement>(null);
+  const track = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    let disposed = false;
+    let cleanup: (() => void) | undefined;
+    void Promise.all([import("gsap"), import("gsap/ScrollTrigger")]).then(
+      ([{ gsap }, { ScrollTrigger }]) => {
+        if (disposed || !root.current || !track.current) return;
+        gsap.registerPlugin(ScrollTrigger);
+        const mm = gsap.matchMedia();
+        const ctx = gsap.context(() => {
+          mm.add(
+            "(min-width: 1024px) and (min-height: 650px) and (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference)",
+            () => {
+              const distance = () =>
+                Math.max(
+                  0,
+                  track.current!.scrollWidth - root.current!.clientWidth,
+                );
+              gsap.to(track.current, {
+                x: () => -distance(),
+                ease: "none",
+                scrollTrigger: {
+                  trigger: root.current,
+                  start: "top 68px",
+                  end: () => `+=${distance()}`,
+                  pin: true,
+                  scrub: 0.6,
+                  invalidateOnRefresh: true,
+                },
+              });
+              const focus = (e: FocusEvent) => {
+                const card = (e.target as HTMLElement).closest<HTMLElement>(
+                  ".rail-card",
+                );
+                const trigger = ScrollTrigger.getAll().find(
+                  (t) => t.trigger === root.current,
+                );
+                if (card && trigger) {
+                  window.scrollTo({
+                    top: trigger.start + Math.min(distance(), card.offsetLeft),
+                    behavior: "instant",
+                  });
+                }
+              };
+              root.current!.addEventListener("focusin", focus);
+              return () => root.current?.removeEventListener("focusin", focus);
+            },
+          );
+        }, root);
+        cleanup = () => {
+          mm.revert();
+          ctx.revert();
+        };
+        void document.fonts.ready.then(() => {
+          if (!disposed) ScrollTrigger.refresh();
+        });
+      },
+    );
+    return () => {
+      disposed = true;
+      cleanup?.();
+    };
+  }, []);
   return (
-    <section
-      id="projects"
-      className="section selected-work"
-      aria-labelledby="projects-heading"
-    >
-      <div className="container">
-        <div className="section-intro">
-          <h2 id="projects-heading">Selected work</h2>
-          <p>Three projects with interfaces you can explore.</p>
-        </div>
-        <div className="selected-work-grid">
-          {["studymind", "campaign-os", "asl-recognition"].map((slug) => {
-            const project = projects.find((p) => p.slug === slug)!;
-            return (
-              <article
-                key={slug}
-                data-project={slug}
-                className="selected-project"
+    <section className="project-rail" ref={root} aria-labelledby="rail-heading">
+      <div className="rail-heading">
+        <h3 id="rail-heading">Follow the curiosity.</h3>
+        <span className="rail-hint">Scroll to explore / 03 projects</span>
+      </div>
+      <div className="rail-track" ref={track}>
+        {["studymind", "campaign-os", "asl-recognition"].map((slug) => {
+          const p = projects.find((p) => p.slug === slug)!;
+          return (
+            <article className="rail-card" key={slug} data-project={slug}>
+              <Link
+                href={`/projects/${slug}`}
+                aria-label={`Explore ${p.title}`}
               >
-                <Link
-                  href={`/projects/${slug}`}
-                  className="project-visual-link"
-                  aria-label={`Read about ${project.title}`}
-                >
-                  <ProjectImage
-                    slug={slug}
-                    title={project.title}
-                    featured
-                    transitionId={`project-${slug}-selected`}
-                  />
-                </Link>
-                <h3>
-                  <Link href={`/projects/${slug}`}>
-                    {project.title}
-                    <ArrowUpRight size={19} />
-                  </Link>
-                </h3>
-                <p>{project.shortDescription}</p>
-                <div className="project-stack">
-                  {project.techStack.slice(0, 4).map((tech) => (
-                    <span key={tech} className="tech-tag">
-                      {tech}
-                    </span>
-                  ))}
+                <ProjectImage
+                  slug={slug}
+                  title={p.title}
+                  featured
+                  transitionId={`project-${slug}-rail`}
+                />
+                <div className="rail-caption">
+                  <h4>{p.title}</h4>
+                  <ChevronRight size={24} />
                 </div>
-                <div className="project-links">
-                  <Link href={`/projects/${slug}`}>
-                    Project details <ArrowUpRight size={15} />
-                  </Link>
-                  {project.githubUrl && (
-                    <a
-                      href={project.githubUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      GitHub <ArrowUpRight size={15} />
-                    </a>
-                  )}
-                  {project.liveUrl && (
-                    <a
-                      href={project.liveUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Live demo <ArrowUpRight size={15} />
-                    </a>
-                  )}
-                </div>
-              </article>
-            );
-          })}
-        </div>
-        <a className="selected-all" href="#all-projects">
-          Browse all {projects.length} projects <ArrowUpRight size={16} />
-        </a>
+              </Link>
+              <p>{p.shortDescription}</p>
+              <span className="mono">{p.category}</span>
+            </article>
+          );
+        })}
       </div>
     </section>
   );

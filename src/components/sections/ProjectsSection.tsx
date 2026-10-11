@@ -1,16 +1,19 @@
 "use client";
 import { SlidingControls } from "@/components/ui/SlidingControls";
 import { SlidingPanel } from "@/components/ui/SlidingPanel";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
-import { ArrowUpRight, ExternalLink } from "lucide-react";
+import { ChevronRight, ExternalLink } from "@/components/icons";
 import { projects, type ProjectCategory } from "@/data/projects";
 import { Github } from "@/components/ui/Icons";
 import { ProjectImage } from "@/components/ui/ProjectImage";
 import { campaignVisuals } from "@/data/projectVisuals";
+import { FeaturedStory } from "@/components/sections/FeaturedStory";
 import { ScrollHeading } from "@/components/ui/ScrollHeading";
 import { FadeIn } from "@/components/animations/FadeIn";
 import { useProjectNavigation } from "@/components/animations/ProjectTransitions";
+import { StudyMindHandoff } from "@/components/animations/StudyMindHandoff";
+import { ProjectRail } from "@/components/sections/ProjectRail";
 const categories: { label: string; value: ProjectCategory | "All" }[] = [
   { label: "All work", value: "All" },
   { label: "Full stack", value: "Full Stack" },
@@ -24,26 +27,72 @@ export function ProjectsSection() {
   const [captureDirection, setCaptureDirection] = useState(1);
   const [filterDirection, setFilterDirection] = useState(1);
   const [filterAxis, setFilterAxis] = useState<"x" | "fade">("x");
+  useEffect(() => {
+    let cancelled = false;
+    void import("gsap/ScrollTrigger").then(({ ScrollTrigger }) => {
+      requestAnimationFrame(() => {
+        if (!cancelled) ScrollTrigger.refresh();
+      });
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, [category]);
   const filtered = projects.filter(
     (p) => category === "All" || p.category === category,
   );
   return (
     <section
-      id="all-projects"
+      id="projects"
       className="section projects-section"
-      aria-labelledby="all-projects-heading"
+      aria-labelledby="projects-heading"
     >
-      <div className="container project-collection">
+      <StudyMindHandoff />
+      <div className="container launch-project-intro">
+        <ScrollHeading id="projects-heading">Selected work</ScrollHeading>
+        <p>
+          Real projects. From the first idea to the final interface.
+          <br />
+          Explore the engineering behind the experience.
+        </p>
+      </div>
+      <div className="project-expansion">
+        <div className="expand-visual">
+          <div className="expand-title">
+            <span>Featured project · Full stack & AI</span>
+            <h3>StudyMind.</h3>
+            <p>
+              A little less organizing.
+              <br />A lot more understanding.
+            </p>
+          </div>
+          <div className="expansion-device">
+            <ProjectImage slug="studymind" title="StudyMind" featured />
+          </div>
+          <a href="#studymind-story" className="expansion-scroll">
+            Go inside the project <ChevronRight size={16} />
+          </a>
+        </div>
+      </div>
+      <div id="studymind-story" className="container story-section">
+        <FeaturedStory />
+      </div>
+      <div
+        id="campaign-story"
+        className="container story-section campaign-story"
+      >
+        <FeaturedStory project="campaign-os" />
+      </div>
+      <ProjectRail />
+      <div id="all-projects" className="container project-collection">
         <div className="collection-heading">
           <div>
-            <ScrollHeading id="all-projects-heading">
-              All projects
-            </ScrollHeading>
+            <ScrollHeading>All projects</ScrollHeading>
           </div>
           <p>
-            Web, machine learning, mobile, and robotics.
+            Full stack, AI, mobile, and robotics.
             <br />
-            {projects.length} projects, in the collection.
+            {projects.length} projects, different perspectives.
           </p>
         </div>
         <SlidingControls
@@ -97,8 +146,11 @@ export function ProjectsSection() {
             direction={filterDirection}
           >
             <div className="projects-grid">
-              {filtered.map((p) => (
-                <FadeIn key={p.slug} className="project-entry">
+              {filtered.map((p, i) => (
+                <FadeIn
+                  key={p.slug}
+                  className={`project-entry ${category === "All" && (i === 2 || i === 4) ? "project-featured" : ""}`}
+                >
                   <article className="project" data-project={p.slug}>
                     <Link
                       className="project-visual-link"
@@ -116,6 +168,7 @@ export function ProjectsSection() {
                             direction={captureDirection}
                             axis="x"
                           >
+                            {" "}
                             <ProjectImage
                               key={
                                 p.slug === "campaign-os"
@@ -125,7 +178,9 @@ export function ProjectsSection() {
                               transitionId={`project-${p.slug}-collection`}
                               slug={p.slug}
                               title={p.title}
-                              featured={false}
+                              featured={
+                                category === "All" && (i === 2 || i === 4)
+                              }
                               visual={
                                 p.slug === "campaign-os"
                                   ? campaignVisuals[campaignState]
@@ -144,7 +199,7 @@ export function ProjectsSection() {
                           transitionId={`project-${p.slug}-collection`}
                           slug={p.slug}
                           title={p.title}
-                          featured={false}
+                          featured={category === "All" && (i === 2 || i === 4)}
                           visual={
                             p.slug === "campaign-os"
                               ? campaignVisuals[campaignState]
@@ -153,7 +208,7 @@ export function ProjectsSection() {
                         />
                       )}
                       <span className="project-open">
-                        <ArrowUpRight size={22} />
+                        <ChevronRight size={22} />
                       </span>
                     </Link>
                     {p.slug === "campaign-os" && (
@@ -195,7 +250,7 @@ export function ProjectsSection() {
                     </div>
                     <div className="project-links">
                       <Link href={`/projects/${p.slug}`}>
-                        Explore project <ArrowUpRight size={15} />
+                        Learn more <ChevronRight size={15} />
                       </Link>
                       {p.githubUrl && (
                         <a
@@ -204,7 +259,7 @@ export function ProjectsSection() {
                           rel="noopener noreferrer"
                           aria-label={`${p.title} GitHub repository`}
                         >
-                          <Github size={15} /> Source
+                          <Github size={15} /> GitHub
                         </a>
                       )}
                       {p.liveUrl && (

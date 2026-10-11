@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import { FadeIn } from "@/components/animations/FadeIn";
-import { Copy, Check, ArrowUpRight } from "lucide-react";
+import { Copy, Check, ArrowUpRight } from "@/components/icons";
 import { Github, Linkedin } from "@/components/ui/Icons";
 const EMAIL = "hamzarizvi006@gmail.com";
 export function ContactSection() {
@@ -63,6 +63,7 @@ export function ContactSection() {
                 </a>
                 <button
                   type="button"
+                  className="btn-primary"
                   onClick={handleCopy}
                   aria-label={copied ? "Email copied" : "Copy email address"}
                 >
@@ -94,14 +95,6 @@ export function ContactSection() {
                   <ArrowUpRight size={15} />
                 </a>
               </div>
-              <a
-                href={`mailto:${EMAIL}`}
-                className="btn-primary"
-                aria-label="Let’s talk, send an email"
-              >
-                Let’s talk
-                <ArrowUpRight size={17} />
-              </a>
             </FadeIn>
           </div>
         </div>

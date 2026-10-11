@@ -1,6 +1,6 @@
 import { BrandLogo } from "@/components/ui/BrandLogo";
 import Link from "next/link";
-import { ArrowUp, ArrowUpRight } from "lucide-react";
+import { ArrowUp, ArrowUpRight } from "@/components/icons";
 export function Footer() {
   return (
     <footer className="border-t border-white/10">

@@ -3,21 +3,10 @@ import { SlidingControls } from "@/components/ui/SlidingControls";
 import { SlidingPanel } from "@/components/ui/SlidingPanel";
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import {
-  ArrowUpRight,
-  Code2,
-  Monitor,
-  Server,
-  Database,
-  Brain,
-  Wrench,
-  Cloud,
-  Cpu,
-} from "lucide-react";
+import { ArrowUpRight } from "@/components/icons";
 import { skillGroups } from "@/data/skills";
 import { projects } from "@/data/projects";
 import { ScrollHeading } from "@/components/ui/ScrollHeading";
-const icons = [Code2, Monitor, Server, Database, Brain, Wrench, Cloud, Cpu];
 export function SkillsSection() {
   const [groupIndex, setGroupIndex] = useState(0);
   const [selected, setSelected] = useState("Python");
@@ -57,7 +46,6 @@ export function SkillsSection() {
             orientation="responsive"
           >
             {skillGroups.map((g, i) => {
-              const Icon = icons[i];
               return (
                 <button
                   type="button"
@@ -65,7 +53,6 @@ export function SkillsSection() {
                   aria-pressed={i === groupIndex}
                   onClick={() => chooseGroup(i)}
                 >
-                  <Icon size={20} />
                   <span>{g.category}</span>
                   <ArrowUpRight size={16} />
                 </button>

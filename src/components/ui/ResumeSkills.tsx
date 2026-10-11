@@ -4,7 +4,7 @@ import { SlidingPanel } from "@/components/ui/SlidingPanel";
 
 import { useState } from "react";
 import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight } from "@/components/icons";
 import { skillGroups } from "@/data/skills";
 import { projects } from "@/data/projects";
 

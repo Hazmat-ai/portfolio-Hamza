@@ -1,11 +1,14 @@
 "use client";
 import { useEffect } from "react";
-import { Printer } from "lucide-react";
+import { Printer } from "@/components/icons";
 
 export function PrintResume() {
   useEffect(() => {
     let collapsed: HTMLDetailsElement[] = [];
+    let printing = false;
     const expand = () => {
+      if (printing) return;
+      printing = true;
       collapsed = Array.from(
         document.querySelectorAll<HTMLDetailsElement>(
           ".resume-page details:not([open])",
@@ -20,6 +23,7 @@ export function PrintResume() {
         details.open = false;
       });
       collapsed = [];
+      printing = false;
     };
     window.addEventListener("beforeprint", expand);
     window.addEventListener("afterprint", restore);

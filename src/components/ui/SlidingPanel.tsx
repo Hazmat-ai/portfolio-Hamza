@@ -45,7 +45,7 @@ export function SlidingPanel({
       className="sliding-panel"
       initial={false}
       animate={{ height }}
-      transition={{ duration: reduced ? 0 : 0.36, ease: [0.16, 1, 0.3, 1] }}
+      transition={{ duration: reduced ? 0 : 0.5, ease: [0.28, 0.11, 0.32, 1] }}
     >
       <AnimatePresence
         initial={false}
@@ -72,9 +72,9 @@ export function SlidingPanel({
             }),
           }}
           transition={{
-            duration: reduced ? 0 : 0.22,
+            duration: reduced ? 0 : 0.4,
             delay: reduced ? 0 : 0.14,
-            ease: [0.16, 1, 0.3, 1],
+            ease: [0.28, 0.11, 0.32, 1],
           }}
         >
           <PresentContent>{children}</PresentContent>

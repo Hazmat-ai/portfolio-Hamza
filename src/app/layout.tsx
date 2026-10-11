@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import "./refinements.css";
 import { ProjectTransitions } from "@/components/animations/ProjectTransitions";
 import { Navigation } from "@/components/layout/Navigation";
 import { Footer } from "@/components/layout/Footer";
@@ -11,13 +10,6 @@ const inter = localFont({
   src: "../../public/assets/fonts/inter-latin-variable.woff2",
   weight: "100 900",
   variable: "--font-inter",
-  display: "swap",
-});
-
-const display = localFont({
-  src: "../../public/assets/fonts/instrument-serif-regular.ttf",
-  weight: "400",
-  variable: "--font-display",
   display: "swap",
 });
 
@@ -129,13 +121,13 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${display.variable} scroll-smooth`}
+      className={`${inter.variable} scroll-smooth`}
       suppressHydrationWarning
     >
       <head>
         <script
           dangerouslySetInnerHTML={{
-            __html: `(function(){try{var t=localStorage.getItem('portfolio-theme');document.documentElement.dataset.theme=t==='light'||t==='dark'?t:'light'}catch(e){document.documentElement.dataset.theme='light'}})()`,
+            __html: `(function(){try{var t=localStorage.getItem('portfolio-theme');document.documentElement.dataset.theme=t==='light'||t==='dark'?t:matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}catch(e){document.documentElement.dataset.theme=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}})()`,
           }}
         />
         <script
