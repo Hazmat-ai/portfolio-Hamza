@@ -106,7 +106,7 @@ export function ContactSection() {
               <a
                 href={`mailto:${EMAIL}`}
                 className="btn-primary"
-                aria-label="Send email"
+                aria-label="Let’s talk, send an email"
               >
                 Let’s talk
                 <ArrowUpRight size={17} />

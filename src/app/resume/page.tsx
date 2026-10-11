@@ -7,11 +7,18 @@ import { ArrowUpRight } from "lucide-react";
 import { ResumeNavigation } from "@/components/ui/ResumeNavigation";
 import { ResumeSkills } from "@/components/ui/ResumeSkills";
 import { PrintResume } from "@/components/ui/PrintResume";
+import { socialMetadata } from "@/lib/socialMetadata";
+const resumeDescription =
+  "Hamza Rizvi — software development, education, projects, and technical skills.";
 export const metadata: Metadata = {
   title: "Resume",
-  description:
-    "Hamza Rizvi — software development, education, projects, and technical skills.",
+  description: resumeDescription,
   alternates: { canonical: "/resume" },
+  ...socialMetadata({
+    path: "/resume",
+    title: "Resume | Hamza Rizvi",
+    description: resumeDescription,
+  }),
 };
 export default function ResumePage() {
   return (

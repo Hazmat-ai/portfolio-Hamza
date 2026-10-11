@@ -8,6 +8,7 @@ import { projects } from "@/data/projects";
 import { ExternalLink, ArrowLeft, ArrowUpRight } from "lucide-react";
 import { ProjectGallery } from "@/components/ui/ProjectGallery";
 import { Github } from "@/components/ui/Icons";
+import { socialMetadata } from "@/lib/socialMetadata";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -25,11 +26,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: project.title,
     alternates: { canonical: `/projects/${slug}` },
     description: project.shortDescription,
-    openGraph: {
-      url: `/projects/${slug}`,
+    ...socialMetadata({
+      path: `/projects/${slug}`,
       title: `${project.title} | Hamza Rizvi`,
       description: project.shortDescription,
-    },
+    }),
   };
 }
 
@@ -85,7 +86,7 @@ export default async function ProjectDetailPage({ params }: Props) {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-secondary"
-                  aria-label={`GitHub repository for ${project.title}`}
+                  aria-label={`View on GitHub: ${project.title}`}
                 >
                   <Github size={16} />
                   View on GitHub
