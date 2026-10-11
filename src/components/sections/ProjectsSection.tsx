@@ -1,4 +1,9 @@
 "use client";
+import {
+  CatalogueLabel,
+  ProjectSpecs,
+} from "@/components/projects/ProjectSpecs";
+import { ProjectDecisions } from "@/components/projects/ProjectDecisions";
 import { SlidingControls } from "@/components/ui/SlidingControls";
 import { SlidingPanel } from "@/components/ui/SlidingPanel";
 import { useEffect, useState } from "react";
@@ -234,20 +239,13 @@ export function ProjectsSection() {
                         ))}
                       </SlidingControls>
                     )}
-                    <div className="project-meta">
-                      <span>{p.category}</span>
-                    </div>
+                    <CatalogueLabel project={p} />
                     <h3>
                       <Link href={`/projects/${p.slug}`}>{p.title}</Link>
                     </h3>
                     <p className="project-description">{p.shortDescription}</p>
-                    <div className="project-stack">
-                      {p.techStack.map((t) => (
-                        <span className="tech-tag" key={t}>
-                          {t}
-                        </span>
-                      ))}
-                    </div>
+                    <ProjectSpecs project={p} />
+                    <ProjectDecisions projectId={p.slug} />
                     <div className="project-links">
                       <Link href={`/projects/${p.slug}`}>
                         Learn more <ChevronRight size={15} />

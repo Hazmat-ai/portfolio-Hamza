@@ -12,7 +12,7 @@ import {
   type ReactElement,
   type ButtonHTMLAttributes,
 } from "react";
-import { motion, useReducedMotion } from "motion/react";
+import { useReducedMotion } from "motion/react";
 
 /** One measured indicator also works across wrapped rows and scrollable rails. */
 export function SlidingControls({
@@ -122,14 +122,13 @@ export function SlidingControls({
       }}
     >
       {box && (
-        <motion.span
+        <span
           aria-hidden="true"
           className="sliding-indicator"
-          initial={false}
-          animate={box}
-          transition={{
-            duration: reduced ? 0 : 0.45,
-            ease: [0.28, 0.11, 0.32, 1],
+          style={{
+            width: box.width,
+            height: box.height,
+            transform: `translate3d(${box.x}px, ${box.y}px, 0)`,
           }}
         />
       )}

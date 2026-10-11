@@ -1,3 +1,4 @@
+import { Workbench } from "@/components/workbench/Workbench";
 import { HeroSection } from "@/components/sections/HeroSection";
 import { AboutSection } from "@/components/sections/AboutSection";
 import { ProjectsSection } from "@/components/sections/ProjectsSection";
@@ -10,6 +11,7 @@ export default function HomePage() {
   return (
     <>
       <HeroSection />
+      <Workbench />
       <ProjectsSection />
       <ExperienceSection />
       <div className="personal-background">

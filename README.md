@@ -32,3 +32,15 @@ The factual project, experience and skill data modules are unchanged by this red
 ## Deployment
 
 Set `NEXT_PUBLIC_SITE_URL` to your production origin; the default is `https://hamzarizvi.dev`. Canonicals, structured data, sitemap, robots, manifest, HR favicon and generated Open Graph image are included. Standard GitHub/Vercel deployment is supported. Builds use local fonts and need no font network request.
+
+## Workshop layer
+
+The workbench after the hero opens native modal dialogs for robotics, software and UX/usability work. Dialog content comes from the existing project and experience data; Escape, keyboard focus containment, focus return and mobile taps are supported. Its app window uses the original StudyMind capture. Robot imagery and a notebook scan are visibly labeled neutral SVG placeholders pending authentic owner-supplied assets; no stock photo represents personal work.
+
+Project catalogue numbers are stable `order` values. Mono spec rows retain all existing stack entries and categories; unrecorded roles and years are omitted. StudyMind, TCP Converter and ARM Simulator have diagrams with annotated decisions grounded in their existing approach descriptions. These are architecture notes, not screenshots or measured traces.
+
+`src/components/signal/SignalLine.tsx` draws a 1.5px blue path on scroll with scoped GSAP contexts and media-query cleanup. StudyMind uses a terminal line, TCP uses a network path, and ARM uses a circuit path. The EEG variant is available but unwired because no EEG project exists. Touch and reduced motion render fully drawn static paths.
+
+The shared segmented thumb uses CSS transforms and a 250ms token with the existing easing; filters, skills and capture selectors retain keyboard support. The original HR geometry also appears as a small maker's mark on catalogue labels and diagrams, with subtle theme-specific relief. The matching asset is available at `public/brand/hr-monogram.svg`.
+
+Owner-supplied personal photos can be registered in `src/data/personalPhotos.ts` for About and the workbench. Empty slots are omitted. See `public/assets/personal/README.md` and `public/assets/workbench/README.md` for asset requirements. The owner confirmed the quiet footer line, “Sunday soccer, cars, and whatever’s next.” Light-mode footer annotation uses the secondary token to maintain readable contrast; dark mode uses tertiary.

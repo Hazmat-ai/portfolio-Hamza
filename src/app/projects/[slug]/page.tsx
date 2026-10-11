@@ -1,3 +1,4 @@
+import { ProjectDecisions } from "@/components/projects/ProjectDecisions";
 import { ProjectBackLink } from "@/components/animations/ProjectTransitions";
 import { ProjectScene } from "@/components/animations/ProjectScene";
 import { ProjectArrival } from "@/components/animations/ProjectArrival";
@@ -112,6 +113,8 @@ export default async function ProjectDetailPage({ params }: Props) {
             title={project.title}
           />
         </ProjectScene>
+
+        <ProjectDecisions projectId={project.slug} />
 
         {/* Content */}
         <ProjectArrival name={`case-content-${project.slug}`} content>

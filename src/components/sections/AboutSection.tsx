@@ -1,3 +1,4 @@
+import { PersonalPhoto } from "@/components/ui/PersonalPhoto";
 import { ScrollHeading } from "@/components/ui/ScrollHeading";
 const highlights = [
   {
@@ -28,6 +29,7 @@ export function AboutSection() {
       aria-labelledby="about-heading"
     >
       <div className="container">
+        <PersonalPhoto slot="about" />
         <div className="about-editorial">
           <div>
             <ScrollHeading id="about-heading">About me</ScrollHeading>

@@ -26,6 +26,9 @@ export function Footer() {
             <ArrowUpRight size={14} />
           </a>
         </nav>
+        <p className="footer-personal-line">
+          Sunday soccer, cars, and whatever’s next.
+        </p>
         <div className="footer-editorial">
           <span>© {new Date().getFullYear()} Hamza Rizvi</span>
           <span>Mississauga, Ontario · Canada</span>
