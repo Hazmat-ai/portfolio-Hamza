@@ -1,4 +1,4 @@
-import { BrandLogo } from "@/components/ui/BrandLogo";
+import { Signature } from "@/components/ui/Signature";
 import Link from "next/link";
 import { ArrowUp, ArrowUpRight } from "@/components/icons";
 export function Footer() {
@@ -7,7 +7,7 @@ export function Footer() {
       <div className="container">
         <div className="footer-main">
           <Link href="/" className="brand" aria-label="Hamza Rizvi home">
-            <BrandLogo />
+            <Signature full />
           </Link>
           <p>
             Computer Science at Wilfrid Laurier.

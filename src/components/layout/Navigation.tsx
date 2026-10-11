@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X, ArrowUpRight } from "@/components/icons";
-import { BrandLogo } from "@/components/ui/BrandLogo";
+import { Signature } from "@/components/ui/Signature";
 import { ThemeToggle } from "@/components/ui/ThemeToggle";
 const links = [
   "Projects",
@@ -90,7 +90,7 @@ export function Navigation() {
       <div className="container">
         <nav className="nav-inner" aria-label="Primary navigation">
           <Link href="/" className="brand" aria-label="Hamza Rizvi home">
-            <BrandLogo compact={condensed} />
+            <Signature />
           </Link>
           <ul className="nav-desktop">
             {links.map((label) => (

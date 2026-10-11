@@ -282,6 +282,43 @@ section[id],
   width: 148px;
   flex: none;
 }
+/* Pen-centerline signature: reserved geometry, 20-second pen reveal cycle. */
+.navigation-signature {
+  display: flex;
+  align-items: center;
+  width: 148px;
+  height: 44px;
+}
+.signature-svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+.desktop-signature {
+  display: block;
+  width: 142px;
+  height: 44px;
+}
+.compact-signature.hr-monogram {
+  display: none;
+}
+.footer-signature {
+  display: block;
+  width: 248px;
+  height: 58px;
+}
+@media (max-width: 1023px) {
+  .navigation-signature {
+    width: 32px;
+  }
+  .desktop-signature {
+    display: none;
+  }
+  .compact-signature.hr-monogram {
+    display: block;
+  }
+}
 .brand-signature {
   display: inline-flex;
   align-items: center;
