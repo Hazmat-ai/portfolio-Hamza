@@ -21,7 +21,33 @@ export function SiteHeader({ actions }: { actions: ContentActions }) {
   return (
     <header>
       <nav aria-label="Main navigation" className="wrap">
-        <Link className="brand" href="/">
+        <Link
+          className="brand"
+          href="/"
+          aria-label="Hamza Rizvi home"
+          onClick={(event) => {
+            // Keep normal navigation and modified-click behavior on other routes.
+            if (
+              event.button !== 0 ||
+              event.metaKey ||
+              event.ctrlKey ||
+              event.shiftKey ||
+              event.altKey ||
+              window.location.pathname !== "/"
+            )
+              return;
+            event.preventDefault();
+            actions.onTab("cs");
+            window.history.replaceState(window.history.state, "", "/");
+            window.scrollTo({
+              top: 0,
+              behavior: window.matchMedia("(prefers-reduced-motion: reduce)")
+                .matches
+                ? "instant"
+                : "smooth",
+            });
+          }}
+        >
           {"Hamza Rizvi"}
           <span aria-hidden="true" className="dot"></span>
         </Link>
