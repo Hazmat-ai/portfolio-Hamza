@@ -1819,7 +1819,7 @@ dialog,
   background: #fff;
 }
 .intro {
-  transition: opacity 0.9s ease;
+  transition: opacity 1.5s cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 .introheader,
 .introfoot {
@@ -1946,7 +1946,7 @@ header {
   padding: 0;
 }
 .intro::backdrop {
-  background: white;
+  background: transparent;
 }
 .project-page {
   padding-top: 60px;
@@ -1978,4 +1978,16 @@ header {
 }
 .project-page li {
   margin: 10px 0;
+}
+
+/* Preserve the page width when the intro locks scrolling. */
+html {
+  scrollbar-gutter: stable;
+}
+.intro-whiteout {
+  position: absolute;
+  inset: 0;
+  background: #fff;
+  opacity: var(--whiteout, 0);
+  pointer-events: none;
 }

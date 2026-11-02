@@ -126,7 +126,7 @@ export function Portfolio({
             requestAnimationFrame(() =>
               (
                 opener.current ?? document.getElementById("motionButton")
-              )?.focus(),
+              )?.focus({ preventScroll: true }),
             );
           }}
         />

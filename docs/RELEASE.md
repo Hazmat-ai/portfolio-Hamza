@@ -24,3 +24,7 @@ The original uploaded recording is preserved outside the repository; only the ed
 ## UAT before public launch
 
 Use an actual laptop and phone to review intro audio/fade/skip, scroll through the work and résumé tabs, open a project and a document, exercise dark mode, and save the résumé as PDF. Confirm the domain, course labels and public-facing résumé content. CI smoke checks do not substitute for a complete user study or accessibility certification.
+
+## Intro dissolve correction
+
+The native modal backdrop is transparent so the website can show through during the overlay fade. A frame-synchronized white layer finishes the clip, then the overlay dissolves for 1.5 seconds. Completion follows the opacity transition, with a timeout fallback. Audio tapers off with the white-out; stable scrollbar space and focus restoration without scrolling prevent a layout jump. The regression suite checks backdrop transparency and a visible intermediate fade. Type, lint and production build were checked locally; the updated browser assertions still require execution on the owner’s machine or CI.

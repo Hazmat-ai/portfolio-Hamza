@@ -82,6 +82,16 @@ test("replay uses the right rendition, full white ending, skip restores focus", 
   await page.goto("/");
   await page.locator("#motionButton").click();
   const video = page.locator(".intro video");
+  const intro = page.getByRole("dialog", {
+    name: "Computer Science and UX Design intro",
+    exact: true,
+  });
+  // An opaque native backdrop would hide the page until the dialog unmounts.
+  expect(
+    await intro.evaluate(
+      (node) => getComputedStyle(node, "::backdrop").backgroundColor,
+    ),
+  ).toBe("rgba(0, 0, 0, 0)");
   await expect(video).toHaveJSProperty("muted", true);
   await expect(video).toHaveJSProperty("paused", false);
   await expect(video).toHaveAttribute(
@@ -90,12 +100,14 @@ test("replay uses the right rendition, full white ending, skip restores focus", 
       ? "/convergence/intro-mobile.mp4"
       : "/convergence/intro-study.mp4",
   );
-  await expect(
-    page.getByRole("dialog", {
-      name: "Computer Science and UX Design intro",
-      exact: true,
-    }),
-  ).toBeHidden({ timeout: 22000 });
+  // Check that the rendered overlay actually dissolves before it disappears.
+  await expect
+    .poll(
+      () => intro.evaluate((node) => Number(getComputedStyle(node).opacity)),
+      { timeout: 18000 },
+    )
+    .toBeLessThan(0.98);
+  await expect(intro).toBeHidden({ timeout: 22000 });
   await expect(page.locator("#motionButton")).toBeFocused();
   await page.locator("#motionButton").click();
   await page.keyboard.press("Escape");

@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 export const INTRO_SEEN = "convergence-intro-seen-v1";
 export function Intro({ onDone }: { onDone: () => void }) {
   const dialog = useRef<HTMLDialogElement>(null),
@@ -7,14 +7,20 @@ export function Intro({ onDone }: { onDone: () => void }) {
   const [muted, setMuted] = useState(true),
     [manual, setManual] = useState(false),
     [error, setError] = useState(false);
-  const timer = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
   const done = useRef(onDone);
   useEffect(() => {
     done.current = onDone;
   }, [onDone]);
+  const finish = useCallback(() => {
+    try {
+      sessionStorage.setItem(INTRO_SEEN, "true");
+    } catch {}
+    done.current();
+  }, []);
   useEffect(() => {
     const modal = dialog.current!,
       clip = video.current!;
+    const motion = matchMedia("(prefers-reduced-motion: reduce)");
     const portrait = matchMedia(
       "(max-width:640px) and (orientation:portrait)",
     ).matches;
@@ -24,21 +30,80 @@ export function Intro({ onDone }: { onDone: () => void }) {
     clip.muted = true;
     const overflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
+    let live = true,
+      frame = 0;
+    let timer: ReturnType<typeof setTimeout> | undefined;
+    const reveal = () => {
+      if (modal.classList.contains("leaving")) return;
+      if (motion.matches) {
+        finish();
+        return;
+      }
+      // The dialog's white canvas fades away. Its backdrop must be transparent
+      // so the already-rendered website is visible throughout this dissolve.
+      modal.style.setProperty("--whiteout", "1");
+      modal.style.setProperty("--clip-exit", "1");
+      modal.classList.add("leaving");
+      timer = setTimeout(finish, 1800); // Fallback if transitionend is interrupted.
+    };
+    const transitionEnd = (event: TransitionEvent) => {
+      if (
+        event.target === modal &&
+        event.propertyName === "opacity" &&
+        modal.classList.contains("leaving")
+      ) {
+        clearTimeout(timer);
+        finish();
+      }
+    };
+    const update = (time: number) => {
+      if (!Number.isFinite(clip.duration)) return;
+      const remaining = clip.duration - time;
+      const whiteout = Math.min(1, Math.max(0, (1.65 - remaining) / 1.1));
+      modal.style.setProperty("--whiteout", String(whiteout));
+      modal.style.setProperty(
+        "--clip-exit",
+        String(Math.min(1, Math.max(0, (2 - remaining) / 0.55))),
+      );
+      clip.volume = 1 - whiteout;
+      // Keep the full movement, reach white, then overlap the page dissolve
+      // with the white hold instead of waiting for an abrupt modal removal.
+      if (remaining <= 0.45 && !motion.matches) reveal();
+    };
+    const supportsVideoFrames =
+      typeof clip.requestVideoFrameCallback === "function";
+    const schedule = () => {
+      if (!live) return;
+      if (supportsVideoFrames)
+        frame = clip.requestVideoFrameCallback((_, metadata) => {
+          update(metadata.mediaTime);
+          schedule();
+        });
+      else
+        frame = requestAnimationFrame(() => {
+          update(clip.currentTime);
+          schedule();
+        });
+    };
+    modal.addEventListener("transitionend", transitionEnd);
+    clip.addEventListener("ended", reveal);
     modal.showModal();
-    clip.play().catch(() => setManual(true));
+    schedule();
+    clip.play().catch(() => {
+      if (live) setManual(true);
+    });
     return () => {
-      clearTimeout(timer.current);
+      live = false;
+      clearTimeout(timer);
+      if (supportsVideoFrames) clip.cancelVideoFrameCallback(frame);
+      else cancelAnimationFrame(frame);
+      modal.removeEventListener("transitionend", transitionEnd);
+      clip.removeEventListener("ended", reveal);
       clip.pause();
       modal.close();
       document.body.style.overflow = overflow;
     };
-  }, []);
-  const finish = () => {
-    try {
-      sessionStorage.setItem(INTRO_SEEN, "true");
-    } catch {}
-    done.current();
-  };
+  }, [finish]);
   return (
     <dialog
       ref={dialog}
@@ -57,25 +122,8 @@ export function Intro({ onDone }: { onDone: () => void }) {
         aria-label="Gojo red and blue sequence with Computer Science and UX Design labels, followed by Hamza Rizvi"
         onError={() => setError(true)}
         onPlaying={() => setManual(false)}
-        onTimeUpdate={(event) => {
-          const clip = event.currentTarget;
-          if (!Number.isFinite(clip.duration)) return;
-          const remaining = clip.duration - clip.currentTime;
-          dialog.current?.style.setProperty(
-            "--clip-exit",
-            String(Math.min(1, Math.max(0, (2 - remaining) / 0.55))),
-          );
-          // The final half-second is fully white; reveal the page without cutting movement.
-          if (remaining <= 0.5) dialog.current?.classList.add("leaving");
-        }}
-        onEnded={() => {
-          dialog.current?.classList.add("leaving");
-          timer.current = setTimeout(
-            finish,
-            matchMedia("(prefers-reduced-motion: reduce)").matches ? 0 : 900,
-          );
-        }}
       />
+      <div className="intro-whiteout" aria-hidden="true" />
       <div className="introheader">
         <span>Hamza Rizvi / two disciplines</span>
         <div className="introcontrols">
