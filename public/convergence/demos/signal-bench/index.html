@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="An offline ARM Cortex-M threshold and timing teaching lab."
+    />
+    <title>Signal Bench · ARM threshold lab</title>
+    <link rel="icon" href="simulator/mark.svg" />
+    <link rel="stylesheet" href="simulator/styles.css" />
+    <script defer src="simulator/bundle.js"></script>
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to lab</a>
+    <header class="masthead">
+      <a class="brand" href="index.html"
+        ><img src="simulator/mark.svg" alt="" />Signal Bench</a
+      ><span class="course">ARM Cortex-M · threshold lab</span
+      ><span class="author">Hamza Rizvi &amp; Samuel Okegbile</span>
+    </header>
+    <main id="main">
+      <div class="intro">
+        <div>
+          <p class="eyebrow">01 / Observe, compare, understand</p>
+          <h1>Where does the alert happen?</h1>
+          <p class="lede">
+            Trace an ADC reading through a polling loop. Explore thresholds and
+            timing with every assumption in view.
+          </p>
+        </div>
+        <div class="session-tools">
+          <button id="export-session">Save settings</button
+          ><button id="import-session">Load settings</button
+          ><input
+            id="file"
+            type="file"
+            accept=".json,application/json"
+            hidden
+          />
+        </div>
+      </div>
+      <p class="disclosure">
+        Educational model · generated sensor data · timing estimates, not
+        measurements from hardware.
+      </p>
+      <div id="error" role="alert" hidden></div>
+      <section class="controls" aria-label="Simulation controls">
+        <div class="field">
+          <label for="core">Processor core</label
+          ><select id="core">
+            <option value="m0">Cortex-M0</option>
+            <option value="m0p">Cortex-M0+</option>
+            <option value="m3" selected>Cortex-M3</option>
+            <option value="m4">Cortex-M4</option>
+          </select>
+        </div>
+        <div class="field small">
+          <label for="clockMHz">Clock (MHz)</label
+          ><input
+            id="clockMHz"
+            type="number"
+            min="1"
+            max="1000"
+            step="1"
+            value="72"
+          />
+        </div>
+        <div class="field">
+          <label for="source">Signal source</label
+          ><select id="source">
+            <option value="sine">Sine wave + noise</option>
+            <option value="manual">Manual ADC code</option>
+          </select>
+        </div>
+        <div class="actions">
+          <button id="step">Single sample</button
+          ><button id="run" class="primary">Run simulation</button
+          ><button id="reset" aria-label="Reset simulation">Reset</button>
+        </div>
+      </section>
+      <div class="workspace">
+        <aside class="settings">
+          <p class="eyebrow">Input conditions</p>
+          <div class="field">
+            <label for="low"
+              >Lower threshold <output id="low-value">800</output></label
+            ><input id="low" type="range" min="0" max="4094" value="800" />
+          </div>
+          <div class="field">
+            <label for="high"
+              >Upper threshold <output id="high-value">3200</output></label
+            ><input id="high" type="range" min="1" max="4095" value="3200" />
+          </div>
+          <div class="field">
+            <label for="manual"
+              >Manual ADC code <output id="manual-value">2048</output></label
+            ><input id="manual" type="range" min="0" max="4095" value="2048" />
+          </div>
+          <div class="field">
+            <label for="sampleHz">Sampling rate (Hz)</label
+            ><input
+              id="sampleHz"
+              type="number"
+              min="1"
+              max="20"
+              step="0.5"
+              value="2"
+            />
+          </div>
+          <div class="field">
+            <label for="signalHz">Signal frequency (Hz)</label
+            ><input
+              id="signalHz"
+              type="number"
+              min="0.01"
+              max="10"
+              step="0.01"
+              value="0.2"
+            />
+          </div>
+          <div class="field">
+            <label for="noise"
+              >Noise amplitude (codes)
+              <output id="noise-value">80</output></label
+            ><input id="noise" type="range" min="0" max="1000" value="80" />
+          </div>
+          <details>
+            <summary>Timing assumptions</summary>
+            <p class="help">
+              Instruction costs below are editable teaching assumptions, not a
+              per-core cycle table.
+            </p>
+            <div class="field">
+              <label for="loadCycles">LDR cost (cycles)</label
+              ><input
+                id="loadCycles"
+                type="number"
+                min="1"
+                max="100"
+                value="2"
+              />
+            </div>
+            <div class="field">
+              <label for="storeCycles">STR cost (cycles)</label
+              ><input
+                id="storeCycles"
+                type="number"
+                min="1"
+                max="100"
+                value="2"
+              />
+            </div>
+            <div class="field">
+              <label for="branchCycles">Taken branch cost (cycles)</label
+              ><input
+                id="branchCycles"
+                type="number"
+                min="1"
+                max="100"
+                value="3"
+              />
+            </div>
+            <div class="field">
+              <label for="gpioNs">Extra GPIO delay (ns)</label
+              ><input
+                id="gpioNs"
+                type="number"
+                min="0"
+                max="10000"
+                step="0.1"
+                value="2"
+              />
+            </div>
+            <div class="field">
+              <label for="seed">Random seed</label
+              ><input
+                id="seed"
+                type="number"
+                min="1"
+                max="4294967295"
+                value="42"
+              />
+            </div>
+            <p class="help">
+              Other instructions and untaken conditional branches cost one
+              modeled cycle. Register loads stand in for address resolution; no
+              real memory map is emulated.
+            </p>
+          </details>
+          <p id="nyquist" class="note"></p>
+        </aside>
+        <div class="bench">
+          <section class="readouts" aria-label="Current sample">
+            <div>
+              <p class="eyebrow">ADC / 12 bit</p>
+              <div class="reading">
+                <span id="adc">2048</span><span class="unit">/ 4095</span>
+              </div>
+              <p id="voltage">1.650 V input</p>
+            </div>
+            <div>
+              <p class="eyebrow">GPIO output</p>
+              <p id="alert" class="status safe">SAFE</p>
+              <p id="boundary">800 ≤ D ≤ 3200</p>
+            </div>
+            <div>
+              <p class="eyebrow">Session</p>
+              <p id="sample-count" class="session-count">0 samples</p>
+              <p id="run-status" role="status">Paused · ready to sample</p>
+            </div>
+          </section>
+          <section class="plot-section">
+            <div class="section-head">
+              <div>
+                <p class="eyebrow">Live trace</p>
+                <h2>Sensor signal</h2>
+              </div>
+              <button id="export-csv" disabled>Export CSV</button>
+            </div>
+            <div
+              id="signal-plot"
+              class="plot"
+              role="img"
+              aria-label="ADC codes over simulated time, with upper and lower thresholds"
+            ></div>
+            <p class="help">
+              Last 60 samples shown. CSV retains up to 1,000 samples. Sample
+              time is simulated; the browser clock is not a hardware timer.
+            </p>
+          </section>
+          <section>
+            <div class="section-head">
+              <div>
+                <p class="eyebrow">Follow the decision</p>
+                <h2>The polling path</h2>
+              </div>
+              <span id="path-count" class="help"></span>
+            </div>
+            <div class="code-layout">
+              <div
+                id="assembly"
+                class="assembly"
+                aria-label="Illustrative Thumb instruction path"
+              ></div>
+              <div class="timing">
+                <h3>Timing notebook</h3>
+                <dl id="timing"></dl>
+                <p class="help">
+                  Exception entry is a reference value under ideal
+                  zero-wait-state conditions. Interrupt work and scheduler costs
+                  are not included.
+                </p>
+                <p class="note">
+                  This is a busy polling loop. The per-sample work fraction
+                  below is not total CPU utilization; waiting and polling can
+                  keep a core occupied.
+                </p>
+              </div>
+            </div>
+          </section>
+          <section class="comparison">
+            <div class="section-head">
+              <div>
+                <p class="eyebrow">One path, four clock settings</p>
+                <h2>Core comparison</h2>
+              </div>
+            </div>
+            <div
+              id="comparison-plot"
+              class="plot"
+              role="img"
+              aria-label="Modeled polling execution time and ideal exception-entry time by core"
+            ></div>
+            <p class="help">
+              Defaults are example system clocks, not maximum core
+              specifications. Your selected core uses the clock entered above.
+              Polling and exception-entry bars describe different operations.
+            </p>
+          </section>
+          <section class="equations">
+            <p class="eyebrow">The calculations behind the display</p>
+            <h2>Equation notebook</h2>
+            <div id="equations"></div>
+          </section>
+        </div>
+      </div>
+      <footer>
+        <p>Built for learning by Hamza Rizvi &amp; Samuel Okegbile.</p>
+        <p>
+          <a
+            href="https://developer.arm.com/community/arm-community-blogs/b/architectures-and-processors-blog/posts/beginner-guide-on-interrupt-latency-and-interrupt-latency-of-the-arm-cortex-m-processors"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Arm: exception-entry reference</a
+          >
+          · No fabricated RTOS, memory, or power benchmarks.
+        </p>
+      </footer>
+    </main>
+    <div id="notice" role="status" aria-live="polite"></div>
+  </body>
+</html>

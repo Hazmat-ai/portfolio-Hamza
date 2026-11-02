@@ -1,0 +1,83 @@
+{
+  "arm-cortex-simulator": {
+    "kind": "live",
+    "title": "Play Signal Bench",
+    "url": "demos/signal-bench/index.html",
+    "note": "The actual browser teaching simulator. Sensor data and timing are modeled; no physical MCU is connected."
+  },
+  "tcp-converter": {
+    "kind": "adaptation",
+    "title": "Try conversion logic",
+    "url": "demos/tcp-converter/index.html",
+    "note": "A functional browser adaptation of the Python formulas and constants. The TCP server and concurrent clients are not running in this preview."
+  },
+  "campaign-os": {
+    "kind": "video",
+    "title": "Watch actual app walkthrough",
+    "url": "demos/media/campaign.mp4",
+    "note": "Recording from the source repository. Live generation requires a configured server, user account and provider API credentials."
+  },
+  "arns-travel-system": {
+    "kind": "video",
+    "title": "Watch actual desktop walkthrough",
+    "url": "demos/media/arns.mp4",
+    "note": "Actual Java Swing application using example traveller data. This planner does not contact suppliers or make bookings."
+  },
+  "remnant": {
+    "kind": "video",
+    "title": "Watch actual CLI walkthrough",
+    "url": "demos/media/remnant.mp4",
+    "note": "Actual terminal commands against a temporary example database. The full project runs locally in Python."
+  },
+  "studymind": {
+    "kind": "setup",
+    "title": "Live app needs deployment",
+    "note": "The API and database need hosting, account/session configuration and a server-side Claude API credential before visitors can generate material.",
+    "repo": "https://github.com/Hazmat-ai/StudyMind#readme"
+  },
+  "smart-write": {
+    "kind": "setup",
+    "title": "Inference demo needs a running model API",
+    "note": "The drawing frontend needs the saved PyTorch model and a running inference service. No predictions are invented in this portfolio preview.",
+    "repo": "https://github.com/ManpreetSingh-345/Handwriting-Recognition#readme"
+  },
+  "asl-recognition": {
+    "kind": "setup",
+    "title": "Camera demo needs an HTTPS deployment",
+    "note": "Palm needs its Node API and same-origin MediaPipe model/WASM assets. Camera permission must be requested only after a visitor chooses to start it.",
+    "repo": "https://github.com/Hazmat-ai/ASL_Recognition#readme"
+  },
+  "fitforge": {
+    "kind": "live",
+    "title": "Try the FitForge browser companion",
+    "url": "demos/fitforge/index.html",
+    "note": "A functional browser companion with the native exercise catalog: build a routine, log actual sets and save local history. It is separate from the SwiftUI app and does not include Apple Health or nutrition."
+  },
+  "hubspot-integration": {
+    "kind": "setup",
+    "title": "CRM demo needs a test account",
+    "note": "A public demo needs isolated sample records, a HubSpot test account, custom-object configuration and a server-side private-app token.",
+    "repo": "https://github.com/Hazmat-ai/Hubspot_integration-#readme"
+  },
+  "mood-picker": {
+    "kind": "setup",
+    "title": "Live deployment needs restoring",
+    "note": "The published Vercel URL returned DEPLOYMENT_NOT_FOUND during this review. The Flask/React source can run locally; it needs a configured host before a live button can be enabled.",
+    "repo": "https://github.com/Hazmat-ai/Mood-Analyzer-Project-Selector#readme"
+  },
+  "jetson-nano-robot": {
+    "kind": "hardware",
+    "title": "Hardware walkthrough needed",
+    "note": "This project needs the actual robot and camera. A recording of the device working is needed for a faithful portfolio demonstration."
+  },
+  "vex-robotics": {
+    "kind": "hardware",
+    "title": "Competition footage needed",
+    "note": "Add an actual robot or match recording to demonstrate drivetrain and control behavior. No competition footage was supplied in the current project sources."
+  },
+  "fpv-racing-sim": {
+    "kind": "hardware",
+    "title": "FPV recording needed",
+    "note": "The physical camera and viewing setup need an actual recording. No live camera feed or fabricated hardware result is shown here."
+  }
+}

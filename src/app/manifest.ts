@@ -7,8 +7,8 @@ export default function manifest(): MetadataRoute.Manifest {
     description: "Hamza Rizvi's software development portfolio",
     start_url: "/",
     display: "standalone",
-    background_color: "#08090c",
-    theme_color: "#08090c",
+    background_color: "#ffffff",
+    theme_color: "#ffffff",
     icons: [
       {
         src: "/assets/icon-192.png?v=hr1",
