@@ -1,17 +1,5 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
 import "./globals.css";
-import { ProjectTransitions } from "@/components/animations/ProjectTransitions";
-import { Navigation } from "@/components/layout/Navigation";
-import { Footer } from "@/components/layout/Footer";
-import { SmoothScrollProvider } from "@/components/animations/SmoothScrollProvider";
-
-const inter = localFont({
-  src: "../../public/assets/fonts/inter-latin-variable.woff2",
-  weight: "100 900",
-  variable: "--font-inter",
-  display: "swap",
-});
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://hamzarizvi.dev";
 
@@ -89,7 +77,7 @@ const jsonLd = {
     "https://www.linkedin.com/in/hamzarizvi-cs",
   ],
   jobTitle: "Software Developer",
-  alumniOf: {
+  affiliation: {
     "@type": "CollegeOrUniversity",
     name: "Wilfrid Laurier University",
   },
@@ -119,15 +107,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html
-      lang="en"
-      className={`${inter.variable} scroll-smooth`}
-      suppressHydrationWarning
-    >
+    <html lang="en" data-theme="light" suppressHydrationWarning>
       <head>
         <script
           dangerouslySetInnerHTML={{
-            __html: `(function(){try{document.documentElement.dataset.signatureVisit=sessionStorage.getItem('portfolio-signature-seen')==='true'?'seen':'new'}catch(e){};try{var t=localStorage.getItem('portfolio-theme');document.documentElement.dataset.theme=t==='light'||t==='dark'?t:matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}catch(e){document.documentElement.dataset.theme=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}})()`,
+            __html: `(function(){var theme='light';try{if(localStorage.getItem('hamza-theme-v2')==='dark')theme='dark'}catch(e){}document.documentElement.dataset.theme=theme})()`,
           }}
         />
         <script
@@ -135,20 +119,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="antialiased">
-        <a href="#main-content" className="skip-link">
-          Skip to content
-        </a>
-        <SmoothScrollProvider>
-          <ProjectTransitions>
-            <Navigation />
-            <main id="main-content" tabIndex={-1}>
-              {children}
-            </main>
-            <Footer />
-          </ProjectTransitions>
-        </SmoothScrollProvider>
-      </body>
+      <body>{children}</body>
     </html>
   );
 }

@@ -1,0 +1,58 @@
+{
+  "studymind": {
+    "image": "assets/studymind.webp",
+    "caption": "Original portfolio interface capture"
+  },
+  "asl-recognition": {
+    "image": "assets/asl.webp",
+    "caption": "Original portfolio interface capture"
+  },
+  "smart-write": {
+    "image": "assets/project-previews/smart-write.svg",
+    "caption": "Inference pipeline overview"
+  },
+  "campaign-os": {
+    "image": "assets/project-previews/campaign.jpg",
+    "caption": "Frame from the actual app walkthrough"
+  },
+  "fitforge": {
+    "image": "assets/project-previews/fitforge.jpg",
+    "caption": "Actual browser companion / routine builder"
+  },
+  "arns-travel-system": {
+    "image": "assets/project-previews/arns.jpg",
+    "caption": "Frame from the actual Java app walkthrough"
+  },
+  "jetson-nano-robot": {
+    "image": "assets/project-previews/jetson.svg",
+    "caption": "Hardware architecture overview"
+  },
+  "tcp-converter": {
+    "image": "assets/project-previews/tcp.jpg",
+    "caption": "Actual conversion-logic browser adaptation"
+  },
+  "arm-cortex-simulator": {
+    "image": "assets/project-previews/arm.jpg",
+    "caption": "Actual simulator with generated sensor data"
+  },
+  "hubspot-integration": {
+    "image": "assets/project-previews/hubspot.svg",
+    "caption": "CRM integration overview"
+  },
+  "vex-robotics": {
+    "image": "assets/project-previews/vex.svg",
+    "caption": "Competition engineering overview"
+  },
+  "fpv-racing-sim": {
+    "image": "assets/project-previews/fpv.svg",
+    "caption": "Camera signal-path overview"
+  },
+  "mood-picker": {
+    "image": "assets/project-previews/mood-picker.svg",
+    "caption": "Preference-matching algorithm overview"
+  },
+  "remnant": {
+    "image": "assets/project-previews/remnant.jpg",
+    "caption": "Frame from the actual CLI walkthrough"
+  }
+}

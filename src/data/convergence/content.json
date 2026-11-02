@@ -1,0 +1,953 @@
+{
+  "sources": [
+    {
+      "title": "Gamified learning platform",
+      "course": "UX100 · Design Thinking",
+      "note": "Interactive learning concept. The source presents courses, games, tests and an AI-assist flow; it is coursework, not a shipped product claim.",
+      "docs": [
+        [
+          "Gamified UX learning platform",
+          "https://canva.link/s3hisb19oyrsg9m",
+          "Canva"
+        ]
+      ]
+    },
+    {
+      "title": "Wellness Hero",
+      "course": "UX103 · UX Strategy",
+      "note": "Design-sprint planning and workshop material.",
+      "docs": [
+        [
+          "Design sprint and planning",
+          "https://canva.link/29n5hhvlvjp6goy",
+          "Canva"
+        ]
+      ]
+    },
+    {
+      "title": "Koenigsegg automotive research",
+      "course": "UX230 collection · collaborative coursework",
+      "note": "Hamza is named Research Lead in the team contract. Collaborators include Augustus Vennam, Safdar Md Abdus Shukur and Raeya Sangha. Several source covers label this work UX115; the owner supplied it under UX230. AI-generated personas and AI-assisted sections remain distinguishable in their original sources.",
+      "docs": [
+        ["Team contract", "https://canva.link/hi2bwrvy5m549rs", "Canva"],
+        ["UX research plan", "https://canva.link/3ugm54bg5rnw0g8", "Canva"],
+        [
+          "Personas and journey maps",
+          "https://canva.link/n0pccn7czng57hy",
+          "Canva"
+        ],
+        [
+          "Interviews and analysis",
+          "https://canva.link/tk6by8o9uk93vb1",
+          "Canva"
+        ],
+        [
+          "Usability testing report",
+          "https://canva.link/brd7e8veo2ns7ue",
+          "Canva"
+        ],
+        [
+          "Competitive and heuristic evaluation",
+          "https://canva.link/fgtgz91evrtp16n",
+          "Canva"
+        ]
+      ]
+    },
+    {
+      "title": "Lotus information architecture",
+      "course": "UX205 · Information Design",
+      "note": "The completed PDF records the actual results. The earlier Canva card-sort deck still says results are pending; it is retained as planning history, not final evidence.",
+      "docs": [
+        [
+          "Competitive analysis: Lotus, McLaren, Porsche",
+          "https://www.canva.com/design/DAHWbNpQhqc/agl3P3umCXjzUMeXJOV9jQ/edit",
+          "Canva"
+        ],
+        [
+          "Earlier card-sort planning deck",
+          "https://www.canva.com/design/DAHXMyp2pMQ/zPogQtP7xJ71vUX00JPWkA/edit",
+          "Canva"
+        ],
+        [
+          "Completed card-sorting research report",
+          "/convergence/assets/lotus-research.pdf",
+          "PDF · 23 pages"
+        ],
+        [
+          "Proposed 30-page sitemap",
+          "/convergence/assets/lotus-sitemap.pdf",
+          "PDF · 1 page"
+        ]
+      ]
+    }
+  ],
+  "uxDocuments": [
+    {
+      "key": "s3hisb19oyrsg9m",
+      "title": "Gamified learning platform",
+      "source": "https://www.canva.com/design/DAGg5LuCfCg/TzjhYx17OUtrY85V0KR_wQ/edit?utm_content=DAGg5LuCfCg&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton",
+      "pdf": "/convergence/assets/ux-previews/s3hisb19oyrsg9m/preview.pdf",
+      "pages": ["/convergence/assets/ux-previews/s3hisb19oyrsg9m/001.webp"],
+      "kind": "Canva page previews"
+    },
+    {
+      "key": "29n5hhvlvjp6goy",
+      "title": "Wellness Hero - Design Sprint",
+      "source": "https://www.canva.com/design/DAGRyC40yh0/xqm8ZD7qA5x1notZ3J62dA/edit?utm_content=DAGRyC40yh0&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton",
+      "pdf": "/convergence/assets/ux-previews/29n5hhvlvjp6goy/preview.pdf",
+      "pages": [
+        "/convergence/assets/ux-previews/29n5hhvlvjp6goy/001.webp",
+        "/convergence/assets/ux-previews/29n5hhvlvjp6goy/002.webp",
+        "/convergence/assets/ux-previews/29n5hhvlvjp6goy/003.webp",
+        "/convergence/assets/ux-previews/29n5hhvlvjp6goy/004.webp",
+        "/convergence/assets/ux-previews/29n5hhvlvjp6goy/005.webp",
+        "/convergence/assets/ux-previews/29n5hhvlvjp6goy/006.webp",
+        "/convergence/assets/ux-previews/29n5hhvlvjp6goy/007.webp",
+        "/convergence/assets/ux-previews/29n5hhvlvjp6goy/008.webp",
+        "/convergence/assets/ux-previews/29n5hhvlvjp6goy/009.webp",
+        "/convergence/assets/ux-previews/29n5hhvlvjp6goy/010.webp",
+        "/convergence/assets/ux-previews/29n5hhvlvjp6goy/011.webp",
+        "/convergence/assets/ux-previews/29n5hhvlvjp6goy/012.webp",
+        "/convergence/assets/ux-previews/29n5hhvlvjp6goy/013.webp",
+        "/convergence/assets/ux-previews/29n5hhvlvjp6goy/014.webp",
+        "/convergence/assets/ux-previews/29n5hhvlvjp6goy/015.webp",
+        "/convergence/assets/ux-previews/29n5hhvlvjp6goy/016.webp",
+        "/convergence/assets/ux-previews/29n5hhvlvjp6goy/017.webp",
+        "/convergence/assets/ux-previews/29n5hhvlvjp6goy/018.webp",
+        "/convergence/assets/ux-previews/29n5hhvlvjp6goy/019.webp",
+        "/convergence/assets/ux-previews/29n5hhvlvjp6goy/020.webp"
+      ],
+      "kind": "Canva page previews"
+    },
+    {
+      "key": "hi2bwrvy5m549rs",
+      "title": "Team contract",
+      "source": "https://www.canva.com/design/DAG-otzH7AY/-IFtJh02LJBmNUZClZvA8w/edit?utm_content=DAG-otzH7AY&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton",
+      "pdf": "/convergence/assets/ux-previews/hi2bwrvy5m549rs/preview.pdf",
+      "pages": ["/convergence/assets/ux-previews/hi2bwrvy5m549rs/001.webp"],
+      "kind": "Canva page previews"
+    },
+    {
+      "key": "3ugm54bg5rnw0g8",
+      "title": "UX research plan",
+      "source": "https://www.canva.com/design/DAG-6DM9T3I/a_bHYaS_HluzEtEtChkO4A/edit?utm_content=DAG-6DM9T3I&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton",
+      "pdf": "/convergence/assets/ux-previews/3ugm54bg5rnw0g8/preview.pdf",
+      "pages": [
+        "/convergence/assets/ux-previews/3ugm54bg5rnw0g8/001.webp",
+        "/convergence/assets/ux-previews/3ugm54bg5rnw0g8/002.webp",
+        "/convergence/assets/ux-previews/3ugm54bg5rnw0g8/003.webp",
+        "/convergence/assets/ux-previews/3ugm54bg5rnw0g8/004.webp",
+        "/convergence/assets/ux-previews/3ugm54bg5rnw0g8/005.webp",
+        "/convergence/assets/ux-previews/3ugm54bg5rnw0g8/006.webp",
+        "/convergence/assets/ux-previews/3ugm54bg5rnw0g8/007.webp",
+        "/convergence/assets/ux-previews/3ugm54bg5rnw0g8/008.webp",
+        "/convergence/assets/ux-previews/3ugm54bg5rnw0g8/009.webp",
+        "/convergence/assets/ux-previews/3ugm54bg5rnw0g8/010.webp"
+      ],
+      "kind": "Canva page previews"
+    },
+    {
+      "key": "n0pccn7czng57hy",
+      "title": "Personas and journey maps",
+      "source": "https://www.canva.com/design/DAHDSlOu604/O5r7opX4N5BSE0UhvO-8Sg/edit?utm_content=DAHDSlOu604&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton",
+      "pdf": "/convergence/assets/ux-previews/n0pccn7czng57hy/preview.pdf",
+      "pages": [
+        "/convergence/assets/ux-previews/n0pccn7czng57hy/001.webp",
+        "/convergence/assets/ux-previews/n0pccn7czng57hy/002.webp",
+        "/convergence/assets/ux-previews/n0pccn7czng57hy/003.webp",
+        "/convergence/assets/ux-previews/n0pccn7czng57hy/004.webp",
+        "/convergence/assets/ux-previews/n0pccn7czng57hy/005.webp",
+        "/convergence/assets/ux-previews/n0pccn7czng57hy/006.webp",
+        "/convergence/assets/ux-previews/n0pccn7czng57hy/007.webp",
+        "/convergence/assets/ux-previews/n0pccn7czng57hy/008.webp",
+        "/convergence/assets/ux-previews/n0pccn7czng57hy/009.webp",
+        "/convergence/assets/ux-previews/n0pccn7czng57hy/010.webp",
+        "/convergence/assets/ux-previews/n0pccn7czng57hy/011.webp",
+        "/convergence/assets/ux-previews/n0pccn7czng57hy/012.webp",
+        "/convergence/assets/ux-previews/n0pccn7czng57hy/013.webp",
+        "/convergence/assets/ux-previews/n0pccn7czng57hy/014.webp",
+        "/convergence/assets/ux-previews/n0pccn7czng57hy/015.webp"
+      ],
+      "kind": "Canva page previews"
+    },
+    {
+      "key": "tk6by8o9uk93vb1",
+      "title": "Interviews and analysis",
+      "source": "https://www.canva.com/design/DAHCuoFtfLc/3Q-wBODIOoFKNR7DrAjL2A/edit?utm_content=DAHCuoFtfLc&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton",
+      "pdf": "/convergence/assets/ux-previews/tk6by8o9uk93vb1/preview.pdf",
+      "pages": [
+        "/convergence/assets/ux-previews/tk6by8o9uk93vb1/001.webp",
+        "/convergence/assets/ux-previews/tk6by8o9uk93vb1/002.webp",
+        "/convergence/assets/ux-previews/tk6by8o9uk93vb1/003.webp",
+        "/convergence/assets/ux-previews/tk6by8o9uk93vb1/004.webp",
+        "/convergence/assets/ux-previews/tk6by8o9uk93vb1/005.webp",
+        "/convergence/assets/ux-previews/tk6by8o9uk93vb1/006.webp",
+        "/convergence/assets/ux-previews/tk6by8o9uk93vb1/007.webp",
+        "/convergence/assets/ux-previews/tk6by8o9uk93vb1/008.webp",
+        "/convergence/assets/ux-previews/tk6by8o9uk93vb1/009.webp",
+        "/convergence/assets/ux-previews/tk6by8o9uk93vb1/010.webp",
+        "/convergence/assets/ux-previews/tk6by8o9uk93vb1/011.webp",
+        "/convergence/assets/ux-previews/tk6by8o9uk93vb1/012.webp",
+        "/convergence/assets/ux-previews/tk6by8o9uk93vb1/013.webp",
+        "/convergence/assets/ux-previews/tk6by8o9uk93vb1/014.webp",
+        "/convergence/assets/ux-previews/tk6by8o9uk93vb1/015.webp",
+        "/convergence/assets/ux-previews/tk6by8o9uk93vb1/016.webp",
+        "/convergence/assets/ux-previews/tk6by8o9uk93vb1/017.webp",
+        "/convergence/assets/ux-previews/tk6by8o9uk93vb1/018.webp",
+        "/convergence/assets/ux-previews/tk6by8o9uk93vb1/019.webp",
+        "/convergence/assets/ux-previews/tk6by8o9uk93vb1/020.webp",
+        "/convergence/assets/ux-previews/tk6by8o9uk93vb1/021.webp",
+        "/convergence/assets/ux-previews/tk6by8o9uk93vb1/022.webp",
+        "/convergence/assets/ux-previews/tk6by8o9uk93vb1/023.webp",
+        "/convergence/assets/ux-previews/tk6by8o9uk93vb1/024.webp",
+        "/convergence/assets/ux-previews/tk6by8o9uk93vb1/025.webp",
+        "/convergence/assets/ux-previews/tk6by8o9uk93vb1/026.webp",
+        "/convergence/assets/ux-previews/tk6by8o9uk93vb1/027.webp",
+        "/convergence/assets/ux-previews/tk6by8o9uk93vb1/028.webp",
+        "/convergence/assets/ux-previews/tk6by8o9uk93vb1/029.webp",
+        "/convergence/assets/ux-previews/tk6by8o9uk93vb1/030.webp",
+        "/convergence/assets/ux-previews/tk6by8o9uk93vb1/031.webp",
+        "/convergence/assets/ux-previews/tk6by8o9uk93vb1/032.webp",
+        "/convergence/assets/ux-previews/tk6by8o9uk93vb1/033.webp",
+        "/convergence/assets/ux-previews/tk6by8o9uk93vb1/034.webp",
+        "/convergence/assets/ux-previews/tk6by8o9uk93vb1/035.webp",
+        "/convergence/assets/ux-previews/tk6by8o9uk93vb1/036.webp",
+        "/convergence/assets/ux-previews/tk6by8o9uk93vb1/037.webp",
+        "/convergence/assets/ux-previews/tk6by8o9uk93vb1/038.webp",
+        "/convergence/assets/ux-previews/tk6by8o9uk93vb1/039.webp",
+        "/convergence/assets/ux-previews/tk6by8o9uk93vb1/040.webp"
+      ],
+      "kind": "Canva page previews"
+    },
+    {
+      "key": "brd7e8veo2ns7ue",
+      "title": "Usability testing report",
+      "source": "https://www.canva.com/design/DAHEun-M1ck/F_oSoMjoSUo7s7g22ivIQw/edit?utm_content=DAHEun-M1ck&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton",
+      "pdf": "/convergence/assets/ux-previews/brd7e8veo2ns7ue/preview.pdf",
+      "pages": [
+        "/convergence/assets/ux-previews/brd7e8veo2ns7ue/001.webp",
+        "/convergence/assets/ux-previews/brd7e8veo2ns7ue/002.webp",
+        "/convergence/assets/ux-previews/brd7e8veo2ns7ue/003.webp",
+        "/convergence/assets/ux-previews/brd7e8veo2ns7ue/004.webp",
+        "/convergence/assets/ux-previews/brd7e8veo2ns7ue/005.webp",
+        "/convergence/assets/ux-previews/brd7e8veo2ns7ue/006.webp",
+        "/convergence/assets/ux-previews/brd7e8veo2ns7ue/007.webp",
+        "/convergence/assets/ux-previews/brd7e8veo2ns7ue/008.webp",
+        "/convergence/assets/ux-previews/brd7e8veo2ns7ue/009.webp",
+        "/convergence/assets/ux-previews/brd7e8veo2ns7ue/010.webp",
+        "/convergence/assets/ux-previews/brd7e8veo2ns7ue/011.webp",
+        "/convergence/assets/ux-previews/brd7e8veo2ns7ue/012.webp",
+        "/convergence/assets/ux-previews/brd7e8veo2ns7ue/013.webp",
+        "/convergence/assets/ux-previews/brd7e8veo2ns7ue/014.webp",
+        "/convergence/assets/ux-previews/brd7e8veo2ns7ue/015.webp",
+        "/convergence/assets/ux-previews/brd7e8veo2ns7ue/016.webp",
+        "/convergence/assets/ux-previews/brd7e8veo2ns7ue/017.webp",
+        "/convergence/assets/ux-previews/brd7e8veo2ns7ue/018.webp",
+        "/convergence/assets/ux-previews/brd7e8veo2ns7ue/019.webp",
+        "/convergence/assets/ux-previews/brd7e8veo2ns7ue/020.webp",
+        "/convergence/assets/ux-previews/brd7e8veo2ns7ue/021.webp",
+        "/convergence/assets/ux-previews/brd7e8veo2ns7ue/022.webp",
+        "/convergence/assets/ux-previews/brd7e8veo2ns7ue/023.webp",
+        "/convergence/assets/ux-previews/brd7e8veo2ns7ue/024.webp",
+        "/convergence/assets/ux-previews/brd7e8veo2ns7ue/025.webp",
+        "/convergence/assets/ux-previews/brd7e8veo2ns7ue/026.webp",
+        "/convergence/assets/ux-previews/brd7e8veo2ns7ue/027.webp",
+        "/convergence/assets/ux-previews/brd7e8veo2ns7ue/028.webp",
+        "/convergence/assets/ux-previews/brd7e8veo2ns7ue/029.webp",
+        "/convergence/assets/ux-previews/brd7e8veo2ns7ue/030.webp",
+        "/convergence/assets/ux-previews/brd7e8veo2ns7ue/031.webp",
+        "/convergence/assets/ux-previews/brd7e8veo2ns7ue/032.webp",
+        "/convergence/assets/ux-previews/brd7e8veo2ns7ue/033.webp",
+        "/convergence/assets/ux-previews/brd7e8veo2ns7ue/034.webp",
+        "/convergence/assets/ux-previews/brd7e8veo2ns7ue/035.webp",
+        "/convergence/assets/ux-previews/brd7e8veo2ns7ue/036.webp",
+        "/convergence/assets/ux-previews/brd7e8veo2ns7ue/037.webp",
+        "/convergence/assets/ux-previews/brd7e8veo2ns7ue/038.webp",
+        "/convergence/assets/ux-previews/brd7e8veo2ns7ue/039.webp"
+      ],
+      "kind": "Canva page previews"
+    },
+    {
+      "key": "fgtgz91evrtp16n",
+      "title": "Competitive and heuristic evaluation",
+      "source": "https://www.canva.com/design/DAHAPPLX9Fg/lX_MrgHyarI9rRKHqt70oQ/edit?utm_content=DAHAPPLX9Fg&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton",
+      "pdf": "/convergence/assets/ux-previews/fgtgz91evrtp16n/preview.pdf",
+      "pages": [
+        "/convergence/assets/ux-previews/fgtgz91evrtp16n/001.webp",
+        "/convergence/assets/ux-previews/fgtgz91evrtp16n/002.webp",
+        "/convergence/assets/ux-previews/fgtgz91evrtp16n/003.webp",
+        "/convergence/assets/ux-previews/fgtgz91evrtp16n/004.webp",
+        "/convergence/assets/ux-previews/fgtgz91evrtp16n/005.webp",
+        "/convergence/assets/ux-previews/fgtgz91evrtp16n/006.webp",
+        "/convergence/assets/ux-previews/fgtgz91evrtp16n/007.webp",
+        "/convergence/assets/ux-previews/fgtgz91evrtp16n/008.webp",
+        "/convergence/assets/ux-previews/fgtgz91evrtp16n/009.webp",
+        "/convergence/assets/ux-previews/fgtgz91evrtp16n/010.webp",
+        "/convergence/assets/ux-previews/fgtgz91evrtp16n/011.webp",
+        "/convergence/assets/ux-previews/fgtgz91evrtp16n/012.webp",
+        "/convergence/assets/ux-previews/fgtgz91evrtp16n/013.webp",
+        "/convergence/assets/ux-previews/fgtgz91evrtp16n/014.webp",
+        "/convergence/assets/ux-previews/fgtgz91evrtp16n/015.webp",
+        "/convergence/assets/ux-previews/fgtgz91evrtp16n/016.webp",
+        "/convergence/assets/ux-previews/fgtgz91evrtp16n/017.webp",
+        "/convergence/assets/ux-previews/fgtgz91evrtp16n/018.webp",
+        "/convergence/assets/ux-previews/fgtgz91evrtp16n/019.webp",
+        "/convergence/assets/ux-previews/fgtgz91evrtp16n/020.webp",
+        "/convergence/assets/ux-previews/fgtgz91evrtp16n/021.webp",
+        "/convergence/assets/ux-previews/fgtgz91evrtp16n/022.webp",
+        "/convergence/assets/ux-previews/fgtgz91evrtp16n/023.webp",
+        "/convergence/assets/ux-previews/fgtgz91evrtp16n/024.webp",
+        "/convergence/assets/ux-previews/fgtgz91evrtp16n/025.webp",
+        "/convergence/assets/ux-previews/fgtgz91evrtp16n/026.webp",
+        "/convergence/assets/ux-previews/fgtgz91evrtp16n/027.webp",
+        "/convergence/assets/ux-previews/fgtgz91evrtp16n/028.webp",
+        "/convergence/assets/ux-previews/fgtgz91evrtp16n/029.webp",
+        "/convergence/assets/ux-previews/fgtgz91evrtp16n/030.webp",
+        "/convergence/assets/ux-previews/fgtgz91evrtp16n/031.webp",
+        "/convergence/assets/ux-previews/fgtgz91evrtp16n/032.webp",
+        "/convergence/assets/ux-previews/fgtgz91evrtp16n/033.webp",
+        "/convergence/assets/ux-previews/fgtgz91evrtp16n/034.webp",
+        "/convergence/assets/ux-previews/fgtgz91evrtp16n/035.webp",
+        "/convergence/assets/ux-previews/fgtgz91evrtp16n/036.webp",
+        "/convergence/assets/ux-previews/fgtgz91evrtp16n/037.webp",
+        "/convergence/assets/ux-previews/fgtgz91evrtp16n/038.webp",
+        "/convergence/assets/ux-previews/fgtgz91evrtp16n/039.webp",
+        "/convergence/assets/ux-previews/fgtgz91evrtp16n/040.webp"
+      ],
+      "kind": "Canva page previews"
+    },
+    {
+      "key": "lotus-competitive",
+      "title": "Lotus - Competitive analysis",
+      "source": "https://www.canva.com/design/DAHWbNpQhqc/agl3P3umCXjzUMeXJOV9jQ/edit",
+      "pdf": "/convergence/assets/ux-previews/lotus-competitive/preview.pdf",
+      "pages": [
+        "/convergence/assets/ux-previews/lotus-competitive/001.webp",
+        "/convergence/assets/ux-previews/lotus-competitive/002.webp",
+        "/convergence/assets/ux-previews/lotus-competitive/003.webp",
+        "/convergence/assets/ux-previews/lotus-competitive/004.webp",
+        "/convergence/assets/ux-previews/lotus-competitive/005.webp",
+        "/convergence/assets/ux-previews/lotus-competitive/006.webp",
+        "/convergence/assets/ux-previews/lotus-competitive/007.webp",
+        "/convergence/assets/ux-previews/lotus-competitive/008.webp"
+      ],
+      "kind": "Canva page previews"
+    },
+    {
+      "key": "lotus-planning",
+      "title": "Lotus - Earlier card-sort planning",
+      "source": "https://www.canva.com/design/DAHXMyp2pMQ/zPogQtP7xJ71vUX00JPWkA/edit",
+      "pdf": "/convergence/assets/ux-previews/lotus-planning/preview.pdf",
+      "pages": [
+        "/convergence/assets/ux-previews/lotus-planning/001.webp",
+        "/convergence/assets/ux-previews/lotus-planning/002.webp",
+        "/convergence/assets/ux-previews/lotus-planning/003.webp",
+        "/convergence/assets/ux-previews/lotus-planning/004.webp"
+      ],
+      "kind": "Canva page previews"
+    },
+    {
+      "key": "lotus-report",
+      "title": "Lotus - Completed research report",
+      "source": "/convergence/assets/lotus-research.pdf",
+      "pdf": "/convergence/assets/lotus-research.pdf",
+      "pages": [
+        "/convergence/assets/ux-previews/lotus-report/001.webp",
+        "/convergence/assets/ux-previews/lotus-report/002.webp",
+        "/convergence/assets/ux-previews/lotus-report/003.webp",
+        "/convergence/assets/ux-previews/lotus-report/004.webp",
+        "/convergence/assets/ux-previews/lotus-report/005.webp",
+        "/convergence/assets/ux-previews/lotus-report/006.webp",
+        "/convergence/assets/ux-previews/lotus-report/007.webp",
+        "/convergence/assets/ux-previews/lotus-report/008.webp",
+        "/convergence/assets/ux-previews/lotus-report/009.webp",
+        "/convergence/assets/ux-previews/lotus-report/010.webp",
+        "/convergence/assets/ux-previews/lotus-report/011.webp",
+        "/convergence/assets/ux-previews/lotus-report/012.webp",
+        "/convergence/assets/ux-previews/lotus-report/013.webp",
+        "/convergence/assets/ux-previews/lotus-report/014.webp",
+        "/convergence/assets/ux-previews/lotus-report/015.webp",
+        "/convergence/assets/ux-previews/lotus-report/016.webp",
+        "/convergence/assets/ux-previews/lotus-report/017.webp",
+        "/convergence/assets/ux-previews/lotus-report/018.webp",
+        "/convergence/assets/ux-previews/lotus-report/019.webp",
+        "/convergence/assets/ux-previews/lotus-report/020.webp",
+        "/convergence/assets/ux-previews/lotus-report/021.webp",
+        "/convergence/assets/ux-previews/lotus-report/022.webp",
+        "/convergence/assets/ux-previews/lotus-report/023.webp"
+      ],
+      "kind": "Supplied PDF"
+    },
+    {
+      "key": "lotus-sitemap",
+      "title": "Lotus - Proposed sitemap",
+      "source": "/convergence/assets/lotus-sitemap.pdf",
+      "pdf": "/convergence/assets/lotus-sitemap.pdf",
+      "pages": ["/convergence/assets/ux-previews/lotus-sitemap/001.webp"],
+      "kind": "Supplied PDF"
+    }
+  ],
+  "docGroups": [[0], [1], [2, 3, 4, 5, 6, 7], [8, 9, 10, 11]],
+  "caseContent": {
+    "studymind": [
+      "StudyMind.",
+      "<figure class=\"case-preview\"><img src=\"/convergence/assets/studymind.webp\" alt=\"Original portfolio interface capture\"><figcaption>Original portfolio interface capture</figcaption></figure><section class=\"demo-panel\"><span class=\"small blue\">Demo setup</span><h3>Live app needs deployment</h3><p>The API and database need hosting, account/session configuration and a server-side Claude API credential before visitors can generate material.</p><a class=\"btn\" href=\"https://github.com/Hazmat-ai/StudyMind#readme\" target=\"_blank\" rel=\"noopener\">Run the source / setup ↗</a></section><p class=\"muted\">Software / Python · React · FastAPI · PostgreSQL · Claude API</p><p>Turn notes and PDFs into summaries, flashcards and practice material. This screen shows how the portfolio would explain the project; it is not a live copy of StudyMind.</p><div class=\"twocol\"><div><h3>The problem</h3><p>Preparing study material can take time away from using it. The project brings document input and structured study output into one workflow.</p></div><div><h3>The decision</h3><p>Separate the interface, API, provider generation and persistence so the workflow can communicate its current state.</p></div></div><div class=\"diagram\"><span>Notes / PDF</span><span aria-hidden=\"true\">→</span><span>FastAPI</span><span aria-hidden=\"true\">→</span><span>Structured material</span><span aria-hidden=\"true\">→</span><span>Saved sets</span></div><h3>What the case study would show</h3><p>Input limits, progress and failure states, consent, review before saving, account boundaries and the tradeoffs behind the architecture. No adoption or learning-impact numbers are assumed.</p><div class=\"links\"><a class=\"btn primary\" href=\"https://github.com/Hazmat-ai/StudyMind\" target=\"_blank\" rel=\"noopener\">Open GitHub ↗</a></div>"
+    ],
+    "lotus": [
+      "The category users didn’t expect.",
+      "<p class=\"muted\">Lotus / UX205 information architecture · Academic research by Hamza Rizvi</p><p>A closed card sort tested twenty page labels against five proposed navigation categories. Five participants completed the study; the proposed sitemap contains thirty pages.</p><div class=\"evidence\"><strong>Only 1 of 5 participants put “Compare models” in Compare.</strong><p>The result challenged the original standalone comparison category. It did not prove a replacement structure would work.</p></div><div class=\"twocol\"><div><h3>What held up</h3><p>Handbooks & manuals reached Owners for 4 of 5 participants, the clearest agreement in the dataset.</p></div><div><h3>What stayed uncertain</h3><p>No card reached unanimous agreement. Fifteen of twenty peaked at 2 of 5. Sessions were fast, so the findings remain directional.</p></div></div><img src=\"/convergence/assets/lotus-findings.png\" alt=\"Agreement summary page from the supplied completed research report\"><h3>From evidence to structure</h3><p>Retain Owners as a support hub, make Contact us a global utility, investigate comparison inside model pages, clarify purchase labels and retest. The supplied proposed categories remain Models, Compare, Buy & test drive, Owners, and Lotus story.</p><img src=\"/convergence/assets/lotus-sitemap.png\" alt=\"Actual supplied proposed Lotus sitemap\"><div class=\"links\"><a class=\"btn primary\" href=\"/convergence/assets/lotus-research.pdf\" target=\"_blank\" rel=\"noopener\">Read completed report ↗</a><a class=\"btn\" href=\"/convergence/assets/lotus-sitemap.pdf\" target=\"_blank\" rel=\"noopener\">Open sitemap ↗</a></div><p class=\"reviewnote\" style=\"margin-top:20px\">Source disclosure: the report records AI assistance with organization and analysis support. Participant evidence, limitations and responsibility remain documented in the source.</p><h3>Browse the documents</h3><div class=\"case-doc-links\"><button class=\"btn\" data-doc-preview=\"lotus-competitive\">Lotus - Competitive analysis ↗</button><button class=\"btn\" data-doc-preview=\"lotus-planning\">Lotus - Earlier card-sort planning ↗</button><button class=\"btn\" data-doc-preview=\"lotus-report\">Lotus - Completed research report ↗</button><button class=\"btn\" data-doc-preview=\"lotus-sitemap\">Lotus - Proposed sitemap ↗</button></div>"
+    ],
+    "koenigsegg": [
+      "Finding information inside the spectacle.",
+      "<p class=\"muted\">Collaborative automotive UX research / The Ghost Squad</p><p>The team examined whether a cinematic automotive website helped people find technical specifications, compare models and locate a dealer. This portfolio treatment highlights the research decisions and keeps team attribution visible.</p><div class=\"twocol\"><div><h3>Hamza’s recorded role</h3><p>Research Lead, as named in the team contract. The work includes contributions from Augustus Vennam, Safdar Md Abdus Shukur and Raeya Sangha.</p></div><div><h3>Recurring themes</h3><p>Interviews describe strong visual appeal alongside excessive scrolling, limited comparison and unclear calls to action. These are reported findings, not measured redesign improvements.</p></div></div><h3>Open the original artifacts</h3><div class=\"doclist\"><a href=\"https://canva.link/hi2bwrvy5m549rs\" target=\"_blank\" rel=\"noopener\">Team contract ↗</a><a href=\"https://canva.link/3ugm54bg5rnw0g8\" target=\"_blank\" rel=\"noopener\">UX research plan ↗</a><a href=\"https://canva.link/n0pccn7czng57hy\" target=\"_blank\" rel=\"noopener\">Personas and journey maps ↗</a><a href=\"https://canva.link/tk6by8o9uk93vb1\" target=\"_blank\" rel=\"noopener\">Interviews and analysis ↗</a><a href=\"https://canva.link/brd7e8veo2ns7ue\" target=\"_blank\" rel=\"noopener\">Usability testing report ↗</a><a href=\"https://canva.link/fgtgz91evrtp16n\" target=\"_blank\" rel=\"noopener\">Competitive and heuristic evaluation ↗</a></div><p class=\"reviewnote\">Hamza is named Research Lead in the team contract. Collaborators include Augustus Vennam, Safdar Md Abdus Shukur and Raeya Sangha. Several source covers label this work UX115; the owner supplied it under UX230. AI-generated personas and AI-assisted sections remain distinguishable in their original sources.</p><h3>Browse the documents</h3><div class=\"case-doc-links\"><button class=\"btn\" data-doc-preview=\"hi2bwrvy5m549rs\">Team contract ↗</button><button class=\"btn\" data-doc-preview=\"3ugm54bg5rnw0g8\">UX research plan ↗</button><button class=\"btn\" data-doc-preview=\"n0pccn7czng57hy\">Personas and journey maps ↗</button><button class=\"btn\" data-doc-preview=\"tk6by8o9uk93vb1\">Interviews and analysis ↗</button><button class=\"btn\" data-doc-preview=\"brd7e8veo2ns7ue\">Usability testing report ↗</button><button class=\"btn\" data-doc-preview=\"fgtgz91evrtp16n\">Competitive and heuristic evaluation ↗</button></div>"
+    ],
+    "asl": [
+      "ASL hand-sign prototype.",
+      "<figure class=\"case-preview\"><img src=\"/convergence/assets/asl.webp\" alt=\"Original portfolio interface capture\"><figcaption>Original portfolio interface capture</figcaption></figure><section class=\"demo-panel\"><span class=\"small blue\">Demo setup</span><h3>Camera demo needs an HTTPS deployment</h3><p>Palm needs its Node API and same-origin MediaPipe model/WASM assets. Camera permission must be requested only after a visitor chooses to start it.</p><a class=\"btn\" href=\"https://github.com/Hazmat-ai/ASL_Recognition#readme\" target=\"_blank\" rel=\"noopener\">Run the source / setup ↗</a></section><p class=\"muted\">Camera interaction / browser prototype</p><p>A camera-based prototype explores recognition of selected static ASL hand shapes with MediaPipe hand tracking and geometric classification.</p><h3>Make the boundary visible</h3><p>Static hand-shape feedback is a narrower task than understanding fluent sign language. The case-study copy keeps that distinction clear and shows the interaction, camera consent and recognition limitations.</p><div class=\"links\"><a class=\"btn primary\" href=\"https://github.com/Hazmat-ai/ASL_Recognition\" target=\"_blank\" rel=\"noopener\">Open GitHub ↗</a></div>"
+    ],
+    "smart-write": [
+      "Smart Write",
+      "<figure class=\"case-preview\"><img src=\"/convergence/assets/project-previews/smart-write.svg\" alt=\"Inference pipeline overview\"><figcaption>Inference pipeline overview</figcaption></figure><section class=\"demo-panel\"><span class=\"small blue\">Demo setup</span><h3>Inference demo needs a running model API</h3><p>The drawing frontend needs the saved PyTorch model and a running inference service. No predictions are invented in this portfolio preview.</p><a class=\"btn\" href=\"https://github.com/ManpreetSingh-345/Handwriting-Recognition#readme\" target=\"_blank\" rel=\"noopener\">Run the source / setup ↗</a></section><p class=\"muted\">AI / Machine Learning / Python · PyTorch · Torchvision · Pillow · React · Vite · Tailwind CSS · Radix UI</p><p>Co-developed a handwriting recognition project combining a React interface for drawing and image uploads with a custom PyTorch convolutional neural network. The model classifies handwritten characters across 47 output classes. Implemented image preprocessing for inference using grayscale conversion, normalization, and colour inversion, with saved model weights available for local predictions.</p><div class=\"twocol\"><div><h3>The problem</h3><p>Handwriting recognition typically requires either expensive proprietary APIs or poorly documented open-source models. The goal was to build an end-to-end solution—from data preprocessing to a trained model to a usable web interface—as a learning exercise in the full ML pipeline.</p></div><div><h3>The approach</h3><p>Built a CNN with PyTorch and Torchvision trained on the EMNIST dataset covering 47 output classes. The React/Vite frontend provides a canvas for freehand drawing and file upload. Images are preprocessed (grayscale conversion, normalization, colour inversion) before being passed to the model for inference.</p></div></div><h3>Inside the project</h3><ul><li>47-class character classification (letters and digits)</li><li>Custom CNN trained with PyTorch and Torchvision</li><li>React + Vite frontend with canvas drawing interface</li><li>Image preprocessing pipeline: grayscale, normalization, colour inversion</li><li>Saved model weights for local inference</li></ul><div class=\"links\"><a class=\"btn primary\" href=\"https://github.com/ManpreetSingh-345/Handwriting-Recognition\" target=\"_blank\" rel=\"noopener\">Open GitHub ↗</a></div>"
+    ],
+    "campaign-os": [
+      "campaignOS",
+      "<figure class=\"case-preview\"><img src=\"/convergence/assets/project-previews/campaign.jpg\" alt=\"Frame from the actual app walkthrough\"><figcaption>Frame from the actual app walkthrough</figcaption></figure><section class=\"demo-panel\"><span class=\"small blue\">Recorded app demo</span><h3>Watch actual app walkthrough</h3><p>Recording from the source repository. Live generation requires a configured server, user account and provider API credentials.</p><video class=\"project-video\" controls playsinline preload=\"none\" src=\"/convergence/demos/media/campaign.mp4\" aria-label=\"Watch actual app walkthrough\">Your browser cannot play this video. <a href=\"/convergence/demos/media/campaign.mp4\">Open the recording</a>.</video><a class=\"btn primary\" href=\"/convergence/demos/media/campaign.mp4\" target=\"_blank\" rel=\"noopener\">Open video ↗</a></section><p class=\"muted\">Full Stack / React · JavaScript · HTML · CSS · Anthropic Claude API · localStorage</p><p>Developed a marketing campaign generator that uses the Anthropic Claude API to transform campaign ideas and audience details into structured plans. Generated outputs include messaging, customer journeys, channel strategies, KPIs, and budget recommendations. Implemented tabbed results, campaign refinement, clipboard export, and browser-based storage for saved campaigns.</p><div class=\"twocol\"><div><h3>The problem</h3><p>Marketing teams and independent creators often lack the resources to produce structured campaign strategies from scratch. The goal was a tool that could turn a brief description into a complete, actionable campaign plan instantly.</p></div><div><h3>The approach</h3><p>Used React with vanilla CSS for the frontend and the Claude API for generation. Campaign inputs are transformed into structured prompts that instruct Claude to produce a JSON-shaped response covering messaging, channels, KPIs, and budget. Results are displayed in a tabbed interface and persisted via browser localStorage.</p></div></div><h3>Inside the project</h3><ul><li>Claude API integration for structured campaign plan generation</li><li>Outputs: messaging, customer journeys, channel strategies, KPIs, budget recommendations</li><li>Tabbed result display with campaign refinement capability</li><li>Clipboard export and browser-based localStorage persistence</li></ul><div class=\"links\"><a class=\"btn primary\" href=\"https://github.com/Hazmat-ai/Campaign-app\" target=\"_blank\" rel=\"noopener\">Open GitHub ↗</a></div>"
+    ],
+    "fitforge": [
+      "FitForge",
+      "<figure class=\"case-preview\"><img src=\"/convergence/assets/project-previews/fitforge.jpg\" alt=\"Actual browser companion / routine builder\"><figcaption>Actual browser companion / routine builder</figcaption></figure><section class=\"demo-panel\"><span class=\"small blue\">Live browser demo</span><h3>Try the FitForge browser companion</h3><p>A functional browser companion with the native exercise catalog: build a routine, log actual sets and save local history. It is separate from the SwiftUI app and does not include Apple Health or nutrition.</p><a class=\"btn primary\" href=\"/convergence/demos/fitforge/index.html\" target=\"_blank\" rel=\"noopener\">Try the FitForge browser companion ↗</a></section><p class=\"muted\">Mobile Development / Swift · SwiftUI · Foundation · Swift Concurrency · iOS</p><p>Developed an iOS fitness application using Swift and SwiftUI, combining workout planning, active workout tracking, and nutrition features. Implemented rule-based workout generation using fitness level, training goals, and selected muscle groups to produce exercise plans with sets, repetitions, and rest periods. Organized the application into reusable UI components, data models, and service layers.</p><div class=\"twocol\"><div><h3>The problem</h3><p>Existing fitness apps are often overcomplicated or rely on subscription paywalls. The goal was a clean, opinionated iOS app that generates effective workout plans without requiring AI APIs or cloud dependencies.</p></div><div><h3>The approach</h3><p>Built entirely in Swift with SwiftUI for the UI layer. Workout generation uses rule-based logic keyed on fitness level, selected muscle groups, and training goals. The app is structured into UI components, data models, and service layers for maintainability.</p></div></div><h3>Inside the project</h3><ul><li>Rule-based workout generation by fitness level, goals, and muscle groups</li><li>Active workout tracking with sets, reps, and rest timers</li><li>Nutrition feature with food logging</li><li>SwiftUI component architecture with data model and service layer separation</li></ul><div class=\"links\"><a class=\"btn primary\" href=\"https://github.com/Hazmat-ai/Workout-app\" target=\"_blank\" rel=\"noopener\">Open GitHub ↗</a></div>"
+    ],
+    "arns-travel-system": [
+      "ARNS Travel System",
+      "<figure class=\"case-preview\"><img src=\"/convergence/assets/project-previews/arns.jpg\" alt=\"Frame from the actual Java app walkthrough\"><figcaption>Frame from the actual Java app walkthrough</figcaption></figure><section class=\"demo-panel\"><span class=\"small blue\">Recorded app demo</span><h3>Watch actual desktop walkthrough</h3><p>Actual Java Swing application using example traveller data. This planner does not contact suppliers or make bookings.</p><video class=\"project-video\" controls playsinline preload=\"none\" src=\"/convergence/demos/media/arns.mp4\" aria-label=\"Watch actual desktop walkthrough\">Your browser cannot play this video. <a href=\"/convergence/demos/media/arns.mp4\">Open the recording</a>.</video><a class=\"btn primary\" href=\"/convergence/demos/media/arns.mp4\" target=\"_blank\" rel=\"noopener\">Open video ↗</a></section><p class=\"muted\">Full Stack / Java · Java Swing · OOP · File Handling · Javadoc · Eclipse IDE</p><p>Co-developed a Java desktop application for travel planning and reservation management as part of an Object-Oriented Programming course. Combined flight selection, reservations, accommodation, and destination activities within a Java Swing interface. Organized the application into GUI, model, service, and utility layers to separate interface logic from travel data and booking operations.</p><div class=\"twocol\"><div><h3>The problem</h3><p>Needed to build a functional multi-feature desktop application as a team project demonstrating object-oriented design principles—layered architecture, encapsulation, and modular feature development.</p></div><div><h3>The approach</h3><p>Structured the application into four layers: GUI (Java Swing), model (data objects), service (business logic), and utility (helpers and file I/O). Team members worked on parallel feature branches—flights, reservations, accommodations, activities—then integrated through well-defined service interfaces.</p></div></div><h3>Inside the project</h3><ul><li>Flight selection, reservations, accommodation, and destination activities</li><li>Java Swing GUI with light/dark mode and animations</li><li>Layered architecture: GUI, model, service, utility</li><li>Javadoc documentation and file-based data persistence</li></ul><div class=\"links\"><a class=\"btn primary\" href=\"https://github.com/Hazmat-ai/ARNS_Travel_System\" target=\"_blank\" rel=\"noopener\">Open GitHub ↗</a></div>"
+    ],
+    "jetson-nano-robot": [
+      "Jetson Nano Face Detection Robot",
+      "<figure class=\"case-preview\"><img src=\"/convergence/assets/project-previews/jetson.svg\" alt=\"Hardware architecture overview\"><figcaption>Hardware architecture overview</figcaption></figure><section class=\"demo-panel\"><span class=\"small blue\">Demo setup</span><h3>Hardware walkthrough needed</h3><p>This project needs the actual robot and camera. A recording of the device working is needed for a faithful portfolio demonstration.</p></section><p class=\"muted\">Robotics / Embedded Systems / Python · OpenCV · NVIDIA Jetson Nano · Raspberry Pi Camera · Computer Vision · Embedded Systems</p><p>Contributed to a robotics project combining a mobile chassis with a camera-based computer vision system. Integrated a Jetson Nano and Raspberry Pi camera module to process live video for face detection and age estimation. Worked on mechanical assembly and embedded hardware integration to connect the robot&#39;s movement platform with its vision subsystem.</p><div class=\"twocol\"><div><h3>The problem</h3><p>Building an autonomous robot that can detect and classify faces requires tightly coupling a real-time vision pipeline with embedded hardware constraints—low power, limited memory, and physical assembly challenges.</p></div><div><h3>The approach</h3><p>Used OpenCV on the Jetson Nano for real-time face detection and age estimation. The Raspberry Pi camera module feeds frames to the GPU-accelerated Jetson for inference. Hardware integration involved mounting the camera on the chassis and routing power and signal connections between the movement platform and the compute module.</p></div></div><h3>Inside the project</h3><ul><li>Real-time face detection and age estimation on the Jetson Nano GPU</li><li>Raspberry Pi camera module integration</li><li>Mobile chassis with motor control</li><li>Hardware-software co-design: mechanical assembly and embedded integration</li></ul><div class=\"links\"><a class=\"btn primary\" href=\"https://github.com/Hazmat-ai/portfolio-Hamza/blob/main/src/data/projects.ts\" target=\"_blank\" rel=\"noopener\">View portfolio project record ↗</a></div>"
+    ],
+    "tcp-converter": [
+      "TCP Multi-Service Converter",
+      "<figure class=\"case-preview\"><img src=\"/convergence/assets/project-previews/tcp.jpg\" alt=\"Actual conversion-logic browser adaptation\"><figcaption>Actual conversion-logic browser adaptation</figcaption></figure><section class=\"demo-panel\"><span class=\"small blue\">Interactive logic preview</span><h3>Try conversion logic</h3><p>A functional browser adaptation of the Python formulas and constants. The TCP server and concurrent clients are not running in this preview.</p><a class=\"btn primary\" href=\"/convergence/demos/tcp-converter/index.html\" target=\"_blank\" rel=\"noopener\">Try conversion logic ↗</a></section><p class=\"muted\">Full Stack / Python · TCP/IP · Socket Programming · Multithreading · Client–Server Architecture · Unit Testing</p><p>Co-developed a TCP client–server application with Nicholas Sobolev for CP372, supporting currency, temperature, length, and weight conversions. Implemented a threaded server for concurrent clients and an interactive client supporting multiple requests per connection. Used a custom text protocol with request validation, formatted responses, and error handling. Currency conversions use fixed exchange rates.</p><div class=\"twocol\"><div><h3>The problem</h3><p>Required a practical implementation of client–server networking concepts including socket programming, threading, custom protocols, and concurrent client handling.</p></div><div><h3>The approach</h3><p>Built a multithreaded TCP server in Python using the socket and threading modules. Each client connection is handled on a separate thread. A custom text protocol defines request formatting and response structure, with validation and error handling at both ends.</p></div></div><h3>Inside the project</h3><ul><li>Multithreaded TCP server handling concurrent client connections</li><li>Currency, temperature, length, and weight conversion services</li><li>Custom text protocol with request validation and error handling</li><li>Interactive client with support for multiple requests per session</li><li>Unit testing for conversion logic</li></ul><div class=\"links\"><a class=\"btn primary\" href=\"https://github.com/Hazmat-ai/tcp-converter-2.0\" target=\"_blank\" rel=\"noopener\">Open GitHub ↗</a></div>"
+    ],
+    "arm-cortex-simulator": [
+      "ARM Cortex-M Sensor Simulator",
+      "<figure class=\"case-preview\"><img src=\"/convergence/assets/project-previews/arm.jpg\" alt=\"Actual simulator with generated sensor data\"><figcaption>Actual simulator with generated sensor data</figcaption></figure><section class=\"demo-panel\"><span class=\"small blue\">Live browser demo</span><h3>Play Signal Bench</h3><p>The actual browser teaching simulator. Sensor data and timing are modeled; no physical MCU is connected.</p><a class=\"btn primary\" href=\"/convergence/demos/signal-bench/index.html\" target=\"_blank\" rel=\"noopener\">Play Signal Bench ↗</a></section><p class=\"muted\">Robotics / Embedded Systems / HTML · JavaScript · Chart.js · ARM Assembly Concepts · Embedded Systems Simulation</p><p>Co-developed an interactive browser simulator with Samuel Okegbile to demonstrate sensor acquisition and threshold alerts using an ARM Thumb polling loop. Visualized simulated ADC readings, instruction execution, and GPIO alerts, with interactive graphs comparing Cortex-M0, M0+, M3, and M4 configurations.</p><div class=\"twocol\"><div><h3>The problem</h3><p>ARM Cortex-M architecture concepts—polling loops, ADC acquisition, GPIO alerts—are difficult to visualize without physical hardware. Needed an accessible, browser-based tool for learning and demonstration.</p></div><div><h3>The approach</h3><p>Built entirely in HTML and JavaScript with Chart.js for visualization. The simulator models the Cortex-M polling loop cycle by cycle, displaying simulated ADC readings against configurable thresholds and visualizing GPIO state transitions. Comparison graphs cover four Cortex-M variants.</p></div></div><h3>Inside the project</h3><ul><li>Interactive simulation of ARM Thumb polling loops</li><li>Simulated ADC readings and GPIO threshold alerts</li><li>Chart.js visualizations comparing Cortex-M0, M0+, M3, M4</li><li>Entirely browser-based, no server required</li></ul><div class=\"links\"><a class=\"btn primary\" href=\"https://github.com/Hazmat-ai/Vibecode_projects\" target=\"_blank\" rel=\"noopener\">Open GitHub ↗</a></div>"
+    ],
+    "hubspot-integration": [
+      "HubSpot CRM Integration",
+      "<figure class=\"case-preview\"><img src=\"/convergence/assets/project-previews/hubspot.svg\" alt=\"CRM integration overview\"><figcaption>CRM integration overview</figcaption></figure><section class=\"demo-panel\"><span class=\"small blue\">Demo setup</span><h3>CRM demo needs a test account</h3><p>A public demo needs isolated sample records, a HubSpot test account, custom-object configuration and a server-side private-app token.</p><a class=\"btn\" href=\"https://github.com/Hazmat-ai/Hubspot_integration-#readme\" target=\"_blank\" rel=\"noopener\">Run the source / setup ↗</a></section><p class=\"muted\">Full Stack / JavaScript · Node.js · Express · HubSpot API · Pug · Axios</p><p>Developed a Node.js and Express application for the Integrating With HubSpot I: Foundations practicum. Integrated the HubSpot API to create, retrieve, and display custom CRM records representing video game characters. Built a record-entry form and a table interface using Pug templates.</p><div class=\"twocol\"><div><h3>The problem</h3><p>Needed to learn HubSpot API fundamentals—authentication, custom object schemas, and CRUD operations—through a hands-on integration project.</p></div><div><h3>The approach</h3><p>Used Node.js and Express for the backend, Pug for server-side HTML templating, and Axios for HubSpot API requests. Implemented OAuth or API key authentication, custom object creation, record retrieval, and a simple CRUD interface.</p></div></div><h3>Inside the project</h3><ul><li>HubSpot API integration for custom CRM object management</li><li>Create, retrieve, and display custom records (video game characters)</li><li>Record-entry form and table interface via Pug templates</li><li>Node.js/Express backend with Axios for API requests</li></ul><div class=\"links\"><a class=\"btn primary\" href=\"https://github.com/Hazmat-ai/Hubspot_integration-\" target=\"_blank\" rel=\"noopener\">Open GitHub ↗</a></div>"
+    ],
+    "vex-robotics": [
+      "VEX V5 Competition Robotics",
+      "<figure class=\"case-preview\"><img src=\"/convergence/assets/project-previews/vex.svg\" alt=\"Competition engineering overview\"><figcaption>Competition engineering overview</figcaption></figure><section class=\"demo-panel\"><span class=\"small blue\">Demo setup</span><h3>Competition footage needed</h3><p>Add an actual robot or match recording to demonstrate drivetrain and control behavior. No competition footage was supplied in the current project sources.</p></section><p class=\"muted\">Robotics / Embedded Systems / VEX V5 · VEXcode · Drivetrain Design · Motor Control · Mechanical Assembly</p><p>Contributed to the design, assembly, and refinement of VEX V5 competition robots across multiple high school seasons. Worked on drivetrain configuration, gearing, and controller mapping to support game-specific tasks and match strategy. The team earned regional victories and qualified for the VEX World Championship.</p><div class=\"twocol\"><div><h3>The problem</h3><p>Each VEX season introduces a new game with unique mechanical and strategic challenges. Required iterative robot design, real-world testing, and rapid iteration under competitive conditions.</p></div><div><h3>The approach</h3><p>Used VEXcode for programming motor control, drivetrain logic, and autonomous routines. Mechanical work included gearing analysis, assembly, and field testing. Strategy was developed collaboratively across team members per match requirements.</p></div></div><h3>Inside the project</h3><ul><li>Multi-season iterative robot design and assembly</li><li>Drivetrain configuration, gearing, and controller mapping</li><li>Autonomous and driver-controlled programming in VEXcode</li><li>Regional victories and VEX World Championship qualification</li></ul><div class=\"links\"><a class=\"btn primary\" href=\"https://github.com/Hazmat-ai/portfolio-Hamza/blob/main/src/data/projects.ts\" target=\"_blank\" rel=\"noopener\">View portfolio project record ↗</a></div>"
+    ],
+    "fpv-racing-sim": [
+      "FPV Racing Simulation",
+      "<figure class=\"case-preview\"><img src=\"/convergence/assets/project-previews/fpv.svg\" alt=\"Camera signal-path overview\"><figcaption>Camera signal-path overview</figcaption></figure><section class=\"demo-panel\"><span class=\"small blue\">Demo setup</span><h3>FPV recording needed</h3><p>The physical camera and viewing setup need an actual recording. No live camera feed or fabricated hardware result is shown here.</p></section><p class=\"muted\">Robotics / Embedded Systems / FPV Camera Systems · VR Camera Modules · Video Transmission · Circuit Wiring · Hardware Troubleshooting</p><p>Contributed to an FPV simulation setup integrating camera modules with a live video feed to provide a first-person viewing experience. Assisted with hardware configuration, circuit rewiring, and troubleshooting component connections. Refined the setup to improve signal consistency and responsiveness between the camera system and viewing interface.</p><div class=\"twocol\"><div><h3>The problem</h3><p>FPV simulation setups require careful hardware integration: camera signal acquisition, transmission, and display must all function together with minimal latency and signal degradation.</p></div><div><h3>The approach</h3><p>Focused on hardware-level integration: configuring camera modules, rewiring circuits for clean signal paths, and iteratively debugging component connections to improve signal consistency and system responsiveness.</p></div></div><h3>Inside the project</h3><ul><li>FPV camera module integration with live video feed</li><li>Hardware configuration and circuit rewiring for signal integrity</li><li>Iterative debugging to improve latency and responsiveness</li></ul><div class=\"links\"><a class=\"btn primary\" href=\"https://github.com/Hazmat-ai/portfolio-Hamza/blob/main/src/data/projects.ts\" target=\"_blank\" rel=\"noopener\">View portfolio project record ↗</a></div>"
+    ],
+    "mood-picker": [
+      "Mood Project Picker",
+      "<figure class=\"case-preview\"><img src=\"/convergence/assets/project-previews/mood-picker.svg\" alt=\"Preference-matching algorithm overview\"><figcaption>Preference-matching algorithm overview</figcaption></figure><section class=\"demo-panel\"><span class=\"small blue\">Demo setup</span><h3>Live deployment needs restoring</h3><p>The published Vercel URL returned DEPLOYMENT_NOT_FOUND during this review. The Flask/React source can run locally; it needs a configured host before a live button can be enabled.</p><a class=\"btn\" href=\"https://github.com/Hazmat-ai/Mood-Analyzer-Project-Selector#readme\" target=\"_blank\" rel=\"noopener\">Run the source / setup ↗</a></section><p class=\"muted\">Full Stack / Python · Flask · React · SQLite</p><p>A Flask and React project recommendation app using preference questions, difficulty selection and weighted vector similarity. It does not scientifically measure mood.</p><div class=\"twocol\"><div><h3>The problem</h3><p>Choosing a project can be harder than starting one.</p></div><div><h3>The approach</h3><p>Match self-reported energy, creativity and challenge preferences against a project catalogue, with private browser-session history.</p></div></div><h3>Inside the project</h3><ul><li>Preference quiz and difficulty selection</li><li>Project brief and private history</li><li>Markdown export and deletion controls</li></ul><div class=\"links\"><a class=\"btn primary\" href=\"https://github.com/Hazmat-ai/Mood-Analyzer-Project-Selector\" target=\"_blank\" rel=\"noopener\">Open GitHub ↗</a></div>"
+    ],
+    "remnant": [
+      "REMNANT",
+      "<figure class=\"case-preview\"><img src=\"/convergence/assets/project-previews/remnant.jpg\" alt=\"Frame from the actual CLI walkthrough\"><figcaption>Frame from the actual CLI walkthrough</figcaption></figure><section class=\"demo-panel\"><span class=\"small blue\">Recorded app demo</span><h3>Watch actual CLI walkthrough</h3><p>Actual terminal commands against a temporary example database. The full project runs locally in Python.</p><video class=\"project-video\" controls playsinline preload=\"none\" src=\"/convergence/demos/media/remnant.mp4\" aria-label=\"Watch actual CLI walkthrough\">Your browser cannot play this video. <a href=\"/convergence/demos/media/remnant.mp4\">Open the recording</a>.</video><a class=\"btn primary\" href=\"/convergence/demos/media/remnant.mp4\" target=\"_blank\" rel=\"noopener\">Open video ↗</a></section><p class=\"muted\">Offline tools / Python · SQLite · CLI</p><p>A standalone Python command-line knowledge library and community skill planner with local SQLite storage. Its small example seed is a demonstration dataset.</p><div class=\"twocol\"><div><h3>The problem</h3><p>Offline information and learning dependencies need a clear, portable structure.</p></div><div><h3>The approach</h3><p>Use local search, prerequisite graphs and validated backup/merge workflows. Core commands use the Python standard library.</p></div></div><h3>Inside the project</h3><ul><li>Offline library search</li><li>Prerequisite-aware skill planning</li><li>SQLite backups and additive snapshot merging</li></ul><div class=\"links\"><a class=\"btn primary\" href=\"https://github.com/Hazmat-ai/REMNANT\" target=\"_blank\" rel=\"noopener\">Open GitHub ↗</a></div>"
+    ],
+    "gamified": [
+      "Gamified learning platform",
+      "<p class=\"muted\">UX100 · Design Thinking</p><p>Interactive learning concept. The source presents courses, games, tests and an AI-assist flow; it is coursework, not a shipped product claim.</p><h3>Original coursework</h3><div class=\"doclist\"><a href=\"https://canva.link/s3hisb19oyrsg9m\" target=\"_blank\" rel=\"noopener\">Gamified UX learning platform ↗</a></div><button class=\"btn\" data-doc-preview=\"s3hisb19oyrsg9m\">Preview Gamified learning platform ↗</button>"
+    ],
+    "wellness": [
+      "Wellness Hero",
+      "<p class=\"muted\">UX103 · UX Strategy</p><p>Design-sprint planning and workshop material.</p><h3>Original coursework</h3><div class=\"doclist\"><a href=\"https://canva.link/29n5hhvlvjp6goy\" target=\"_blank\" rel=\"noopener\">Design sprint and planning ↗</a></div><button class=\"btn\" data-doc-preview=\"29n5hhvlvjp6goy\">Preview Wellness Hero - Design Sprint ↗</button>"
+    ]
+  },
+  "portfolioProjects": [
+    {
+      "slug": "studymind",
+      "title": "StudyMind",
+      "shortDescription": "AI-powered study assistant that transforms notes and PDFs into flashcards, summaries, and practice questions.",
+      "description": "A full-stack study assistant that transforms notes and PDFs into flashcards, summaries, practice questions, and key concept breakdowns using the Anthropic Claude API. Built with a React frontend, FastAPI backend, and PostgreSQL database with JWT authentication.",
+      "problem": "Students spend a disproportionate amount of time reformatting notes rather than actually studying. There was no single tool that could ingest arbitrary document formats and produce structured study materials on demand.",
+      "approach": "Designed a layered architecture: a React frontend handles document uploads and study-set management, a FastAPI backend orchestrates Claude API calls and PDF parsing via PyMuPDF, and PostgreSQL stores user data and saved sets behind JWT authentication. Claude is prompted to produce structured JSON output for each study material type.",
+      "keyFeatures": [
+        "PDF and plain-text ingestion via PyMuPDF",
+        "AI-generated flashcards, summaries, practice questions, and concept breakdowns",
+        "User authentication with JWT and persistent study sets",
+        "React frontend with Tailwind CSS styling",
+        "FastAPI backend with SQLAlchemy ORM"
+      ],
+      "techStack": [
+        "Python",
+        "FastAPI",
+        "React",
+        "Tailwind CSS",
+        "PostgreSQL",
+        "SQLAlchemy",
+        "Claude API",
+        "JWT",
+        "PyMuPDF"
+      ],
+      "category": "Full Stack",
+      "githubUrl": "https://github.com/Hazmat-ai/StudyMind",
+      "featured": true,
+      "order": 1
+    },
+    {
+      "slug": "smart-write",
+      "title": "Smart Write",
+      "shortDescription": "Handwriting recognition app with a custom PyTorch CNN classifying 47 character classes.",
+      "description": "Co-developed a handwriting recognition project combining a React interface for drawing and image uploads with a custom PyTorch convolutional neural network. The model classifies handwritten characters across 47 output classes. Implemented image preprocessing for inference using grayscale conversion, normalization, and colour inversion, with saved model weights available for local predictions.",
+      "problem": "Handwriting recognition typically requires either expensive proprietary APIs or poorly documented open-source models. The goal was to build an end-to-end solution—from data preprocessing to a trained model to a usable web interface—as a learning exercise in the full ML pipeline.",
+      "approach": "Built a CNN with PyTorch and Torchvision trained on the EMNIST dataset covering 47 output classes. The React/Vite frontend provides a canvas for freehand drawing and file upload. Images are preprocessed (grayscale conversion, normalization, colour inversion) before being passed to the model for inference.",
+      "keyFeatures": [
+        "47-class character classification (letters and digits)",
+        "Custom CNN trained with PyTorch and Torchvision",
+        "React + Vite frontend with canvas drawing interface",
+        "Image preprocessing pipeline: grayscale, normalization, colour inversion",
+        "Saved model weights for local inference"
+      ],
+      "techStack": [
+        "Python",
+        "PyTorch",
+        "Torchvision",
+        "Pillow",
+        "React",
+        "Vite",
+        "Tailwind CSS",
+        "Radix UI"
+      ],
+      "category": "AI / Machine Learning",
+      "githubUrl": "https://github.com/ManpreetSingh-345/Handwriting-Recognition",
+      "featured": true,
+      "order": 2
+    },
+    {
+      "slug": "campaign-os",
+      "title": "campaignOS",
+      "shortDescription": "AI-powered marketing campaign generator using the Claude API to produce structured campaign plans.",
+      "description": "Developed a marketing campaign generator that uses the Anthropic Claude API to transform campaign ideas and audience details into structured plans. Generated outputs include messaging, customer journeys, channel strategies, KPIs, and budget recommendations. Implemented tabbed results, campaign refinement, clipboard export, and browser-based storage for saved campaigns.",
+      "problem": "Marketing teams and independent creators often lack the resources to produce structured campaign strategies from scratch. The goal was a tool that could turn a brief description into a complete, actionable campaign plan instantly.",
+      "approach": "Used React with vanilla CSS for the frontend and the Claude API for generation. Campaign inputs are transformed into structured prompts that instruct Claude to produce a JSON-shaped response covering messaging, channels, KPIs, and budget. Results are displayed in a tabbed interface and persisted via browser localStorage.",
+      "keyFeatures": [
+        "Claude API integration for structured campaign plan generation",
+        "Outputs: messaging, customer journeys, channel strategies, KPIs, budget recommendations",
+        "Tabbed result display with campaign refinement capability",
+        "Clipboard export and browser-based localStorage persistence"
+      ],
+      "techStack": [
+        "React",
+        "JavaScript",
+        "HTML",
+        "CSS",
+        "Anthropic Claude API",
+        "localStorage"
+      ],
+      "category": "Full Stack",
+      "githubUrl": "https://github.com/Hazmat-ai/Campaign-app",
+      "featured": true,
+      "order": 3
+    },
+    {
+      "slug": "asl-recognition",
+      "title": "ASL Hand-Sign Recognition",
+      "shortDescription": "Browser-based prototype recognizing static ASL hand shapes via MediaPipe and a geometric classifier.",
+      "description": "Built a browser-based prototype that recognizes selected static ASL hand shapes through a webcam using MediaPipe hand tracking and a custom geometric classifier. Implemented temporal smoothing, editable subtitles, and text-to-speech. Camera frames are processed locally in the browser—no data is sent to a server.",
+      "problem": "Accessibility tools for ASL recognition are often server-dependent and require significant latency. The goal was a fully client-side implementation that runs in the browser with no backend required.",
+      "approach": "MediaPipe Hands provides real-time hand landmark detection in the browser. A custom geometric classifier analyzes landmark positions and angles to identify specific static hand shapes. Temporal smoothing reduces jitter. The Web Speech API drives text-to-speech output.",
+      "keyFeatures": [
+        "Real-time hand landmark detection via MediaPipe in the browser",
+        "Custom geometric classifier for static ASL hand shapes",
+        "Temporal smoothing to reduce recognition jitter",
+        "Editable subtitles and Web Speech API text-to-speech",
+        "Fully client-side: no server, no data sent externally"
+      ],
+      "techStack": [
+        "React",
+        "TypeScript",
+        "Vite",
+        "Tailwind CSS",
+        "MediaPipe",
+        "Web Speech API"
+      ],
+      "category": "AI / Machine Learning",
+      "githubUrl": "https://github.com/Hazmat-ai/ASL_Recognition",
+      "featured": true,
+      "order": 4
+    },
+    {
+      "slug": "fitforge",
+      "title": "FitForge",
+      "shortDescription": "iOS fitness app built with Swift and SwiftUI for workout planning, tracking, and nutrition.",
+      "description": "Developed an iOS fitness application using Swift and SwiftUI, combining workout planning, active workout tracking, and nutrition features. Implemented rule-based workout generation using fitness level, training goals, and selected muscle groups to produce exercise plans with sets, repetitions, and rest periods. Organized the application into reusable UI components, data models, and service layers.",
+      "problem": "Existing fitness apps are often overcomplicated or rely on subscription paywalls. The goal was a clean, opinionated iOS app that generates effective workout plans without requiring AI APIs or cloud dependencies.",
+      "approach": "Built entirely in Swift with SwiftUI for the UI layer. Workout generation uses rule-based logic keyed on fitness level, selected muscle groups, and training goals. The app is structured into UI components, data models, and service layers for maintainability.",
+      "keyFeatures": [
+        "Rule-based workout generation by fitness level, goals, and muscle groups",
+        "Active workout tracking with sets, reps, and rest timers",
+        "Nutrition feature with food logging",
+        "SwiftUI component architecture with data model and service layer separation"
+      ],
+      "techStack": [
+        "Swift",
+        "SwiftUI",
+        "Foundation",
+        "Swift Concurrency",
+        "iOS"
+      ],
+      "category": "Mobile Development",
+      "githubUrl": "https://github.com/Hazmat-ai/Workout-app",
+      "featured": true,
+      "order": 5
+    },
+    {
+      "slug": "arns-travel-system",
+      "title": "ARNS Travel System",
+      "shortDescription": "Java desktop application for travel planning and reservation management with a layered OOP architecture.",
+      "description": "Co-developed a Java desktop application for travel planning and reservation management as part of an Object-Oriented Programming course. Combined flight selection, reservations, accommodation, and destination activities within a Java Swing interface. Organized the application into GUI, model, service, and utility layers to separate interface logic from travel data and booking operations.",
+      "problem": "Needed to build a functional multi-feature desktop application as a team project demonstrating object-oriented design principles—layered architecture, encapsulation, and modular feature development.",
+      "approach": "Structured the application into four layers: GUI (Java Swing), model (data objects), service (business logic), and utility (helpers and file I/O). Team members worked on parallel feature branches—flights, reservations, accommodations, activities—then integrated through well-defined service interfaces.",
+      "keyFeatures": [
+        "Flight selection, reservations, accommodation, and destination activities",
+        "Java Swing GUI with light/dark mode and animations",
+        "Layered architecture: GUI, model, service, utility",
+        "Javadoc documentation and file-based data persistence"
+      ],
+      "techStack": [
+        "Java",
+        "Java Swing",
+        "OOP",
+        "File Handling",
+        "Javadoc",
+        "Eclipse IDE"
+      ],
+      "category": "Full Stack",
+      "githubUrl": "https://github.com/Hazmat-ai/ARNS_Travel_System",
+      "featured": false,
+      "order": 6
+    },
+    {
+      "slug": "jetson-nano-robot",
+      "title": "Jetson Nano Face Detection Robot",
+      "shortDescription": "Robotics project combining a mobile chassis with Jetson Nano-powered face detection and age estimation.",
+      "description": "Contributed to a robotics project combining a mobile chassis with a camera-based computer vision system. Integrated a Jetson Nano and Raspberry Pi camera module to process live video for face detection and age estimation. Worked on mechanical assembly and embedded hardware integration to connect the robot's movement platform with its vision subsystem.",
+      "problem": "Building an autonomous robot that can detect and classify faces requires tightly coupling a real-time vision pipeline with embedded hardware constraints—low power, limited memory, and physical assembly challenges.",
+      "approach": "Used OpenCV on the Jetson Nano for real-time face detection and age estimation. The Raspberry Pi camera module feeds frames to the GPU-accelerated Jetson for inference. Hardware integration involved mounting the camera on the chassis and routing power and signal connections between the movement platform and the compute module.",
+      "keyFeatures": [
+        "Real-time face detection and age estimation on the Jetson Nano GPU",
+        "Raspberry Pi camera module integration",
+        "Mobile chassis with motor control",
+        "Hardware-software co-design: mechanical assembly and embedded integration"
+      ],
+      "techStack": [
+        "Python",
+        "OpenCV",
+        "NVIDIA Jetson Nano",
+        "Raspberry Pi Camera",
+        "Computer Vision",
+        "Embedded Systems"
+      ],
+      "category": "Robotics / Embedded Systems",
+      "featured": true,
+      "order": 7
+    },
+    {
+      "slug": "tcp-converter",
+      "title": "TCP Multi-Service Converter",
+      "shortDescription": "Python TCP client–server application supporting concurrent currency, temperature, length, and weight conversions.",
+      "description": "Co-developed a TCP client–server application with Nicholas Sobolev for CP372, supporting currency, temperature, length, and weight conversions. Implemented a threaded server for concurrent clients and an interactive client supporting multiple requests per connection. Used a custom text protocol with request validation, formatted responses, and error handling. Currency conversions use fixed exchange rates.",
+      "problem": "Required a practical implementation of client–server networking concepts including socket programming, threading, custom protocols, and concurrent client handling.",
+      "approach": "Built a multithreaded TCP server in Python using the socket and threading modules. Each client connection is handled on a separate thread. A custom text protocol defines request formatting and response structure, with validation and error handling at both ends.",
+      "keyFeatures": [
+        "Multithreaded TCP server handling concurrent client connections",
+        "Currency, temperature, length, and weight conversion services",
+        "Custom text protocol with request validation and error handling",
+        "Interactive client with support for multiple requests per session",
+        "Unit testing for conversion logic"
+      ],
+      "techStack": [
+        "Python",
+        "TCP/IP",
+        "Socket Programming",
+        "Multithreading",
+        "Client–Server Architecture",
+        "Unit Testing"
+      ],
+      "category": "Full Stack",
+      "githubUrl": "https://github.com/Hazmat-ai/tcp-converter-2.0",
+      "featured": false,
+      "order": 8
+    },
+    {
+      "slug": "arm-cortex-simulator",
+      "title": "ARM Cortex-M Sensor Simulator",
+      "shortDescription": "Interactive browser simulator visualizing ARM Thumb polling loops and GPIO threshold alerts across Cortex-M variants.",
+      "description": "Co-developed an interactive browser simulator with Samuel Okegbile to demonstrate sensor acquisition and threshold alerts using an ARM Thumb polling loop. Visualized simulated ADC readings, instruction execution, and GPIO alerts, with interactive graphs comparing Cortex-M0, M0+, M3, and M4 configurations.",
+      "problem": "ARM Cortex-M architecture concepts—polling loops, ADC acquisition, GPIO alerts—are difficult to visualize without physical hardware. Needed an accessible, browser-based tool for learning and demonstration.",
+      "approach": "Built entirely in HTML and JavaScript with Chart.js for visualization. The simulator models the Cortex-M polling loop cycle by cycle, displaying simulated ADC readings against configurable thresholds and visualizing GPIO state transitions. Comparison graphs cover four Cortex-M variants.",
+      "keyFeatures": [
+        "Interactive simulation of ARM Thumb polling loops",
+        "Simulated ADC readings and GPIO threshold alerts",
+        "Chart.js visualizations comparing Cortex-M0, M0+, M3, M4",
+        "Entirely browser-based, no server required"
+      ],
+      "techStack": [
+        "HTML",
+        "JavaScript",
+        "Chart.js",
+        "ARM Assembly Concepts",
+        "Embedded Systems Simulation"
+      ],
+      "category": "Robotics / Embedded Systems",
+      "githubUrl": "https://github.com/Hazmat-ai/Vibecode_projects",
+      "featured": false,
+      "order": 9
+    },
+    {
+      "slug": "hubspot-integration",
+      "title": "HubSpot CRM Integration",
+      "shortDescription": "Node.js/Express app integrating the HubSpot API to create and display custom CRM object records.",
+      "description": "Developed a Node.js and Express application for the Integrating With HubSpot I: Foundations practicum. Integrated the HubSpot API to create, retrieve, and display custom CRM records representing video game characters. Built a record-entry form and a table interface using Pug templates.",
+      "problem": "Needed to learn HubSpot API fundamentals—authentication, custom object schemas, and CRUD operations—through a hands-on integration project.",
+      "approach": "Used Node.js and Express for the backend, Pug for server-side HTML templating, and Axios for HubSpot API requests. Implemented OAuth or API key authentication, custom object creation, record retrieval, and a simple CRUD interface.",
+      "keyFeatures": [
+        "HubSpot API integration for custom CRM object management",
+        "Create, retrieve, and display custom records (video game characters)",
+        "Record-entry form and table interface via Pug templates",
+        "Node.js/Express backend with Axios for API requests"
+      ],
+      "techStack": [
+        "JavaScript",
+        "Node.js",
+        "Express",
+        "HubSpot API",
+        "Pug",
+        "Axios"
+      ],
+      "category": "Full Stack",
+      "githubUrl": "https://github.com/Hazmat-ai/Hubspot_integration-",
+      "featured": false,
+      "order": 10
+    },
+    {
+      "slug": "vex-robotics",
+      "title": "VEX V5 Competition Robotics",
+      "shortDescription": "Multi-season VEX V5 competition robotics: drivetrain design, motor control, and team World Championship qualification.",
+      "description": "Contributed to the design, assembly, and refinement of VEX V5 competition robots across multiple high school seasons. Worked on drivetrain configuration, gearing, and controller mapping to support game-specific tasks and match strategy. The team earned regional victories and qualified for the VEX World Championship.",
+      "problem": "Each VEX season introduces a new game with unique mechanical and strategic challenges. Required iterative robot design, real-world testing, and rapid iteration under competitive conditions.",
+      "approach": "Used VEXcode for programming motor control, drivetrain logic, and autonomous routines. Mechanical work included gearing analysis, assembly, and field testing. Strategy was developed collaboratively across team members per match requirements.",
+      "keyFeatures": [
+        "Multi-season iterative robot design and assembly",
+        "Drivetrain configuration, gearing, and controller mapping",
+        "Autonomous and driver-controlled programming in VEXcode",
+        "Regional victories and VEX World Championship qualification"
+      ],
+      "techStack": [
+        "VEX V5",
+        "VEXcode",
+        "Drivetrain Design",
+        "Motor Control",
+        "Mechanical Assembly"
+      ],
+      "category": "Robotics / Embedded Systems",
+      "featured": false,
+      "order": 11
+    },
+    {
+      "slug": "fpv-racing-sim",
+      "title": "FPV Racing Simulation",
+      "shortDescription": "FPV simulation integrating camera modules with live video feeds for a first-person viewing experience.",
+      "description": "Contributed to an FPV simulation setup integrating camera modules with a live video feed to provide a first-person viewing experience. Assisted with hardware configuration, circuit rewiring, and troubleshooting component connections. Refined the setup to improve signal consistency and responsiveness between the camera system and viewing interface.",
+      "problem": "FPV simulation setups require careful hardware integration: camera signal acquisition, transmission, and display must all function together with minimal latency and signal degradation.",
+      "approach": "Focused on hardware-level integration: configuring camera modules, rewiring circuits for clean signal paths, and iteratively debugging component connections to improve signal consistency and system responsiveness.",
+      "keyFeatures": [
+        "FPV camera module integration with live video feed",
+        "Hardware configuration and circuit rewiring for signal integrity",
+        "Iterative debugging to improve latency and responsiveness"
+      ],
+      "techStack": [
+        "FPV Camera Systems",
+        "VR Camera Modules",
+        "Video Transmission",
+        "Circuit Wiring",
+        "Hardware Troubleshooting"
+      ],
+      "category": "Robotics / Embedded Systems",
+      "featured": false,
+      "order": 12
+    },
+    {
+      "slug": "mood-picker",
+      "title": "Mood Project Picker",
+      "shortDescription": "Self-reported preferences become a project brief through weighted matching.",
+      "description": "A Flask and React project recommendation app using preference questions, difficulty selection and weighted vector similarity. It does not scientifically measure mood.",
+      "problem": "Choosing a project can be harder than starting one.",
+      "approach": "Match self-reported energy, creativity and challenge preferences against a project catalogue, with private browser-session history.",
+      "keyFeatures": [
+        "Preference quiz and difficulty selection",
+        "Project brief and private history",
+        "Markdown export and deletion controls"
+      ],
+      "techStack": ["Python", "Flask", "React", "SQLite"],
+      "category": "Full Stack",
+      "githubUrl": "https://github.com/Hazmat-ai/Mood-Analyzer-Project-Selector"
+    },
+    {
+      "slug": "remnant",
+      "title": "REMNANT",
+      "shortDescription": "An offline knowledge library and prerequisite-aware community skill planner.",
+      "description": "A standalone Python command-line knowledge library and community skill planner with local SQLite storage. Its small example seed is a demonstration dataset.",
+      "problem": "Offline information and learning dependencies need a clear, portable structure.",
+      "approach": "Use local search, prerequisite graphs and validated backup/merge workflows. Core commands use the Python standard library.",
+      "keyFeatures": [
+        "Offline library search",
+        "Prerequisite-aware skill planning",
+        "SQLite backups and additive snapshot merging"
+      ],
+      "techStack": ["Python", "SQLite", "CLI"],
+      "category": "Offline tools",
+      "githubUrl": "https://github.com/Hazmat-ai/REMNANT"
+    }
+  ],
+  "projectDemos": {
+    "arm-cortex-simulator": {
+      "kind": "live",
+      "title": "Play Signal Bench",
+      "url": "/convergence/demos/signal-bench/index.html",
+      "note": "The actual browser teaching simulator. Sensor data and timing are modeled; no physical MCU is connected."
+    },
+    "tcp-converter": {
+      "kind": "adaptation",
+      "title": "Try conversion logic",
+      "url": "/convergence/demos/tcp-converter/index.html",
+      "note": "A functional browser adaptation of the Python formulas and constants. The TCP server and concurrent clients are not running in this preview."
+    },
+    "campaign-os": {
+      "kind": "video",
+      "title": "Watch actual app walkthrough",
+      "url": "/convergence/demos/media/campaign.mp4",
+      "note": "Recording from the source repository. Live generation requires a configured server, user account and provider API credentials."
+    },
+    "arns-travel-system": {
+      "kind": "video",
+      "title": "Watch actual desktop walkthrough",
+      "url": "/convergence/demos/media/arns.mp4",
+      "note": "Actual Java Swing application using example traveller data. This planner does not contact suppliers or make bookings."
+    },
+    "remnant": {
+      "kind": "video",
+      "title": "Watch actual CLI walkthrough",
+      "url": "/convergence/demos/media/remnant.mp4",
+      "note": "Actual terminal commands against a temporary example database. The full project runs locally in Python."
+    },
+    "studymind": {
+      "kind": "setup",
+      "title": "Live app needs deployment",
+      "note": "The API and database need hosting, account/session configuration and a server-side Claude API credential before visitors can generate material.",
+      "repo": "https://github.com/Hazmat-ai/StudyMind#readme"
+    },
+    "smart-write": {
+      "kind": "setup",
+      "title": "Inference demo needs a running model API",
+      "note": "The drawing frontend needs the saved PyTorch model and a running inference service. No predictions are invented in this portfolio preview.",
+      "repo": "https://github.com/ManpreetSingh-345/Handwriting-Recognition#readme"
+    },
+    "asl-recognition": {
+      "kind": "setup",
+      "title": "Camera demo needs an HTTPS deployment",
+      "note": "Palm needs its Node API and same-origin MediaPipe model/WASM assets. Camera permission must be requested only after a visitor chooses to start it.",
+      "repo": "https://github.com/Hazmat-ai/ASL_Recognition#readme"
+    },
+    "fitforge": {
+      "kind": "live",
+      "title": "Try the FitForge browser companion",
+      "url": "/convergence/demos/fitforge/index.html",
+      "note": "A functional browser companion with the native exercise catalog: build a routine, log actual sets and save local history. It is separate from the SwiftUI app and does not include Apple Health or nutrition."
+    },
+    "hubspot-integration": {
+      "kind": "setup",
+      "title": "CRM demo needs a test account",
+      "note": "A public demo needs isolated sample records, a HubSpot test account, custom-object configuration and a server-side private-app token.",
+      "repo": "https://github.com/Hazmat-ai/Hubspot_integration-#readme"
+    },
+    "mood-picker": {
+      "kind": "setup",
+      "title": "Live deployment needs restoring",
+      "note": "The published Vercel URL returned DEPLOYMENT_NOT_FOUND during this review. The Flask/React source can run locally; it needs a configured host before a live button can be enabled.",
+      "repo": "https://github.com/Hazmat-ai/Mood-Analyzer-Project-Selector#readme"
+    },
+    "jetson-nano-robot": {
+      "kind": "hardware",
+      "title": "Hardware walkthrough needed",
+      "note": "This project needs the actual robot and camera. A recording of the device working is needed for a faithful portfolio demonstration."
+    },
+    "vex-robotics": {
+      "kind": "hardware",
+      "title": "Competition footage needed",
+      "note": "Add an actual robot or match recording to demonstrate drivetrain and control behavior. No competition footage was supplied in the current project sources."
+    },
+    "fpv-racing-sim": {
+      "kind": "hardware",
+      "title": "FPV recording needed",
+      "note": "The physical camera and viewing setup need an actual recording. No live camera feed or fabricated hardware result is shown here."
+    }
+  },
+  "projectPreviews": {
+    "studymind": {
+      "image": "/convergence/assets/studymind.webp",
+      "caption": "Original portfolio interface capture"
+    },
+    "asl-recognition": {
+      "image": "/convergence/assets/asl.webp",
+      "caption": "Original portfolio interface capture"
+    },
+    "smart-write": {
+      "image": "/convergence/assets/project-previews/smart-write.svg",
+      "caption": "Inference pipeline overview"
+    },
+    "campaign-os": {
+      "image": "/convergence/assets/project-previews/campaign.jpg",
+      "caption": "Frame from the actual app walkthrough"
+    },
+    "fitforge": {
+      "image": "/convergence/assets/project-previews/fitforge.jpg",
+      "caption": "Actual browser companion / routine builder"
+    },
+    "arns-travel-system": {
+      "image": "/convergence/assets/project-previews/arns.jpg",
+      "caption": "Frame from the actual Java app walkthrough"
+    },
+    "jetson-nano-robot": {
+      "image": "/convergence/assets/project-previews/jetson.svg",
+      "caption": "Hardware architecture overview"
+    },
+    "tcp-converter": {
+      "image": "/convergence/assets/project-previews/tcp.jpg",
+      "caption": "Actual conversion-logic browser adaptation"
+    },
+    "arm-cortex-simulator": {
+      "image": "/convergence/assets/project-previews/arm.jpg",
+      "caption": "Actual simulator with generated sensor data"
+    },
+    "hubspot-integration": {
+      "image": "/convergence/assets/project-previews/hubspot.svg",
+      "caption": "CRM integration overview"
+    },
+    "vex-robotics": {
+      "image": "/convergence/assets/project-previews/vex.svg",
+      "caption": "Competition engineering overview"
+    },
+    "fpv-racing-sim": {
+      "image": "/convergence/assets/project-previews/fpv.svg",
+      "caption": "Camera signal-path overview"
+    },
+    "mood-picker": {
+      "image": "/convergence/assets/project-previews/mood-picker.svg",
+      "caption": "Preference-matching algorithm overview"
+    },
+    "remnant": {
+      "image": "/convergence/assets/project-previews/remnant.jpg",
+      "caption": "Frame from the actual CLI walkthrough"
+    }
+  }
+}
